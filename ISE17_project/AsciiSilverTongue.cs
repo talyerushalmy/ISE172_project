@@ -44,7 +44,7 @@ namespace Program
         {
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("menu - print this menu");
-            Console.WriteLine("hello [NAME] - say Hello to {name}!");
+            Console.WriteLine("hello [NAME] - say Hello to [NAME]!");
             Console.WriteLine("exit - Exit the program");
         }
 
