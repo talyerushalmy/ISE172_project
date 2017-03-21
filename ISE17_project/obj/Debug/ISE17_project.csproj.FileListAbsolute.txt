@@ -1,0 +1,7 @@
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE17_project\ISE17_project\ISE17_project\bin\Debug\ISE17_project.exe.config
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE17_project\ISE17_project\bin\Debug\ISE17_project.exe.config
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE17_project\ISE17_project\bin\Debug\ISE17_project.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE17_project\ISE17_project\bin\Debug\ISE17_project.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE17_project\ISE17_project\obj\Debug\ISE17_project.csprojResolveAssemblyReference.cache
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE17_project\ISE17_project\obj\Debug\ISE17_project.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE17_project\ISE17_project\obj\Debug\ISE17_project.pdb
