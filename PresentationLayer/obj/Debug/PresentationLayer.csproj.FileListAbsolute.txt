@@ -1,0 +1,6 @@
+C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\bin\Debug\PresentationLayer.exe.config
+C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\bin\Debug\PresentationLayer.exe
+C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\bin\Debug\PresentationLayer.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
+C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\obj\Debug\PresentationLayer.exe
+C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\obj\Debug\PresentationLayer.pdb

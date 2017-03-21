@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    class Program
+    public class Program
     {
+
         static void Main(string[] args)
         {
-            Presentation.MainLoop(); // Start the loop in the Presentation Layer project
+            
         }
     }
 }
