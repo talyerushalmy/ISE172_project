@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsciiSilverTongue.cs" />
     <Compile Include="SimpleHTTPClient.cs" />
     <Compile Include="Utils\MarketException.cs" />
     <Compile Include="DataEntries\IMarketCommodityOffer.cs" />

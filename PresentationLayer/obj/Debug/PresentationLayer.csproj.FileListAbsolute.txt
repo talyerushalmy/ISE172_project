@@ -4,3 +4,9 @@ C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\bin\Debug\
 C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
 C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\obj\Debug\PresentationLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe.config
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache

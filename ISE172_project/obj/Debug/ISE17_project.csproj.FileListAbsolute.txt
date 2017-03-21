@@ -13,3 +13,5 @@ C:\Users\roee9\Desktop\Project in ISE\ISE17_project\ISE17_project\bin\Debug\ISE1
 C:\Users\roee9\Desktop\Project in ISE\ISE17_project\ISE17_project\bin\Debug\PresentationLayer.exe
 C:\Users\roee9\Desktop\Project in ISE\ISE17_project\ISE17_project\bin\Debug\PresentationLayer.pdb
 C:\Users\roee9\Desktop\Project in ISE\ISE17_project\ISE17_project\obj\Debug\ISE17_project.csprojResolveAssemblyReference.cache
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE17_project\ISE17_project\bin\Debug\PresentationLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE17_project\ISE17_project\bin\Debug\PresentationLayer.pdb
