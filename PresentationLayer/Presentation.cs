@@ -8,27 +8,10 @@ namespace Program
 {
     public class Presentation
     {
-        static AsciiSilverTongue ast = new AsciiSilverTongue();
-
-        private static void HandleInput(string input)
-        {
-            switch (input)
-            {
-                case "menu":
-                    ast.PrintMenu();
-                    break;
-                default:
-                    if (input.Length > 6 && input.IndexOf("hello ") == 0)
-                        Console.WriteLine("Hello " + input.Substring(6));
-                    else
-                        Console.WriteLine("Wrong format - please check your input");
-                    break;
-            }
-
-        }
-
         public static void MainLoop()
         {
+            AsciiSilverTongue ast = new AsciiSilverTongue();
+
             ast.PrintWelcome();
             ast.PrintMenu();
 
@@ -36,7 +19,8 @@ namespace Program
 
             while (!input.Equals("exit"))
             {
-                HandleInput(input);
+                Console.WriteLine(input);
+                // delete the line above and use the Business Layer project to handle the input
                 input = ast.ReadLine();
             }
 

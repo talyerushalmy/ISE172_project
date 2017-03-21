@@ -43,9 +43,12 @@ namespace Program
         public void PrintMenu()
         {
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("menu - print this menu");
-            Console.WriteLine("hello [NAME] - say Hello to [NAME]!");
-            Console.WriteLine("exit - Exit the program");
+            Console.WriteLine("\tmenu - print this menu");
+            Console.WriteLine("\tsell [COMMODITY (name)] [QUANTITY (number)] - Sell [COMMODITY] by the number of [QUANTITY]");
+            Console.WriteLine("\tbuy [COMMODITY (name)] [QUANTITY (number)] - Buy [COMMODITY] by the number of [QUANTITY]");
+            Console.WriteLine("\tcancel [TRADE ID (number)] - Cancel trade identified by [TRADE ID]");
+            Console.WriteLine("\tfind sell/buy/user/market [METHOD ID (number)] - Query the server for [METHOD ID] and show the results");
+            Console.WriteLine("\texit - Exit the program");
         }
 
         public string ReadLine()
