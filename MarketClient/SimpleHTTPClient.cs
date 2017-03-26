@@ -3,7 +3,7 @@ using MarketClient.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace MarketClient
+namespace Program
 {
     public class SimpleHTTPClient
     {

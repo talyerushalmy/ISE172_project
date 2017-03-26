@@ -1,0 +1,7 @@
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\MarketClient\bin\Debug\MarketClient.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\MarketClient\bin\Debug\MarketClient.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\MarketClient\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\MarketClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\MarketClient\obj\Debug\MarketClient.csprojResolveAssemblyReference.cache
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\MarketClient\obj\Debug\MarketClient.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\MarketClient\obj\Debug\MarketClient.pdb

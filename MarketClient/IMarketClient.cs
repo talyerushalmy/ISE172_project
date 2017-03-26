@@ -1,7 +1,7 @@
 ﻿using MarketClient.DataEntries;
 using MarketClient.Utils;
 
-namespace MarketClient
+namespace Program
 {
     public interface IMarketClient
     {

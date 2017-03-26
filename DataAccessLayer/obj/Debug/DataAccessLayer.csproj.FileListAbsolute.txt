@@ -1,0 +1,10 @@
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.exe.config
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\bin\Debug\MarketClient.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\bin\Debug\MarketClient.pdb
