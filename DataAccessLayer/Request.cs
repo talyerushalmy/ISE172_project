@@ -69,26 +69,24 @@ namespace Program
         {
             try
             {
-                SendRequest(new BuyRequest(commodity, amount, price));
+                return Convert.ToInt32(SendRequest(new BuyRequest(commodity, amount, price)));
             }
             catch
             {
                 return -1;
             }
-            return 0;
         }
 
         public int SendSellRequest(int price, int commodity, int amount)
         {
             try
             {
-                SendRequest(new SellRequest(commodity, amount, price));
+                return Convert.ToInt32(SendRequest(new SellRequest(commodity, amount, price)));
             }
             catch
             {
                 return -1;
             }
-            return 0;
         }
 
         public IMarketItemQuery SendQueryBuySellRequest(int id)
