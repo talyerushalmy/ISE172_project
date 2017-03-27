@@ -8,7 +8,7 @@ namespace Program
 {
     class QueryUserRequest
     {
-        private string type;
+        public string type;
 
         public QueryUserRequest()
         {

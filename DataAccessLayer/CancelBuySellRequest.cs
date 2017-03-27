@@ -8,8 +8,8 @@ namespace Program
 {
     class CancelBuySellRequest
     {
-        private string type;
-        private int id;
+        public string type;
+        public int id;
 
         public CancelBuySellRequest(int id)
         {

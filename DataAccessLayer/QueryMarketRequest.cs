@@ -8,8 +8,8 @@ namespace Program
 {
     class QueryMarketRequest
     {
-        private string type;
-        private int commodity;
+        public string type;
+        public int commodity;
 
         public QueryMarketRequest(int commodity)
         {

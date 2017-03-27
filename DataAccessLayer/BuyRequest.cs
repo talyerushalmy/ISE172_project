@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    class BuyRequest
+    public class BuyRequest
     {
-        private string type;
-        private int commodity;
-        private int amount;
-        private int price;
+        public string type;
+        public int commodity;
+        public int amount;
+        public int price;
 
         public BuyRequest(int commodity, int amount, int price)
         {

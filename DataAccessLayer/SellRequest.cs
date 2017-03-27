@@ -8,10 +8,10 @@ namespace Program
 {
     class SellRequest
     {
-        private string type;
-        private int commodity;
-        private int amount;
-        private int price;
+        public string type;
+        public int commodity;
+        public int amount;
+        public int price;
 
         public SellRequest(int commodity, int amount, int price)
         {

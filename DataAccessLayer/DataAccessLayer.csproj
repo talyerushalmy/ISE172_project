@@ -45,12 +45,16 @@
   <ItemGroup>
     <Compile Include="BuyRequest.cs" />
     <Compile Include="CancelBuySellRequest.cs" />
+    <Compile Include="MarketCommodityOffer.cs" />
+    <Compile Include="MarketItemQuery.cs" />
+    <Compile Include="MarketUserData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryBuySellRequest.cs" />
     <Compile Include="QueryMarketRequest.cs" />
     <Compile Include="QueryUserRequest.cs" />
-    <Compile Include="Request.cs" />
+    <Compile Include="MarketClient.cs" />
+    <Compile Include="RequestBase.cs" />
     <Compile Include="SellRequest.cs" />
   </ItemGroup>
   <ItemGroup>

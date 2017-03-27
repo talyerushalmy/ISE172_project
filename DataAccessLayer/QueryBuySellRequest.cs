@@ -8,8 +8,8 @@ namespace Program
 {
     class QueryBuySellRequest
     {
-        private string type;
-        private int id;
+        public string type;
+        public int id;
 
         public QueryBuySellRequest(int id)
         {

@@ -1,4 +1,4 @@
-﻿namespace MarketClient.DataEntries
+﻿namespace Program
 {
     public interface IMarketItemQuery
     {
