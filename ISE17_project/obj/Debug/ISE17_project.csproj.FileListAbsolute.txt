@@ -8,3 +8,8 @@ C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנד�
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\ISE17_project\bin\Debug\ISE17_project.exe.config
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\ISE17_project\obj\Debug\ISE17_project.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\ISE17_project\obj\Debug\ISE17_project.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\ISE17_project\bin\Debug\ISE17_project.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\ISE17_project\bin\Debug\ISE17_project.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\ISE17_project\obj\Debug\ISE17_project.csprojResolveAssemblyReference.cache
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\ISE17_project\bin\Debug\BusinessLayer.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\ISE17_project\bin\Debug\BusinessLayer.pdb

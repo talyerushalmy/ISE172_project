@@ -8,7 +8,7 @@ using Org.BouncyCastle.OpenSsl;
 
 namespace MarketClient.Utils
 {
-    public static class SimpleCtyptoLibrary
+    public static class SimpleCryptoLibrary
     {
         /// <summary>
         /// Returns the authentication token of the given username and private key

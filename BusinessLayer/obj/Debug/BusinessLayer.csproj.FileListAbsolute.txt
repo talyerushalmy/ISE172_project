@@ -1,0 +1,6 @@
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\BusinessLayer\bin\Debug\BusinessLayer.exe.config
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\BusinessLayer\bin\Debug\BusinessLayer.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\BusinessLayer\obj\Debug\BusinessLayer.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE17_project\BusinessLayer\obj\Debug\BusinessLayer.pdb

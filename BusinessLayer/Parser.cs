@@ -10,95 +10,57 @@ namespace Program
     {
         public static void parser(String str)
         {
+            ErrorPrinter errorPrinter = new ErrorPrinter();
+            Socket socket = new Socket();
             String[] words = str.Split(' ');
             switch (words[0].ToLower())
             {
                 case "buy":
                     {
-                        if (words.Length == 3)
-                            buy(str.Substring(4));
+                        if (words.Length == 4)
+                            socket.buy(str.Substring(4));
                         else
-                            printNoValidCommandError();
+                            errorPrinter.printError(0);
                     }
                     break;
                 case "sell":
                     {
-                        if (words.Length == 3)
-                            sell(str.Substring(5));
+                        if (words.Length == 4)
+                            socket.sell(str.Substring(5));
                         else
-                            printNoValidCommandError();
+                            errorPrinter.printError(0);
                     }
                     break;
                 case "cancel":
                     {
                         if (words.Length == 2)
                         {
-                            //stringToInt(words[1]);
-                            cancel(str.Substring(7));
+                            socket.cancel(words[1]);
                         }
                         else
-                            printNoValidCommandError();
+                            socket.printNoValidCommandError();
                     }
                     break;
                 case "info":
                     {
                         if (words.Length == 2)
-                            info(str.Substring(7));
+                            socket.info(words[1]);
+                        else if (words.Length == 1)
+                            //print info about the user
+                            ;
                         else
-                            printNoValidCommandError();
+                            socket.printNoValidCommandError();
                     }
                     break;
                 default:
                     {
                         // no command was identified
-                        printNoValidCommandError();
+                        errorPrinter.printError(9);
                     }
                     break;
             }
         }
 
-        public static void printNoValidCommandError()
-        {
-            Console.WriteLine("No valid command was found. Please try again");
-        }
 
-        public static int stringToInt(String str)
-        {
-            int id;
-            try
-            {
-                id = Convert.ToInt32(str);
-                return id;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("You haven't entered a number");
-                return -1;
-            }
-        }
-
-        public static void buy(String str)
-        {
-            String[] words = str.Split(' ');
-
-        }
-        public static void sell(String str)
-        {
-
-        }
-        public static void cancel(String str)
-        {
-            int id = stringToInt(str);
-            //Goes to bool SendCancelBuySellRequest(int id) in the IMarketClient Interface
-        }
-        public static void info(String str)
-        {
-            int id = stringToInt(str);
-
-        }
-        public static bool isInStock(String str)
-        {
-            return false;
-        }
     }
 }

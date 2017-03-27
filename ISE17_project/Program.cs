@@ -11,23 +11,6 @@ namespace Program
 
         static AsciiSilverTongue ast = new AsciiSilverTongue();
 
-        public static void HandleInput(string input)
-        {
-            switch (input)
-            {
-                case "menu":
-                    ast.PrintMenu();
-                    break;
-                default:
-                    if (input.Length > 6 && input.IndexOf("hello ") == 0)
-                        Console.WriteLine("Hello " + input.Substring(6));
-                    else
-                        Console.WriteLine("Wrong format - please check your input");
-                    break;
-            }
-            
-        }
-
         static void Main(string[] args)
         {
             ast.PrintWelcome();
@@ -37,7 +20,8 @@ namespace Program
 
             while (!input.Equals("exit"))
             {
-                HandleInput(input);
+
+                Parser.parser(input);
                 input = ast.ReadLine();
             }
 

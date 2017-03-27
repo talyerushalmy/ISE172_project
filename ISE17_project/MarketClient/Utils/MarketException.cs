@@ -10,6 +10,7 @@ namespace MarketClient.Utils
 
         public MarketException(string message) : base(message)
         {
+
         }
     }
 
