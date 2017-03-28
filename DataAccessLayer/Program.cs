@@ -10,8 +10,6 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            MarketClient c = new MarketClient();
-            Console.WriteLine(c.SendQueryUserRequest());
         }
     }
 }

@@ -77,22 +77,34 @@ namespace Program
 
         public IMarketItemQuery SendQueryBuySellRequest(int id)
         {
-            return SendRequest<QueryBuySellRequest, MarketItemQuery>(new QueryBuySellRequest(id));
+            object obj = SendRequest<QueryBuySellRequest, MarketItemQuery>(new QueryBuySellRequest(id));
+            if (obj == null)
+                Console.WriteLine("Id not found");
+            return (MarketItemQuery)obj;
         }
 
         public IMarketUserData SendQueryUserRequest()
         {
-            return SendRequest<QueryUserRequest, MarketUserData>(new QueryUserRequest());
+            object obj = SendRequest<QueryUserRequest, MarketUserData>(new QueryUserRequest());
+            if (obj == null)
+                Console.WriteLine("Could not fetch user data");
+            return (MarketUserData)obj;
         }
 
         public IMarketCommodityOffer SendQueryMarketRequest(int commodity)
         {
-            return SendRequest<QueryMarketRequest, MarketCommodityOffer>(new QueryMarketRequest(commodity));
+            object obj = SendRequest<QueryMarketRequest, MarketCommodityOffer>(new QueryMarketRequest(commodity));
+            if (obj == null)
+                Console.WriteLine("Could not fetch commodity data");
+            return (MarketCommodityOffer)obj;
         }
 
         public bool SendCancelBuySellRequest(int id)
         {
-            return SendRequest<CancelBuySellRequest>(new CancelBuySellRequest(id)).Equals("Ok");
+            string data = SendRequest<CancelBuySellRequest>(new CancelBuySellRequest(id));
+            if (data == null)
+                return false;
+            return data.Equals("Ok");
         }
     }
 }

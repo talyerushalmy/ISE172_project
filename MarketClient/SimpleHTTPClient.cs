@@ -44,7 +44,6 @@ namespace Program
             JObject jsonItem = JObject.FromObject(item);
             jsonItem.Add("auth", JObject.FromObject(auth));
             StringContent content = new StringContent(jsonItem.ToString());
-            // System.Console.WriteLine(jsonItem.ToString());
             using (var client = new HttpClient())
             {
                 var result = client.PostAsync(url, content).Result;
@@ -55,7 +54,6 @@ namespace Program
 
         private static T FromJson<T>(string response) where T : class 
         {
-            System.Console.WriteLine(response);
             if (response == null)
             {
                 return null;
