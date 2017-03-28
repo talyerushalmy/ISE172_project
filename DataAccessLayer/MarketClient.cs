@@ -9,6 +9,13 @@ namespace Program
 
     class MarketClient : IMarketClient
     {
+        static string[] errorsNotToPrint = {
+            "No auth key",
+            "No user or auth token",
+            "Verification failure",
+            "No type key"
+        };
+
         private SimpleHTTPClient client;
         private RequestBase req = new RequestBase();
 
@@ -18,12 +25,19 @@ namespace Program
             this.req = new RequestBase();
         }
 
+        private void printError(string error)
+            // Prints the error string only if it's relevant to the user
+            // The error variable contains a response from the server that was marked as error
+        {
+            if (!MarketClient.errorsNotToPrint.Contains(error))
+                Console.WriteLine(error);
+        }
+
         private string SendRequest<T>(T data)
         {
             try
             {
-                string st = this.client.SendPostRequest<T>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
-                return st;
+                return this.client.SendPostRequest<T>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
             }
             catch
             {
@@ -54,7 +68,7 @@ namespace Program
             }
             catch
             {
-                Console.WriteLine(response); // Print the error
+                printError(response); // Print the error
                 return -1;
             }
         }
@@ -70,7 +84,7 @@ namespace Program
             }
             catch
             {
-                Console.WriteLine(response); // Print the error
+                printError(response); // Print the error
                 return -1;
             }
         }
@@ -79,7 +93,7 @@ namespace Program
         {
             object obj = SendRequest<QueryBuySellRequest, MarketItemQuery>(new QueryBuySellRequest(id));
             if (obj == null)
-                Console.WriteLine("Id not found");
+                Console.WriteLine("Could not fetch request data");
             return (MarketItemQuery)obj;
         }
 
