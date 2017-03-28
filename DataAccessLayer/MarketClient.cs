@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Program
 {
 
-    class MarketClient : IMarketClient
+    public class MarketClient : IMarketClient
     {
         static string[] errorsNotToPrint = {
             "No auth key",

@@ -19,8 +19,7 @@ namespace Program
 
             while (!input.Equals("exit"))
             {
-                Console.WriteLine(input);
-                // delete the line above and use the Business Layer project to handle the input
+                Parser.parse(input); // Parse and handle the input using the BusinessLayer
                 input = ast.ReadLine();
             }
 
