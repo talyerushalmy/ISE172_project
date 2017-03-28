@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    class MarketUserData : IMarketUserData
+    public class MarketUserData : IMarketUserData
     {
         public Dictionary<string, int> commodities;
-        public int funds;
+        public double funds;
         public int[] requests;
 
         public override string ToString()

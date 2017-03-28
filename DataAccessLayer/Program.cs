@@ -12,7 +12,6 @@ namespace Program
         {
             MarketClient c = new MarketClient();
             Console.WriteLine(c.SendQueryUserRequest());
-            Console.WriteLine("HEY");
         }
     }
 }
