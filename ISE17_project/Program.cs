@@ -20,8 +20,7 @@ namespace Program
 
             while (!input.Equals("exit"))
             {
-
-                Parser.parser(input);
+                Parser.parse(input);
                 input = ast.ReadLine();
             }
 

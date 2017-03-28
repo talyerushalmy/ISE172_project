@@ -21,9 +21,9 @@ namespace Program
                 id = Convert.ToInt32(str);            
                 return id;
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine("You haven't entered a number");
+                Console.WriteLine("Your argument is not a number");
                 return -1;
             }
         }
@@ -31,43 +31,54 @@ namespace Program
         public void buy(String str)
         {
             String[] words = str.Split(' ');
-            if (words.Length == 2)
+            if (words.Length == 3)
             {
-                if (isInStock(words[0]))
-                {
-
-                }
+                int commodity = stringToInt(words[0]);
+                int amount = stringToInt(words[1]);
+                int price = stringToInt(words[2]);
+                //goes to buy request
             }
+            else
+                printNoValidCommandError();
 
         }
         public  void sell(String str)
         {
-            
+            String[] words = str.Split(' ');
+            if (words.Length == 3)
+            {
+                int commodity = stringToInt(words[0]);
+                int amount = stringToInt(words[1]);
+                int price = stringToInt(words[2]);
+                //goes to sell request
+            }
+            else
+                printNoValidCommandError();
         }
         public void cancel(String str)
         {
             int id = stringToInt(str);
-            //Goes to bool SendCancelBuySellRequest(int id) in the IMarketClient Interface
+            //goes to 
         }
         public void info(String str)
         {
-            //3 types of queries - request, user, market
-            if (str.ToLower().Equals("market"))
+            //3 types of queries - buy request, sell request, market request
+            string[] words = str.ToLower().Split();
+            if (words.Length == 2)
             {
-
+                string type = words[0];
+                int id = stringToInt(words[1]);
+                if (type.Equals("commodity"))
+                {
+                    //goes to query market request
+                }
+                else if (type.Equals("sell") || type.Equals("buy") || type.Equals("trade"))
+                {
+                    //goes to query buy/sell request
+                }
             }
-            else if (str.ToLower().Equals("sell"))
-            {
-
-            }
-            else if (str.ToLower().Equals("buy"))
-            {
-
-            }
-        }
-        public static bool isInStock(String str)
-        {
-            return true;
+            else
+                printNoValidCommandError();
         }
     }
 }

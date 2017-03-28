@@ -13,7 +13,7 @@ namespace Program
             string input = Console.ReadLine();
             while (!input.ToLower().Equals("quit"))
             {
-                Parser.parser(input);
+                Parser.parse(input);
                 input = Console.ReadLine();
             }
         }

@@ -8,27 +8,27 @@ namespace Program
 {
     public static class Parser
     {
-        public static void parser(String str)
+        public static void parse(String str)
         {
-            ErrorPrinter errorPrinter = new ErrorPrinter();
             Socket socket = new Socket();
-            String[] words = str.Split(' ');
-            switch (words[0].ToLower())
+            string [] words = str.Split(' ');
+            string command = words[0];
+            switch (command.ToLower())
             {
                 case "buy":
                     {
                         if (words.Length == 4)
-                            socket.buy(str.Substring(4));
+                            socket.buy(str.Substring(command.Length + 1));
                         else
-                            errorPrinter.printError(0);
+                            socket.printNoValidCommandError();
                     }
                     break;
                 case "sell":
                     {
                         if (words.Length == 4)
-                            socket.sell(str.Substring(5));
+                            socket.sell(str.Substring(command.Length + 1));
                         else
-                            errorPrinter.printError(0);
+                            socket.printNoValidCommandError();
                     }
                     break;
                 case "cancel":
@@ -43,8 +43,8 @@ namespace Program
                     break;
                 case "info":
                     {
-                        if (words.Length == 2)
-                            socket.info(words[1]);
+                        if (words.Length == 3)
+                            socket.info(str.Substring(command.Length + 1));
                         else if (words.Length == 1)
                             //print info about the user
                             ;
@@ -55,7 +55,7 @@ namespace Program
                 default:
                     {
                         // no command was identified
-                        errorPrinter.printError(9);
+                        socket.printNoValidCommandError();
                     }
                     break;
             }
