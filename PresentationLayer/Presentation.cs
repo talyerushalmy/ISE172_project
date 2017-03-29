@@ -21,6 +21,7 @@ namespace Program
             {
                 Parser.parse(input); // Parse and handle the input using the BusinessLayer
                 input = ast.ReadLine();
+
             }
 
             // "exit" was recieved as input - print Goodbye and exit program

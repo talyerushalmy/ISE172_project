@@ -32,3 +32,17 @@ C:\Users\roee9\Desktop\Project in ISE\ISE172_project\PresentationLayer\bin\Debug
 C:\Users\roee9\Desktop\Project in ISE\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
 C:\Users\roee9\Desktop\Project in ISE\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Users\roee9\Desktop\Project in ISE\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe.config
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\BusinessLayer.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\DataAccessLayer.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\MarketClient.dll
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\bin\Debug\MarketClient.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.pdb

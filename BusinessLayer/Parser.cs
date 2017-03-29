@@ -43,13 +43,19 @@ namespace Program
                     break;
                 case "info":
                     {
-                        if (words.Length == 3)
-                            socket.info(str.Substring(command.Length + 1));
-                        else if (words.Length == 1)
+                        if (words.Length == 1)
                             //print info about the user
                             socket.userInfo();
                         else
                             socket.printNoValidCommandError();
+                    }
+                    break;
+                case "find":
+                    {
+                        if(words.Length == 3)
+                        {
+                            socket.findInfo(str.Substring(words[0].Length + 1));
+                        }
                     }
                     break;
                 default:

@@ -28,3 +28,15 @@ C:\Users\roee9\Desktop\Project in ISE\ISE172_project\BusinessLayer\bin\Debug\Mar
 C:\Users\roee9\Desktop\Project in ISE\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
 C:\Users\roee9\Desktop\Project in ISE\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.exe
 C:\Users\roee9\Desktop\Project in ISE\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.exe.config
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\bin\Debug\DataAccessLayer.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\bin\Debug\MarketClient.dll
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\bin\Debug\MarketClient.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\Milestone1\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.pdb

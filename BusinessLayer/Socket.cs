@@ -44,7 +44,7 @@ namespace Program
                 int amount = stringToInt(words[1]);
                 int price = stringToInt(words[2]);
                 //goes to buy request
-                marketClient.SendBuyRequest(price, commodity, amount);
+                Console.WriteLine(marketClient.SendBuyRequest(price, commodity, amount));
             }
             else
                 printNoValidCommandError();
@@ -60,7 +60,7 @@ namespace Program
                 int amount = stringToInt(words[1]);
                 int price = stringToInt(words[2]);
                 //goes to sell request
-                marketClient.SendSellRequest(price, commodity, amount);
+                Console.WriteLine(this.marketClient.SendSellRequest(price, commodity, amount));
             }
             else
                 printNoValidCommandError();
@@ -69,9 +69,9 @@ namespace Program
         {
             int id = stringToInt(str);
             //goes to cancel request
-            marketClient.SendCancelBuySellRequest(id);
+            Console.WriteLine(this.marketClient.SendCancelBuySellRequest(id));
         }
-        public void info(String str)
+        public void findInfo(String str)
         {
             //3 types of queries - buy request, sell request, market request
             string[] words = str.ToLower().Split();
@@ -82,20 +82,22 @@ namespace Program
                 if (type.Equals("commodity"))
                 {
                     //goes to query market request
-                    marketClient.SendQueryMarketRequest(id);
+                    Console.WriteLine(this.marketClient.SendQueryMarketRequest(id));
                 }
-                else if (type.Equals("sell") || type.Equals("buy") || type.Equals("trade"))
+                else if (type.Equals("sell") || type.Equals("buy"))
                 {
                     //goes to query buy/sell request
-                    marketClient.SendQueryBuySellRequest(id);
+                    Console.WriteLine(this.marketClient.SendQueryBuySellRequest(id));
                 }
+                else
+                    printNoValidCommandError();
             }
             else
                 printNoValidCommandError();
         }
         public void userInfo()
         {
-            this.marketClient.SendQueryUserRequest();
+            Console.WriteLine(this.marketClient.SendQueryUserRequest());
         }
     }
 }
