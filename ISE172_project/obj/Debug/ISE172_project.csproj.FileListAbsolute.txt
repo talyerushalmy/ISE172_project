@@ -24,3 +24,19 @@ C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנד�
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\ISE172_project\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\ISE172_project\bin\Debug\DataAccessLayer.pdb
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\ISE172_project\bin\Debug\MarketClient.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\ISE17_project.exe.config
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\obj\Debug\ISE17_project.exe
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\obj\Debug\ISE17_project.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\ISE17_project.exe
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\ISE17_project.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\PresentationLayer.exe
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\BusinessLayer.exe
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\DataAccessLayer.exe
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\MarketClient.dll
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\Newtonsoft.Json.dll
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\PresentationLayer.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\BusinessLayer.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\DataAccessLayer.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\bin\Debug\MarketClient.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\ISE172_project\obj\Debug\ISE172_project.csprojResolveAssemblyReference.cache

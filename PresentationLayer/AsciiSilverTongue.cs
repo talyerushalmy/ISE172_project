@@ -44,10 +44,11 @@ namespace Program
         {
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("\tmenu - print this menu");
-            Console.WriteLine("\tsell [COMMODITY (name)] [QUANTITY (number)] - Sell [COMMODITY] by the number of [QUANTITY]");
-            Console.WriteLine("\tbuy [COMMODITY (name)] [QUANTITY (number)] - Buy [COMMODITY] by the number of [QUANTITY]");
+            Console.WriteLine("\tbuy [COMMODITY ID (number)] [QUANTITY (number)] [PRICE(number)] - Buy [COMMODITY] by the number of [QUANTITY] for the price of [PRICE]");
+            Console.WriteLine("\tsell [COMMODITY ID (number)] [QUANTITY (number)] [PRICE(number)] - Sell [COMMODITY] by the number of [QUANTITY] for the price of [PRICE]");
             Console.WriteLine("\tcancel [TRADE ID (number)] - Cancel trade identified by [TRADE ID]");
-            Console.WriteLine("\tfind sell/buy/user/market [METHOD ID (number)] - Query the server for [METHOD ID] and show the results");
+            Console.WriteLine("\tinfo - Query the server for information about the user and show the results");
+            Console.WriteLine("\tfind sell/buy/market [REQUEST/COMMODITY ID (number)] - Query the server for [REQUEST/COMMODITY ID] and show the results");
             Console.WriteLine("\texit - Exit the program");
         }
 

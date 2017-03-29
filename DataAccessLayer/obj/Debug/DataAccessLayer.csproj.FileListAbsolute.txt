@@ -8,3 +8,13 @@ C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנד�
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\DataAccessLayer\bin\Debug\MarketClient.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.exe.config
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.exe
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\DataAccessLayer\bin\Debug\MarketClient.dll
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\DataAccessLayer\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\DataAccessLayer\bin\Debug\MarketClient.pdb
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.exe
+C:\Users\roee9\Desktop\Project in ISE\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
