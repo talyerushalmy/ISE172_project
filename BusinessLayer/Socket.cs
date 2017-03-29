@@ -20,18 +20,16 @@ namespace Program
             Console.WriteLine("No valid command was found. Please try again");
         }
 
-        public int stringToInt(String str)
+        public int generalStringToInt(string str, int errorVal, string errorMsg)
         {
-            int id;
             try
             {
-                id = Convert.ToInt32(str);            
-                return id;
+                return Math.Abs(Convert.ToInt32(str));
             }
             catch
             {
-                Console.WriteLine("Your argument is not a number");
-                return -1;
+                Console.WriteLine(errorMsg);
+                return errorVal;
             }
         }
 
@@ -40,11 +38,16 @@ namespace Program
             String[] words = str.Split(' ');
             if (words.Length == 3)
             {
-                int commodity = stringToInt(words[0]);
-                int amount = stringToInt(words[1]);
-                int price = stringToInt(words[2]);
+                int commodity = generalStringToInt(words[0], -1, "The commodity should be a positive integer");
+                int amount = generalStringToInt(words[1], 0, "The amount should be a non-negative number");
+                int price = generalStringToInt(words[2], 0, "The price should be a non-negative number");
                 //goes to buy request
-                Console.WriteLine(marketClient.SendBuyRequest(price, commodity, amount));
+                if (commodity >= 0 && amount != 0 && price != 0)
+                {
+                    int resp = marketClient.SendBuyRequest(price, commodity, amount);
+                    if (resp != -1)
+                        Console.WriteLine("Success! Trade id: " + resp);
+                }
             }
             else
                 printNoValidCommandError();
@@ -56,20 +59,35 @@ namespace Program
             String[] words = str.Split(' ');
             if (words.Length == 3)
             {
-                int commodity = stringToInt(words[0]);
-                int amount = stringToInt(words[1]);
-                int price = stringToInt(words[2]);
+                int commodity = generalStringToInt(words[0], -1, "The commodity should be a positive integer");
+                int amount = generalStringToInt(words[1], 0, "The amount should be a non-negative number");
+                int price = generalStringToInt(words[2], 0, "The price should be a non-negative number");
                 //goes to sell request
-                Console.WriteLine(this.marketClient.SendSellRequest(price, commodity, amount));
+                if (commodity >= 0 && amount != 0 && price != 0)
+                {
+                    int resp = this.marketClient.SendSellRequest(price, commodity, amount);
+                    if (resp != -1)
+                        Console.WriteLine("Success! Trade id: " + resp);
+                }
             }
             else
                 printNoValidCommandError();
         }
         public void cancel(String str)
         {
-            int id = stringToInt(str);
-            //goes to cancel request
-            Console.WriteLine(this.marketClient.SendCancelBuySellRequest(id));
+            int id = generalStringToInt(str, -1, "The Id should be a non-negative number");
+            if (id > -1)
+            {
+                //goes to cancel request
+                if (this.marketClient.SendCancelBuySellRequest(id))
+                    Console.WriteLine("Cancelled successfully");
+                else
+                    Console.WriteLine("Cannot cancel trade number " + id);
+            }
+            else
+            {
+                Console.WriteLine();
+            }
         }
         public void findInfo(String str)
         {
@@ -78,16 +96,19 @@ namespace Program
             if (words.Length == 2)
             {
                 string type = words[0];
-                int id = stringToInt(words[1]);
                 if (type.Equals("commodity"))
                 {
                     //goes to query market request
-                    Console.WriteLine(this.marketClient.SendQueryMarketRequest(id));
+                    int id = generalStringToInt(words[1], -1, "The commodity should be a positive integer");
+                    if (id > -1)
+                        Console.WriteLine(this.marketClient.SendQueryMarketRequest(id));
                 }
                 else if (type.Equals("sell") || type.Equals("buy"))
                 {
                     //goes to query buy/sell request
-                    Console.WriteLine(this.marketClient.SendQueryBuySellRequest(id));
+                    int id = generalStringToInt(words[1], 0, "The Id should be a positive number");
+                    if (id > 0)
+                        Console.WriteLine(this.marketClient.SendQueryBuySellRequest(id));
                 }
                 else
                     printNoValidCommandError();

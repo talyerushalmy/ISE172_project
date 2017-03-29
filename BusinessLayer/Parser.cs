@@ -56,6 +56,10 @@ namespace Program
                         {
                             socket.findInfo(str.Substring(words[0].Length + 1));
                         }
+                        else
+                        {
+                            socket.printNoValidCommandError();
+                        }
                     }
                     break;
                 default:

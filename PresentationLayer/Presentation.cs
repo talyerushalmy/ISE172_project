@@ -19,7 +19,10 @@ namespace Program
 
             while (!input.Equals("exit"))
             {
-                Parser.parse(input); // Parse and handle the input using the BusinessLayer
+                if (input.Equals("menu"))
+                    ast.PrintMenu();
+                else
+                    Parser.parse(input); // Parse and handle the input using the BusinessLayer
                 input = ast.ReadLine();
 
             }

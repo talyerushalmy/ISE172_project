@@ -51,8 +51,9 @@ namespace Program
             {
                 return this.client.SendPostRequest<T1, T2>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
             }
-            catch
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return null;
             }
         }
@@ -92,16 +93,12 @@ namespace Program
         public IMarketItemQuery SendQueryBuySellRequest(int id)
         {
             object obj = SendRequest<QueryBuySellRequest, MarketItemQuery>(new QueryBuySellRequest(id));
-            if (obj == null)
-                Console.WriteLine("Could not fetch request data");
             return (MarketItemQuery)obj;
         }
 
         public IMarketUserData SendQueryUserRequest()
         {
             object obj = SendRequest<QueryUserRequest, MarketUserData>(new QueryUserRequest());
-            if (obj == null)
-                Console.WriteLine("Could not fetch user data");
             return (MarketUserData)obj;
         }
 
