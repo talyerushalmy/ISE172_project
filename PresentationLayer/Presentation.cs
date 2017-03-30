@@ -8,7 +8,7 @@ namespace Program
 {
     public class Presentation
     {
-        public static void MainLoop()
+        public static void MainLoop()  //Print the main communication loop with the user.
         {
             AsciiSilverTongue ast = new AsciiSilverTongue();
 

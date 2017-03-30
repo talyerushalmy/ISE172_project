@@ -53,12 +53,12 @@ namespace Program
             Console.WriteLine("\texit - Exit the program");
         }
 
-        public static void printServerData(Object obj)
+        public static void printServerData(Object obj) //The method Prints information that the server sends.
         {
             Console.WriteLine(obj);
         }
 
-        public string ReadLine()
+        public string ReadLine()  //The method reads the user's input.
         {
             Console.Write("\n> ");
             return Console.ReadLine();
