@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+    // holds the data that is necessary for every request
     class RequestBase
     {
+        // variables relevant for every request
         private string KEY_PATH = @"..\..\..\private_key";
         private string user;
         private string token;
@@ -26,6 +28,7 @@ namespace Program
             }
         }
 
+        // a constructor that sets the variables' values
         public RequestBase()
         {
             //this.url = "http://localhost";

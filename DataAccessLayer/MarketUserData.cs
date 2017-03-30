@@ -8,10 +8,12 @@ namespace Program
 {
     public class MarketUserData : IMarketUserData
     {
+        // variables relevant for holding the server's resonse
         public Dictionary<string, int> commodities;
         public double funds;
         public int[] requests;
 
+        // override the ToString() method to print the data in an elegant way
         public override string ToString()
         {
             string toPrint = "Commodities:\t";

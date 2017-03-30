@@ -8,9 +8,11 @@ namespace Program
 {
     class QueryMarketRequest
     {
+        // variables relevant for the request
         public string type;
         public int commodity;
 
+        // a constructor that sets the variables' values
         public QueryMarketRequest(int commodity)
         {
             this.type = "queryMarket";

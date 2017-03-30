@@ -10,6 +10,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
+            // an empty Main method, necessary for the project to compile
         }
     }
 }

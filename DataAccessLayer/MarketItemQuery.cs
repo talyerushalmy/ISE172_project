@@ -8,12 +8,14 @@ namespace Program
 {
     class MarketItemQuery : IMarketItemQuery
     {
+        // variables relevant for holding the server's resonse
         public int price;
         public int amount;
         public string type;
         public string user;
         public int commodity;
 
+        // override the ToString() method to print the data in an elegant way
         public override string ToString()
         {
             string toPrint = "";

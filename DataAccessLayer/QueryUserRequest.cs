@@ -8,8 +8,10 @@ namespace Program
 {
     class QueryUserRequest
     {
+        // variables relevant for the request
         public string type;
 
+        // a constructor that sets the variable's value
         public QueryUserRequest()
         {
             this.type = "queryUser";

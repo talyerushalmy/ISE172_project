@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 namespace Program
 {
 
+    // an implementation of the IMarketClient interface
     public class MarketClient : IMarketClient
     {
+        // a dictionary (or an array, to be precise) of errors not to print on occurrence
         static string[] errorsNotToPrint = {
             "No auth key",
             "No user or auth token",
@@ -16,9 +18,10 @@ namespace Program
             "No type key"
         };
 
-        private SimpleHTTPClient client;
-        private RequestBase req = new RequestBase();
+        private SimpleHTTPClient client; // will be used to communicate with the server
+        private RequestBase req = new RequestBase(); // will be used to get the necessary data for every request
 
+        // a constructor that resets the local variables
         public MarketClient()
         {
             this.client = new SimpleHTTPClient();
@@ -33,6 +36,7 @@ namespace Program
                 Console.WriteLine(error);
         }
 
+        // a method to make the function call shorter (and thus more convenient for the programmer)
         private string SendRequest<T>(T data)
         {
             try
@@ -45,6 +49,7 @@ namespace Program
             }
         }
 
+        // a method to make the function call shorter (and thus more convenient for the programmer)
         private T2 SendRequest<T1, T2>(T1 data) where T2 : class
         {
             try
@@ -53,11 +58,13 @@ namespace Program
             }
             catch (Exception e)
             {
+                // in case of an error, print the error message
                 Console.WriteLine(e.Message);
                 return null;
             }
         }
 
+        // send a buy request using the MarketClient project API
         public int SendBuyRequest(int price, int commodity, int amount)
         {
             string response = "Unknown error";
@@ -74,6 +81,7 @@ namespace Program
             }
         }
 
+        // send a sell request using the MarketClient project API
         public int SendSellRequest(int price, int commodity, int amount)
         {
             string response = "Unknown error";
@@ -90,18 +98,21 @@ namespace Program
             }
         }
 
+        // send a query buy/sell request using the MarketClient project API
         public IMarketItemQuery SendQueryBuySellRequest(int id)
         {
             object obj = SendRequest<QueryBuySellRequest, MarketItemQuery>(new QueryBuySellRequest(id));
             return (MarketItemQuery)obj;
         }
 
+        // send a query user request using the MarketClient project API
         public IMarketUserData SendQueryUserRequest()
         {
             object obj = SendRequest<QueryUserRequest, MarketUserData>(new QueryUserRequest());
             return (MarketUserData)obj;
         }
 
+        // send a query market request using the MarketClient project API
         public IMarketCommodityOffer SendQueryMarketRequest(int commodity)
         {
             object obj = SendRequest<QueryMarketRequest, MarketCommodityOffer>(new QueryMarketRequest(commodity));
@@ -110,6 +121,7 @@ namespace Program
             return (MarketCommodityOffer)obj;
         }
 
+        // send a cancel buy/sell request using the MarketClient project API
         public bool SendCancelBuySellRequest(int id)
         {
             string data = SendRequest<CancelBuySellRequest>(new CancelBuySellRequest(id));

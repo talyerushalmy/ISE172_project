@@ -8,9 +8,11 @@ namespace Program
 {
     class CancelBuySellRequest
     {
+        // variables relevant for the request
         public string type;
         public int id;
 
+        // a constructor that sets the variables' values
         public CancelBuySellRequest(int id)
         {
             this.type = "cancelBuySell";
