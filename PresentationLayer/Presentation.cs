@@ -15,13 +15,13 @@ namespace Program
             ast.PrintWelcome();
             ast.PrintMenu();
 
-            string input = ast.ReadLine();
+            string input = ast.ReadLine().ToLower();
 
             while (!input.Equals("exit"))
             {
                 if (input.Equals("menu"))
                     ast.PrintMenu();
-                if (input.Equals("clear"))
+                else if (input.Equals("clear"))
                 {
                     Console.Clear();
                     ast.PrintWelcome();

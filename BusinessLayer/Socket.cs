@@ -51,7 +51,7 @@ namespace Program
             }
             catch
             {
-                Console.WriteLine("The commodity ID should be a non-negative number");
+                Console.WriteLine("The " + errorMsg + " ID should be a non-negative number");
                 return errorVal;
             }
         }
