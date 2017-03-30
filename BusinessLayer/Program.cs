@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+    //The default project class
     class Program
     {
         static void Main(string[] args)
         {
-            string input = Console.ReadLine();
-            while (!input.ToLower().Equals("quit"))
-            {
-                Parser.parse(input);
-                input = Console.ReadLine();
-            }
         }
 
     }

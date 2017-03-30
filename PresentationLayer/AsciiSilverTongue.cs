@@ -43,13 +43,13 @@ namespace Program
         public void PrintMenu()
         {
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("\tmenu - print this menu");
+            Console.WriteLine("\tmenu - Print this menu");
             Console.WriteLine("\tbuy [COMMODITY ID (number)] [QUANTITY (number)] [PRICE(number)] - Buy [COMMODITY] by the number of [QUANTITY] for the price of [PRICE] each");
             Console.WriteLine("\tsell [COMMODITY ID (number)] [QUANTITY (number)] [PRICE(number)] - Sell [COMMODITY] by the number of [QUANTITY] for the price of [PRICE] each");
             Console.WriteLine("\tcancel [TRADE ID (number)] - Cancel trade identified by [TRADE ID]");
             Console.WriteLine("\tinfo - Query the server for information about the user and show the results");
             Console.WriteLine("\tfind sell/buy/commodity [REQUEST/COMMODITY ID (number)] - Query the server for [REQUEST/COMMODITY ID] and show the results");
-            Console.WriteLine("\tclear - clear the user activity history");
+            Console.WriteLine("\tclear - Clear the user activity history");
             Console.WriteLine("\texit - Exit the program");
         }
 

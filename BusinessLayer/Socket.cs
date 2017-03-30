@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+    // This socket class connects between the BL and the DAL by sending the user input string recieved from the parser to the market client
     public class Socket
     {
         private MarketClient marketClient;
 
+        //Construcor which initializes the market client which is in the DAL
         public Socket()
         {
             this.marketClient = new MarketClient();
@@ -20,6 +22,7 @@ namespace Program
             Console.WriteLine("No valid command was found. Please try again");
         }
 
+        //String to int convertors
         public int generalStringToInt(string str, int errorVal, string errorMsg)
         {
             try
@@ -53,6 +56,9 @@ namespace Program
             }
         }
 
+        //Those functions Prepare the string recieved from the Parser and send it to the relevant function in market client
+
+        //Buy Request
         public void buy(String str)
         {
             String[] words = str.Split(' ');
@@ -74,6 +80,7 @@ namespace Program
 
         }
 
+        //Sell Request
         public  void sell(String str)
         {
             String[] words = str.Split(' ');
@@ -93,6 +100,8 @@ namespace Program
             else
                 printNoValidCommandError();
         }
+
+        //Cancel Request
         public void cancel(String str)
         {
             int id = idStringToInt(str, -1, "cancel request");
@@ -105,9 +114,11 @@ namespace Program
                     Console.WriteLine("Cannot cancel trade number " + id);
             }
         }
+
+        //Query Buy/Sell/Market Request
         public void findInfo(String str)
         {
-            //3 types of queries - buy request, sell request, commodity request
+            //3 types of queries - buy request, sell request, commodity(market) request
             string[] words = str.ToLower().Split();
             if (words.Length == 2)
             {
@@ -132,6 +143,8 @@ namespace Program
             else
                 printNoValidCommandError();
         }
+
+        //Query User Request
         public void userInfo()
         {
             Console.WriteLine(this.marketClient.SendQueryUserRequest());
