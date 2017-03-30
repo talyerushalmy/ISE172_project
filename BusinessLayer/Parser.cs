@@ -8,6 +8,7 @@ namespace Program
 {
     public static class Parser
     {
+        // Recieves the input string from the communication module and parses it, the sends it to the relevant function in the socket
         public static void parse(String str)
         {
             Socket socket = new Socket();

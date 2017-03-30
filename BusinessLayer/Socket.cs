@@ -24,11 +24,31 @@ namespace Program
         {
             try
             {
-                return Math.Abs(Convert.ToInt32(str));
+                return Convert.ToInt32(str);
             }
             catch
             {
                 Console.WriteLine(errorMsg);
+                return errorVal;
+            }
+        }
+
+        public int idStringToInt(string str, int errorVal, string errorMsg)
+        {
+            try
+            {
+                int id = Convert.ToInt32(str);
+                if (id >= 0)
+                    return id;
+                else
+                {
+                    Console.WriteLine("The " + errorMsg + " ID should be a non-negative number");
+                    return errorVal;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("The commodity ID should be a non-negative number");
                 return errorVal;
             }
         }
@@ -38,14 +58,14 @@ namespace Program
             String[] words = str.Split(' ');
             if (words.Length == 3)
             {
-                int commodity = generalStringToInt(words[0], -1, "The commodity should be a positive integer");
-                int amount = generalStringToInt(words[1], 0, "The amount should be a non-negative number");
-                int price = generalStringToInt(words[2], 0, "The price should be a non-negative number");
+                int commodity = idStringToInt(words[0], -1, "commodity");
+                int amount = generalStringToInt(words[1], 0, "The amount should be a number different then 0");
+                int price = generalStringToInt(words[2], 0, "The price should be a number different then 0");
                 //goes to buy request
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
                     int resp = marketClient.SendBuyRequest(price, commodity, amount);
-                    if (resp != -1)
+                    if (resp >=0)
                         Console.WriteLine("Success! Trade id: " + resp);
                 }
             }
@@ -59,14 +79,14 @@ namespace Program
             String[] words = str.Split(' ');
             if (words.Length == 3)
             {
-                int commodity = generalStringToInt(words[0], -1, "The commodity should be a positive integer");
-                int amount = generalStringToInt(words[1], 0, "The amount should be a non-negative number");
-                int price = generalStringToInt(words[2], 0, "The price should be a non-negative number");
+                int commodity = idStringToInt(words[0], -1, "commodity");
+                int amount = generalStringToInt(words[1], 0, "The amount should be a number different then 0");
+                int price = generalStringToInt(words[2], 0, "The price should be a number different then 0");
                 //goes to sell request
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
                     int resp = this.marketClient.SendSellRequest(price, commodity, amount);
-                    if (resp != -1)
+                    if (resp >=0)
                         Console.WriteLine("Success! Trade id: " + resp);
                 }
             }
@@ -75,7 +95,7 @@ namespace Program
         }
         public void cancel(String str)
         {
-            int id = generalStringToInt(str, -1, "The Id should be a non-negative number");
+            int id = idStringToInt(str, -1, "cancel request");
             if (id > -1)
             {
                 //goes to cancel request
@@ -84,14 +104,10 @@ namespace Program
                 else
                     Console.WriteLine("Cannot cancel trade number " + id);
             }
-            else
-            {
-                Console.WriteLine();
-            }
         }
         public void findInfo(String str)
         {
-            //3 types of queries - buy request, sell request, market request
+            //3 types of queries - buy request, sell request, commodity request
             string[] words = str.ToLower().Split();
             if (words.Length == 2)
             {
@@ -99,15 +115,15 @@ namespace Program
                 if (type.Equals("commodity"))
                 {
                     //goes to query market request
-                    int id = generalStringToInt(words[1], -1, "The commodity should be a positive integer");
+                    int id = idStringToInt(words[1], -1, "commodity");
                     if (id > -1)
                         Console.WriteLine(this.marketClient.SendQueryMarketRequest(id));
                 }
                 else if (type.Equals("sell") || type.Equals("buy"))
                 {
                     //goes to query buy/sell request
-                    int id = generalStringToInt(words[1], 0, "The Id should be a positive number");
-                    if (id > 0)
+                    int id = idStringToInt(words[1], -1, "" + type + " request");
+                    if (id > -1)
                         Console.WriteLine(this.marketClient.SendQueryBuySellRequest(id));
                 }
                 else

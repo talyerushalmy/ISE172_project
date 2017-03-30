@@ -28,8 +28,8 @@ namespace Program
 
         public RequestBase()
         {
-            this.url = "http://localhost";
-            //this.url = @"http://ise172.ise.bgu.ac.il/";
+            //this.url = "http://localhost";
+            this.url = @"http://ise172.ise.bgu.ac.il/";
             this.user = "user46";
             setToken(KEY_PATH);
         }

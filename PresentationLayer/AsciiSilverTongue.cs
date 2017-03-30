@@ -49,6 +49,7 @@ namespace Program
             Console.WriteLine("\tcancel [TRADE ID (number)] - Cancel trade identified by [TRADE ID]");
             Console.WriteLine("\tinfo - Query the server for information about the user and show the results");
             Console.WriteLine("\tfind sell/buy/commodity [REQUEST/COMMODITY ID (number)] - Query the server for [REQUEST/COMMODITY ID] and show the results");
+            Console.WriteLine("\tclear - clear the user activity history");
             Console.WriteLine("\texit - Exit the program");
         }
 

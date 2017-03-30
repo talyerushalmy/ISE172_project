@@ -21,6 +21,12 @@ namespace Program
             {
                 if (input.Equals("menu"))
                     ast.PrintMenu();
+                if (input.Equals("clear"))
+                {
+                    Console.Clear();
+                    ast.PrintWelcome();
+                    ast.PrintMenu();
+                }
                 else
                     Parser.parse(input); // Parse and handle the input using the BusinessLayer
                 input = ast.ReadLine();
