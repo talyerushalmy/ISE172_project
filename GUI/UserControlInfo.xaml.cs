@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,17 +27,55 @@ namespace GUI
         public UserControlInfo()
         {
             InitializeComponent();
-            updateInformation();
+            UpdateInformation();
         }
 
-        private async void updateInformation()
+        private void UpdateInformation()
+        {
+            PresentData();
+        }
+
+        private void PresentData()
         {
             global::Program.MarketClient marketClient = new global::Program.MarketClient();
-            while (true)
+            MarketUserData marketUserData = (MarketUserData)marketClient.SendQueryUserRequest();
+
+            try
             {
-                MarketUserData marketUserData = (MarketUserData)marketClient.SendQueryUserRequest();
-                await Task.Delay(2000);
-                this.textBoxInfo.Text = marketUserData.ToString();
+                // Set all to visible
+                this.DataGridCommodities.Visibility = Visibility.Visible;
+                this.DataGridRequests.Visibility = Visibility.Visible;
+                this.LabelCommodities.Visibility = Visibility.Visible;
+                this.LabelRequests.Visibility = Visibility.Visible;
+                this.LabelFunds.Visibility = Visibility.Visible;
+
+                // Set the commodities section
+                this.DataGridCommodities.ItemsSource = marketUserData.commodities;
+                if (DataGridCommodities.Columns.Count > 1)
+                {
+                    this.DataGridCommodities.Columns[0].Header = "Commodity";
+                    this.DataGridCommodities.Columns[1].Header = "Quantity";
+                }
+
+                // Set the requests section
+                this.DataGridRequests.ItemsSource = marketUserData.requests
+                    .Select((x, index) => new { Number = index + 1, Request = x })
+                    .ToList();
+
+                this.LabelHeader.Content = "Refreshed: " + DateTime.Now.ToLongTimeString();
+
+                // Set the funds section
+                this.LabelFunds.Content = "Funds: " + marketUserData.funds;
+            }
+            catch (Exception e)
+            {
+                // Set all to hidden
+                this.DataGridCommodities.Visibility = Visibility.Hidden;
+                this.DataGridRequests.Visibility = Visibility.Hidden;
+                this.LabelCommodities.Visibility = Visibility.Hidden;
+                this.LabelRequests.Visibility = Visibility.Hidden;
+                this.LabelFunds.Visibility = Visibility.Hidden;
+                this.LabelHeader.Content = "No connection to server. Refreshed: " + DateTime.Now.ToLongTimeString();
             }
         }
 

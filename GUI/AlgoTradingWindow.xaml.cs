@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,23 @@ namespace GUI
         {
             UserControlInfo userControlInfo = new UserControlInfo();
             this.ContentControl.Content = userControlInfo;
+        }
+
+        public void ExitProgram()
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void AlgoTradingWindow_OnClosing(object sender, CancelEventArgs e)
+        {
+            ExitProgram();
+        }
+
+        private void buttonExit_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure you want to exit?", "Exit Algo-Trading", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+                ExitProgram();
         }
     }
 }

@@ -5,8 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI"
              mc:Ignorable="d" 
-             d:DesignHeight="301" d:DesignWidth="388">
+             d:DesignHeight="251" d:DesignWidth="358">
     <Grid>
-        <TextBox x:Name="textBoxInfo" Text="Loading" Height="251" Width="358" Padding="20px" />
+        <Label x:Name="LabelHeader" Padding="20" Content="Loading" />
+        <Label x:Name="LabelCommodities" Visibility="Hidden" Padding="20" Content="Commodities" HorizontalAlignment="Left" Margin="0,32,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="DataGridCommodities" Visibility="Hidden" Margin="18,78,172,22.2" ColumnWidth="80" />
+        <Label x:Name="LabelRequests" Visibility="Hidden" Content="Requests" HorizontalAlignment="Left" Margin="199,47,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="DataGridRequests" Visibility="Hidden" HorizontalAlignment="Left" Margin="199,78,0,0" VerticalAlignment="Top" Height="151" Width="128" ColumnWidth="60" RowHeight="20" />
+        <Label x:Name="LabelFunds" Visibility="Hidden" Content="Funds" HorizontalAlignment="Left" Margin="199,14,0,0" VerticalAlignment="Top"/>
+
     </Grid>
+    <!--<TextBox x:Name="textBoxInfo" Text="Loading" Height="251" Width="358" Padding="20px" />-->
+
 </UserControl>

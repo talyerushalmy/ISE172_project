@@ -5,13 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="AlgoTradingWindow" Height="350" Width="525" ResizeMode="NoResize">
+        Title="AlgoTradingWindow" Height="350" Width="525" ResizeMode="NoResize"
+        Closing="AlgoTradingWindow_OnClosing">
     <Grid>
-        <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" Margin="405,10,10,9.8">
-            <Button x:Name="buttonInformation" Content="Information" Margin="0.2,0.2,0,264.4" Click="buttonInformation_Click" />
+        <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" Margin="10,10,405.4,10.2">
+            <Grid Margin="-0.8,-0.8,-1,264.6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8*" />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" x:Name="buttonInformation" Content="Information" Click="buttonInformation_Click" />
+                <Button x:Name="buttonExit" Content="Exit" Click="buttonExit_Click" Margin="0,266,0.2,-265.8" />
+            </Grid>
         </Border>
-        <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" Margin="10,10,120.4,10.2">
-            <DockPanel HorizontalAlignment="Left" Height="303" LastChildFill="False" Margin="-0.8,-2.8,-0.8,-0.6" VerticalAlignment="Top" Width="388">
+        <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" Margin="120,10,10.4,10.2">
+            <DockPanel HorizontalAlignment="Left" Height="303" LastChildFill="False" Margin="-0.8,-0.8,-1.2,-3.4" VerticalAlignment="Top" Width="388">
                 <ContentControl x:Name="ContentControl" />
             </DockPanel>
         </Border>
