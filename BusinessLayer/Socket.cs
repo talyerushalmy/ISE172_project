@@ -32,6 +32,7 @@ namespace Program
             catch
             {
                 Console.WriteLine(errorMsg);
+                //Log-Conversion failed.
                 return errorVal;
             }
         }
@@ -46,12 +47,14 @@ namespace Program
                 else
                 {
                     Console.WriteLine("The " + errorMsg + " ID should be a non-negative number");
+                    //Log-Conversion failed.
                     return errorVal;
                 }
             }
             catch
             {
                 Console.WriteLine("The " + errorMsg + " ID should be a non-negative number");
+                //Log-Conversion failed.
                 return errorVal;
             }
         }
@@ -72,11 +75,15 @@ namespace Program
                 {
                     int resp = marketClient.SendBuyRequest(price, commodity, amount);
                     if (resp >=0)
+                    {
+                        //if resp>0 Log- success.
+                        //if resp=0 Log- Problem with communication with the server.
                         Console.WriteLine("Success! Trade id: " + resp);
+                    }
                 }
             }
             else
-                printNoValidCommandError();
+                printNoValidCommandError(); //Log- fail- the user entered invalid values.
 
         }
 
@@ -93,12 +100,16 @@ namespace Program
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
                     int resp = this.marketClient.SendSellRequest(price, commodity, amount);
-                    if (resp >=0)
+                    if (resp >= 0)
+                    {
+                        //if resp>0 Log- success.
+                        //if resp=0 Log- Problem with communication with the server.
                         Console.WriteLine("Success! Trade id: " + resp);
+                    }
                 }
             }
             else
-                printNoValidCommandError();
+                printNoValidCommandError(); //Log- fail- the user entered invalid values.
         }
 
         //Cancel Request
@@ -109,9 +120,12 @@ namespace Program
             {
                 //goes to cancel request
                 if (this.marketClient.SendCancelBuySellRequest(id))
+                {
                     Console.WriteLine("Cancelled successfully");
+                    //Log-Cancel succeed.
+                }
                 else
-                    Console.WriteLine("Cannot cancel trade number " + id);
+                    Console.WriteLine("Cannot cancel trade number " + id); //Log-Cancel failed.
             }
         }
 
@@ -138,16 +152,17 @@ namespace Program
                         Console.WriteLine(this.marketClient.SendQueryBuySellRequest(id));
                 }
                 else
-                    printNoValidCommandError();
+                    printNoValidCommandError(); //Log- There's an unrellevant info.
             }
             else
-                printNoValidCommandError();
+                printNoValidCommandError();//Log- There's an unrellevant info.
         }
 
         //Query User Request
         public void userInfo()
         {
             Console.WriteLine(this.marketClient.SendQueryUserRequest());
+            //Log-The user got his info.
         }
     }
 }

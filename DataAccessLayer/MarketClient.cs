@@ -70,6 +70,7 @@ namespace Program
             string response = "Unknown error";
             try
             {
+                //Log- Buy Request is sent to the server.
                 BuyRequest data = new BuyRequest(commodity, amount, price);
                 response = SendRequest(data);
                 return Convert.ToInt32(response);
@@ -87,6 +88,7 @@ namespace Program
             string response = "Unknown error";
             try
             {
+                //Log- Sell Request is sent to the server.
                 SellRequest data = new SellRequest(commodity, amount, price);
                 response = SendRequest(data);
                 return Convert.ToInt32(response);
@@ -101,6 +103,7 @@ namespace Program
         // send a query buy/sell request using the MarketClient project API
         public IMarketItemQuery SendQueryBuySellRequest(int id)
         {
+            //Log BuySell Request is sent to the server
             object obj = SendRequest<QueryBuySellRequest, MarketItemQuery>(new QueryBuySellRequest(id));
             return (MarketItemQuery)obj;
         }
@@ -108,6 +111,7 @@ namespace Program
         // send a query user request using the MarketClient project API
         public IMarketUserData SendQueryUserRequest()
         {
+            //Log- User Query Request is sent to the server
             object obj = SendRequest<QueryUserRequest, MarketUserData>(new QueryUserRequest());
             return (MarketUserData)obj;
         }
@@ -115,15 +119,20 @@ namespace Program
         // send a query market request using the MarketClient project API
         public IMarketCommodityOffer SendQueryMarketRequest(int commodity)
         {
+            //Log- Market Request is sent to the server
             object obj = SendRequest<QueryMarketRequest, MarketCommodityOffer>(new QueryMarketRequest(commodity));
             if (obj == null)
+            {
                 Console.WriteLine("Could not fetch commodity data");
+                //Log- Can't find the product.
+            }
             return (MarketCommodityOffer)obj;
         }
 
         // send a cancel buy/sell request using the MarketClient project API
         public bool SendCancelBuySellRequest(int id)
         {
+            //Log-Cancel request is sent to the server.
             string data = SendRequest<CancelBuySellRequest>(new CancelBuySellRequest(id));
             if (data == null)
                 return false;

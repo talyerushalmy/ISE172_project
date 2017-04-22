@@ -22,6 +22,7 @@ namespace Program
                             socket.buy(str.Substring(command.Length + 1));
                         else
                             socket.printNoValidCommandError();
+                            //Log-Information is missing.
                     }
                     break;
                 case "sell":
@@ -40,6 +41,7 @@ namespace Program
                         }
                         else
                             socket.printNoValidCommandError();
+                        //Log-Information is missing.
                     }
                     break;
                 case "info":
@@ -49,6 +51,7 @@ namespace Program
                             socket.userInfo();
                         else
                             socket.printNoValidCommandError();
+                        //Log-Information is missing.
                     }
                     break;
                 case "find":
@@ -60,6 +63,7 @@ namespace Program
                         else
                         {
                             socket.printNoValidCommandError();
+                            //Log-Information is missing.
                         }
                     }
                     break;
@@ -67,6 +71,7 @@ namespace Program
                     {
                         // no command was identified
                         socket.printNoValidCommandError();
+                        //Wrong command.
                     }
                     break;
             }

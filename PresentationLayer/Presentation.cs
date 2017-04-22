@@ -11,7 +11,7 @@ namespace Program
         public static void MainLoop()  //Print the main communication loop with the user.
         {
             AsciiSilverTongue ast = new AsciiSilverTongue();
-
+            //Log- the user enters to the system.
             ast.PrintWelcome();
             ast.PrintMenu();
 
@@ -34,6 +34,7 @@ namespace Program
             }
 
             // "exit" was recieved as input - print Goodbye and exit program
+            //Log- the user exits to the system.
             ast.PrintGoodbye();
         }
     }
