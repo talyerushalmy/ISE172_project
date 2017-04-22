@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    class QueryBuySellRequest
+    public class QueryBuySellRequest
     {
         // variables relevant for the request
         public string type;

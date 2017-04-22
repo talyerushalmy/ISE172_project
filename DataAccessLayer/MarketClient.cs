@@ -118,7 +118,7 @@ namespace Program
             object obj = SendRequest<QueryMarketRequest, MarketCommodityOffer>(new QueryMarketRequest(commodity));
             if (obj == null)
                 Console.WriteLine("Could not fetch commodity data");
-            return (MarketCommodityOffer)obj;
+            return (MarketCommodityOffer) obj;
         }
 
         // send a cancel buy/sell request using the MarketClient project API

@@ -12,7 +12,7 @@ namespace Program
         public static void parse(String str)
         {
             Socket socket = new Socket();
-            string [] words = str.Split(' ');
+            string[] words = str.Split(' ');
             string command = words[0];
             switch (command.ToLower())
             {
@@ -53,13 +53,22 @@ namespace Program
                     break;
                 case "find":
                     {
-                        if(words.Length == 3)
+                        if (words.Length == 3)
                         {
                             socket.findInfo(str.Substring(words[0].Length + 1));
                         }
                         else
                         {
                             socket.printNoValidCommandError();
+                        }
+                    }
+                    break;
+                case "auto":
+                    {
+                        if (words.Length == 1)
+                        {
+                            AutoMarketAgent autoMarketAgent = new AutoMarketAgent(true);
+                            autoMarketAgent.autoPilot();
                         }
                     }
                     break;
