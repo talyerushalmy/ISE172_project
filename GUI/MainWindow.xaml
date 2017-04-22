@@ -10,7 +10,7 @@
         <TextBlock HorizontalAlignment="Center" Text="Welcome to" Margin="170,18,167,-0.2" Width="183" TextAlignment="Center" />
         <TextBlock HorizontalAlignment="Center" Text="Algo-Trading" FontSize="72" Margin="10,32,10,-0.2" FontFamily="Old English Text MT" FontWeight="Bold" TextDecorations="{x:Null}" Width="500" TextAlignment="Center" />
         <TextBlock HorizontalAlignment="Center" Text="By Tom Marzea, Roee Groiser and Tal Yerushalmi" Margin="77,279,77,-0.2" FontFamily="Segoe UI Emoji" Width="366" TextAlignment="Center" />
-        <Button x:Name="ButtonEnter" Content="Enter" Margin="170,167,167,117.8" Width="183" Height="38" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Button x:Name="ButtonEnter" Content="Enter" Margin="170,167,167,117.8" Width="183" Height="38" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Click="ButtonEnter_Click" />
         <Button x:Name="ButtonOpenConsole" Content="Run as console mode" Margin="170,210,167,74.8" Width="183" Height="38" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Click="ButtonOpenConsole_Click" />
     </Grid>
 </Window>

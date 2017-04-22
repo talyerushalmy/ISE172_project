@@ -58,10 +58,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UserControlInfo.xaml.cs">
+      <DependentUpon>UserControlInfo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AlgoTradingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AlgoTradingWindow.xaml.cs">
+      <DependentUpon>AlgoTradingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -70,6 +80,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControlInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -102,6 +116,14 @@
     <Resource Include="graph.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{1970e9f1-ab4d-4270-baef-5417e47f03c3}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketClient\MarketClient.csproj">
+      <Project>{371E8EA8-CE7A-4AB2-85E5-EAC135DF4A26}</Project>
+      <Name>MarketClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PresentationLayer\PresentationLayer.csproj">
       <Project>{02c58ad6-4e3c-4fff-8e0b-46a468612bef}</Project>
       <Name>PresentationLayer</Name>

@@ -40,5 +40,12 @@ namespace GUI
             FreeConsole();
             Application.Current.Shutdown();
         }
+
+        private void ButtonEnter_Click(object sender, RoutedEventArgs e)
+        {
+            AlgoTradingWindow algoTradingWindow = new AlgoTradingWindow();
+            algoTradingWindow.Show();
+            this.Hide();
+        }
     }
 }
