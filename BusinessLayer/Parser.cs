@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,59 +20,96 @@ namespace Program
                 case "buy":
                     {
                         if (words.Length == 4)
+                        {
+                            Logger.logMessage("The buy request is sent to the socket");
                             socket.buy(str.Substring(command.Length + 1));
+                        }
                         else
+                        {
+                            StackFrame st = new StackFrame(0, true);
+                            String file = st.GetFileName();
+                            String line = Convert.ToString(st.GetFileLineNumber());
+                            Logger.logError(file, line);
                             socket.printNoValidCommandError();
-                            //Log-Information is missing.
+                        }
                     }
                     break;
                 case "sell":
                     {
                         if (words.Length == 4)
+                        {
+                            Logger.logMessage("The sell request is sent to the socket");
                             socket.sell(str.Substring(command.Length + 1));
+                        }
                         else
+                        {
+                            StackFrame st = new StackFrame(0, true);
+                            String file = st.GetFileName();
+                            String line = Convert.ToString(st.GetFileLineNumber());
+                            Logger.logError(file, line);
                             socket.printNoValidCommandError();
+                        }
                     }
                     break;
                 case "cancel":
                     {
                         if (words.Length == 2)
                         {
+                            Logger.logMessage("The cancel request is sent to the socket");
                             socket.cancel(words[1]);
                         }
                         else
+                        {
+                            StackFrame st = new StackFrame(0, true);
+                            String file = st.GetFileName();
+                            String line = Convert.ToString(st.GetFileLineNumber());
+                            Logger.logError(file, line);
                             socket.printNoValidCommandError();
-                        //Log-Information is missing.
+                        }
                     }
                     break;
                 case "info":
                     {
                         if (words.Length == 1)
-                            //print info about the user
+                        {
+                            Logger.logMessage("The user's information request is sent to the socket");
                             socket.userInfo();
+                        }
                         else
+                        {
+                            StackFrame st = new StackFrame(0, true);
+                            String file = st.GetFileName();
+                            String line = Convert.ToString(st.GetFileLineNumber());
+                            Logger.logError(file, line);
                             socket.printNoValidCommandError();
-                        //Log-Information is missing.
+                        }
                     }
                     break;
                 case "find":
                     {
                         if(words.Length == 3)
                         {
+                            Logger.logMessage("Find information request is sent to the socket");
                             socket.findInfo(str.Substring(words[0].Length + 1));
                         }
                         else
                         {
+                            StackFrame st = new StackFrame(0, true);
+                            String file = st.GetFileName();
+                            String line = Convert.ToString(st.GetFileLineNumber());
+                            Logger.logError(file, line);
                             socket.printNoValidCommandError();
-                            //Log-Information is missing.
                         }
                     }
                     break;
                 default:
                     {
                         // no command was identified
+                        StackFrame st = new StackFrame(0, true);
+                        String file = st.GetFileName();
+                        String line = Convert.ToString(st.GetFileLineNumber());
+                        Logger.logError(file, line);
                         socket.printNoValidCommandError();
-                        //Wrong command.
                     }
                     break;
             }

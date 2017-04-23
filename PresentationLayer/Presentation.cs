@@ -32,7 +32,10 @@ namespace Program
                     ast.PrintMenu();
                 }
                 else
+                {
+                    Logger.logMessage("The request is sent to the parser");
                     Parser.parse(input); // Parse and handle the input using the BusinessLayer
+                }
                 input = ast.ReadLine();
 
             }
