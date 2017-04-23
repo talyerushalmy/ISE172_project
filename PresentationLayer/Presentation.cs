@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+
     public class Presentation
     {
+        
         public static void MainLoop()  //Print the main communication loop with the user.
         {
             AsciiSilverTongue ast = new AsciiSilverTongue();
-            Logger lg = new Logger();
-            lg.logMessage("The user opens the system");
+            
+            Logger.logMessage("The user opens the system");
             ast.PrintWelcome();
             ast.PrintMenu();
 
@@ -36,7 +38,7 @@ namespace Program
             }
 
             // "exit" was recieved as input - print Goodbye and exit program
-            lg.logMessage("The user exits the system");
+            Logger.logMessage("The user exits the system");
             ast.PrintGoodbye();
         }
     }

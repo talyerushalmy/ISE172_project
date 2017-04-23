@@ -1,0 +1,4 @@
+Type: Message ,23/04/2017 19:08:31 , The user opens the system
+Type: Message ,23/04/2017 19:09:09 , The user opens the system
+Type: Message ,23/04/2017 19:10:05 , The user opens the system
+Type: Message ,23/04/2017 19:15:32 , The user opens the system

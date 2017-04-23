@@ -9,30 +9,27 @@ using Program;
 
 namespace Program
 {
-    public class Logger 
+    public static class Logger 
     {
-        private string _path = @"../../../Logs.txt";
-        private System.IO.StreamWriter _log;
-
-        public Logger() {
-            this._log = new System.IO.StreamWriter(_path, true);
-        }
-        public void logMessage(string input)
+        public static void logMessage(string input)
         {
-            this._log.Write("Type: Message ,");
-            this._log.Write(DateTime.Now+" , ");
-            this._log.Write(input);
-            this._log.WriteLine();
-            this._log.Close();
-            this._log= new System.IO.StreamWriter(_path, true); 
+            string path = @"../../../Logs.txt";
+            System.IO.StreamWriter log = new System.IO.StreamWriter(path, true);
+            log.Write("Type: Message ,");
+            log.Write(DateTime.Now+" , ");
+            log.Write(input);
+            log.WriteLine();
+            log.Close();  
         }
-        public void logError(string File,string Line)
+        public static void logError(string File,string Line)
         {
-            
-            this._log.Write("Type: Error ,");
-            this._log.Write("Occured in "+DateTime.Now + " ,");
-            this._log.Write(" In File " + File + " In Line " + Line);
-            this._log.WriteLine();
+            string path = @"../../../Logs.txt";
+            System.IO.StreamWriter log = new System.IO.StreamWriter(path, true);
+            log.Write("Type: Error ,");
+            log.Write("Occured in "+DateTime.Now + " ,");
+            log.Write(" In File " + File + " In Line " + Line);
+            log.WriteLine();
+            log.Close();
         }
 
     }
