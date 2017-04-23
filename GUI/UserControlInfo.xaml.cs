@@ -58,16 +58,26 @@ namespace GUI
                 }
 
                 // Set the requests section
-                this.DataGridRequests.ItemsSource = marketUserData.requests
-                    .Select((x, index) => new { Number = index + 1, Request = x })
-                    .ToList();
+                this.LabelRequests.Content = "Requests";
+                if (marketUserData.requests.Length > 0)
+                {
+                    this.DataGridRequests.Visibility = Visibility.Visible;
+                    this.DataGridRequests.ItemsSource = marketUserData.requests
+                        .Select((x, index) => new {Number = index + 1, Request = x})
+                        .ToList();
+                }
+                else
+                {
+                    this.DataGridRequests.Visibility = Visibility.Hidden;
+                    this.LabelRequests.Content += "\n\n No requests.";
+                }
 
                 this.LabelHeader.Content = "Refreshed: " + DateTime.Now.ToLongTimeString();
 
                 // Set the funds section
-                this.LabelFunds.Content = "Funds: " + marketUserData.funds;
+                this.LabelFunds.Content = "Funds: " + marketUserData.funds + " $";
             }
-            catch (Exception e)
+            catch
             {
                 // Set all to hidden
                 this.DataGridCommodities.Visibility = Visibility.Hidden;
