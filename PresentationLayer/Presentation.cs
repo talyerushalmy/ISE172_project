@@ -1,4 +1,4 @@
-﻿using Logger;
+﻿using Program;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,8 @@ namespace Program
         public static void MainLoop()  //Print the main communication loop with the user.
         {
             AsciiSilverTongue ast = new AsciiSilverTongue();
-           // Log lg = new Log();
-            //lg.WriteAndRead("Groiser the king");
-            //Log- the user enters to the system.
+            Logger lg = new Logger();
+            lg.logMessage("The user opens the system");
             ast.PrintWelcome();
             ast.PrintMenu();
 
@@ -37,7 +36,7 @@ namespace Program
             }
 
             // "exit" was recieved as input - print Goodbye and exit program
-            //Log- the user exits to the system.
+            lg.logMessage("The user exits the system");
             ast.PrintGoodbye();
         }
     }
