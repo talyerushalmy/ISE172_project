@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +78,10 @@ namespace Program
             }
             catch
             {
+                StackFrame st = new StackFrame(0, true);
+                String file = st.GetFileName();
+                String line = Convert.ToString(st.GetFileLineNumber());
+                Logger.logError(file, line, "The server can't perform buy request");
                 printError(response); // Print the error
                 return -1;
             }
@@ -95,6 +100,10 @@ namespace Program
             }
             catch
             {
+                StackFrame st = new StackFrame(0, true);
+                String file = st.GetFileName();
+                String line = Convert.ToString(st.GetFileLineNumber());
+                Logger.logError(file, line, "The server can't perform sell");
                 printError(response); // Print the error
                 return -1;
             }
@@ -124,7 +133,10 @@ namespace Program
             if (obj == null)
             {
                 Console.WriteLine("Could not fetch commodity data");
-                //Log- Can't find the product.
+                StackFrame st = new StackFrame(0, true);
+                String file = st.GetFileName();
+                String line = Convert.ToString(st.GetFileLineNumber());
+                Logger.logError(file, line, "The server can't find of commodity/buy/sell");
             }
             return (MarketCommodityOffer)obj;
         }
@@ -135,7 +147,14 @@ namespace Program
             //Log-Cancel request is sent to the server.
             string data = SendRequest<CancelBuySellRequest>(new CancelBuySellRequest(id));
             if (data == null)
+            {
+                StackFrame st = new StackFrame(0, true);
+                String file = st.GetFileName();
+                String line = Convert.ToString(st.GetFileLineNumber());
+                Logger.logError(file, line, "The server can't perform cancel of request with id " + id);
                 return false;
+            }
+                
             return data.Equals("Ok");
         }
     }

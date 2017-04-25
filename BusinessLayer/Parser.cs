@@ -29,7 +29,7 @@ namespace Program
                             StackFrame st = new StackFrame(0, true);
                             String file = st.GetFileName();
                             String line = Convert.ToString(st.GetFileLineNumber());
-                            Logger.logError(file, line);
+                            Logger.logError(file, line,"Can not perform buy request");
                             socket.printNoValidCommandError();
                         }
                     }
@@ -46,7 +46,7 @@ namespace Program
                             StackFrame st = new StackFrame(0, true);
                             String file = st.GetFileName();
                             String line = Convert.ToString(st.GetFileLineNumber());
-                            Logger.logError(file, line);
+                            Logger.logError(file, line, "Can not perform sell request");
                             socket.printNoValidCommandError();
                         }
                     }
@@ -63,7 +63,7 @@ namespace Program
                             StackFrame st = new StackFrame(0, true);
                             String file = st.GetFileName();
                             String line = Convert.ToString(st.GetFileLineNumber());
-                            Logger.logError(file, line);
+                            Logger.logError(file, line, "Can not perform cancel request");
                             socket.printNoValidCommandError();
                         }
                     }
@@ -80,7 +80,7 @@ namespace Program
                             StackFrame st = new StackFrame(0, true);
                             String file = st.GetFileName();
                             String line = Convert.ToString(st.GetFileLineNumber());
-                            Logger.logError(file, line);
+                            Logger.logError(file, line, "Can not perform user's information request");
                             socket.printNoValidCommandError();
                         }
                     }
@@ -97,7 +97,7 @@ namespace Program
                             StackFrame st = new StackFrame(0, true);
                             String file = st.GetFileName();
                             String line = Convert.ToString(st.GetFileLineNumber());
-                            Logger.logError(file, line);
+                            Logger.logError(file, line, "Can not find information");
                             socket.printNoValidCommandError();
                         }
                     }
@@ -108,7 +108,7 @@ namespace Program
                         StackFrame st = new StackFrame(0, true);
                         String file = st.GetFileName();
                         String line = Convert.ToString(st.GetFileLineNumber());
-                        Logger.logError(file, line);
+                        Logger.logError(file, line, "The user enters invalid input");
                         socket.printNoValidCommandError();
                     }
                     break;

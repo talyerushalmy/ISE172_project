@@ -1,13 +1,17 @@
-Type: Message ,23/04/2017 19:02:10 , The user opens the system
-Type: Message ,23/04/2017 19:03:40 , The user opens the system
-Type: Message ,23/04/2017 19:24:32 , The user opens the system
-Type: Message ,23/04/2017 19:26:42 , The user opens the system
-Type: Message ,23/04/2017 19:26:44 , The user exits the system
-Type: Message ,23/04/2017 20:44:44 , The user opens the system
-Type: Message ,23/04/2017 20:44:58 , The request is sent to the parser
-Type: Message ,23/04/2017 20:44:58 , The request is sent to the socket
-Type: Message ,23/04/2017 20:46:14 , The request is sent to the parser
-Type: Message ,23/04/2017 20:46:14 , The request is sent to the socket
-Type: Message ,23/04/2017 20:47:31 , The request is sent to the parser
-Type: Message ,23/04/2017 20:47:31 , The request is sent to the socket
-Type: Message ,23/04/2017 21:34:38 , The user exits the system
+Type: Message ,25/04/2017 13:24:31 , The request is sent to the parser
+ Type: ErrorOccured in 25/04/2017 13:24:32 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\Parser.cs in Line 108
+
+Type: Message ,25/04/2017 13:26:26 , The user opens the system
+Type: Message ,25/04/2017 13:26:27 , The request is sent to the parser
+ Type: ErrorOccured in 25/04/2017 13:26:27 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\Parser.cs in Line 108
+
+Type: Message ,25/04/2017 13:26:28 , The request is sent to the parser
+ Type: ErrorOccured in 25/04/2017 13:26:28 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\Parser.cs in Line 108
+
+Type: Message ,25/04/2017 13:26:29 , The request is sent to the parser
+ Type: ErrorOccured in 25/04/2017 13:26:29 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\Parser.cs in Line 108
+
+Type: Message ,25/04/2017 13:27:59 , The request is sent to the parser
+Type: Message ,25/04/2017 13:27:59 , The sell request is sent to the socket
+Type: Message ,25/04/2017 13:28:28 , The request is sent to the parser
+Type: Message ,25/04/2017 13:28:28 , The sell request is sent to the socket

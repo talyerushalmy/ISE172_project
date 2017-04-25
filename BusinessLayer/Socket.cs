@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,16 +75,28 @@ namespace Program
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
                     int resp = marketClient.SendBuyRequest(price, commodity, amount);
-                    if (resp >=0)
+                    if (resp >= 0)
                     {
-                        //if resp>0 Log- success.
-                        //if resp=0 Log- Problem with communication with the server.
+                        Logger.logMessage("The user have got his buy request");
                         Console.WriteLine("Success! Trade id: " + resp);
+                    }
+                    if (resp == 0)
+                    {
+                        StackFrame st = new StackFrame(0, true);
+                        String file = st.GetFileName();
+                        String line = Convert.ToString(st.GetFileLineNumber());
+                        Logger.logError(file, line, "Maybe the communication with the server have failed,while the user tried to perform buy request");
                     }
                 }
             }
             else
-                printNoValidCommandError(); //Log- fail- the user entered invalid values.
+            {
+                printNoValidCommandError();
+                StackFrame st = new StackFrame(0, true);
+                String file = st.GetFileName();
+                String line = Convert.ToString(st.GetFileLineNumber());
+                Logger.logError(file, line, "The user enters invalid/unrellevant values when he tries to perform buy request.");
+            }
 
         }
 
@@ -102,14 +115,27 @@ namespace Program
                     int resp = this.marketClient.SendSellRequest(price, commodity, amount);
                     if (resp >= 0)
                     {
-                        //if resp>0 Log- success.
-                        //if resp=0 Log- Problem with communication with the server.
+                        Logger.logMessage("The user have got his sell request");
                         Console.WriteLine("Success! Trade id: " + resp);
+                    }
+                    if (resp == 0)
+                    {
+                        StackFrame st = new StackFrame(0, true);
+                        String file = st.GetFileName();
+                        String line = Convert.ToString(st.GetFileLineNumber());
+                        Logger.logError(file, line, "Maybe the communication with the server have failed, while the user tried to perform sell request");
                     }
                 }
             }
             else
-                printNoValidCommandError(); //Log- fail- the user entered invalid values.
+            {
+                printNoValidCommandError();
+                StackFrame st = new StackFrame(0, true);
+                String file = st.GetFileName();
+                String line = Convert.ToString(st.GetFileLineNumber());
+                Logger.logError(file, line, "The user enters invalid/unrellevant values when he tries to perform sell request.");
+
+            }
         }
 
         //Cancel Request
@@ -122,10 +148,16 @@ namespace Program
                 if (this.marketClient.SendCancelBuySellRequest(id))
                 {
                     Console.WriteLine("Cancelled successfully");
-                    //Log-Cancel succeed.
+                    Logger.logMessage("The request with id: "+id+" canceled");
                 }
                 else
-                    Console.WriteLine("Cannot cancel trade number " + id); //Log-Cancel failed.
+                {
+                    Console.WriteLine("Cannot cancel trade number " + id);
+                    StackFrame st = new StackFrame(0, true);
+                    String file = st.GetFileName();
+                    String line = Convert.ToString(st.GetFileLineNumber());
+                    Logger.logError(file, line, "Cancel request with id "+id+" failed.");
+                }
             }
         }
 
@@ -152,17 +184,30 @@ namespace Program
                         Console.WriteLine(this.marketClient.SendQueryBuySellRequest(id));
                 }
                 else
-                    printNoValidCommandError(); //Log- There's an unrellevant info.
+                {
+                    printNoValidCommandError();
+                    StackFrame st = new StackFrame(0, true);
+                    String file = st.GetFileName();
+                    String line = Convert.ToString(st.GetFileLineNumber());
+                    Logger.logError(file, line, "The user typed invalid id");
+                }
             }
             else
-                printNoValidCommandError();//Log- There's an unrellevant info.
+            {
+                printNoValidCommandError();
+                StackFrame st = new StackFrame(0, true);
+                String file = st.GetFileName();
+                String line = Convert.ToString(st.GetFileLineNumber());
+                Logger.logError(file, line, "The user typed unrellevant information.");
+
+            }
         }
 
         //Query User Request
         public void userInfo()
         {
             Console.WriteLine(this.marketClient.SendQueryUserRequest());
-            //Log-The user got his info.
+            Logger.logMessage("The user got his own information");
         }
     }
 }
