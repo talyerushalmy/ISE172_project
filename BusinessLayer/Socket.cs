@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,10 +32,7 @@ namespace Program
             catch
             {
                 Console.WriteLine(errorMsg);
-                StackFrame st = new StackFrame(0, true);
-                String file = st.GetFileName();
-                String line = Convert.ToString(st.GetFileLineNumber());
-                Logger.logError(file, line);
+                //Log-Conversion failed.
                 return errorVal;
             }
         }
@@ -51,20 +47,14 @@ namespace Program
                 else
                 {
                     Console.WriteLine("The " + errorMsg + " ID should be a non-negative number");
-                    StackFrame st = new StackFrame(0, true);
-                    String file = st.GetFileName();
-                    String line = Convert.ToString(st.GetFileLineNumber());
-                    Logger.logError(file, line);
+                    //Log-Conversion failed.
                     return errorVal;
                 }
             }
             catch
             {
                 Console.WriteLine("The " + errorMsg + " ID should be a non-negative number");
-                StackFrame st = new StackFrame(0, true);
-                String file = st.GetFileName();
-                String line = Convert.ToString(st.GetFileLineNumber());
-                Logger.logError(file, line);
+                //Log-Conversion failed.
                 return errorVal;
             }
         }
@@ -83,24 +73,17 @@ namespace Program
                 //goes to buy request
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
-                    Logger.logMessage("Buy request is sent to MarketClient ");
                     int resp = marketClient.SendBuyRequest(price, commodity, amount);
-                    if (resp >= 0)
+                    if (resp >=0)
                     {
-                        Logger.logMessage("Success of buy request");
+                        //if resp>0 Log- success.
                         //if resp=0 Log- Problem with communication with the server.
                         Console.WriteLine("Success! Trade id: " + resp);
                     }
                 }
             }
             else
-            {
-                StackFrame st = new StackFrame(0, true);
-                String file = st.GetFileName();
-                String line = Convert.ToString(st.GetFileLineNumber());
-                Logger.logError(file, line);
-                printNoValidCommandError();
-            }
+                printNoValidCommandError(); //Log- fail- the user entered invalid values.
 
         }
 
@@ -116,7 +99,6 @@ namespace Program
                 //goes to sell request
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
-                    Logger.logMessage("Sell request is sent to MarketClient ");
                     int resp = this.marketClient.SendSellRequest(price, commodity, amount);
                     if (resp >= 0)
                     {
@@ -127,13 +109,7 @@ namespace Program
                 }
             }
             else
-            {
-                StackFrame st = new StackFrame(0, true);
-                String file = st.GetFileName();
-                String line = Convert.ToString(st.GetFileLineNumber());
-                Logger.logError(file, line);
                 printNoValidCommandError(); //Log- fail- the user entered invalid values.
-            }
         }
 
         //Cancel Request
@@ -143,20 +119,13 @@ namespace Program
             if (id > -1)
             {
                 //goes to cancel request
-                Logger.logMessage("Cancel request is sent to MarketClient ");
                 if (this.marketClient.SendCancelBuySellRequest(id))
                 {
                     Console.WriteLine("Cancelled successfully");
-                    Logger.logMessage("Cancelled successfully");
+                    //Log-Cancel succeed.
                 }
                 else
-                {
-                    Console.WriteLine("Cannot cancel trade number " + id);
-                    StackFrame st = new StackFrame(0, true);
-                    String file = st.GetFileName();
-                    String line = Convert.ToString(st.GetFileLineNumber());
-                    Logger.logError(file, line);
-                }
+                    Console.WriteLine("Cannot cancel trade number " + id); //Log-Cancel failed.
             }
         }
 
@@ -180,36 +149,20 @@ namespace Program
                     //goes to query buy/sell request
                     int id = idStringToInt(words[1], -1, "" + type + " request");
                     if (id > -1)
-                    {
-                        Logger.logMessage("Find info request is sent to MarketClient ");
                         Console.WriteLine(this.marketClient.SendQueryBuySellRequest(id));
-                    }
                 }
                 else
-                {
-                    StackFrame st = new StackFrame(0, true);
-                    String file = st.GetFileName();
-                    String line = Convert.ToString(st.GetFileLineNumber());
-                    Logger.logError(file, line);
-                    printNoValidCommandError();
-                }
+                    printNoValidCommandError(); //Log- There's an unrellevant info.
             }
             else
-            {
-                StackFrame st = new StackFrame(0, true);
-                String file = st.GetFileName();
-                String line = Convert.ToString(st.GetFileLineNumber());
-                Logger.logError(file, line);
-                printNoValidCommandError();
-            }
+                printNoValidCommandError();//Log- There's an unrellevant info.
         }
 
         //Query User Request
         public void userInfo()
         {
-            Logger.logMessage("User's information request is sent to MarketClient ");
             Console.WriteLine(this.marketClient.SendQueryUserRequest());
-            Logger.logMessage("The user got his information");
+            //Log-The user got his info.
         }
     }
 }
