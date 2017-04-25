@@ -18,7 +18,7 @@ namespace Program
                 AsciiSilverTongue ast = new AsciiSilverTongue();
             try
             {
-                Logger.logMessage("The user opens the system");
+                Logger.infoLog("The user opens the system");
                 ast.PrintWelcome();
                 ast.PrintMenu();
                 string input = ast.ReadLine().ToLower();
@@ -34,7 +34,7 @@ namespace Program
                     }
                     else
                     {
-                        Logger.logMessage("The request is sent to the parser");
+                        Logger.infoLog("The request is sent to the parser");
                         Parser.parse(input); // Parse and handle the input using the BusinessLayer
                     }
                     input = ast.ReadLine();
@@ -46,11 +46,11 @@ namespace Program
                 StackFrame st = new StackFrame(0, true);
                 String file = st.GetFileName();
                 String line = Convert.ToString(st.GetFileLineNumber());
-                Logger.logError(file, line,"Unexcepted error");
+                Logger.errorLog(file, line,"Unexcepted error");
             }
 
             // "exit" was recieved as input - print Goodbye and exit program
-            Logger.logMessage("The user exits the system");
+            Logger.infoLog("The user exits the system");
             ast.PrintGoodbye();
         }
     }

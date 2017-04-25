@@ -10,7 +10,7 @@ namespace Program
 {
     public static class Logger 
     {
-        public static void logMessage(string input)
+        public static void infoLog(string input)
         {
                 string path = @"../../../Logs.txt";
                 bool isTimeToClean = (DateTime.Now.Hour == 19 && DateTime.Now.Minute == 00);
@@ -22,18 +22,27 @@ namespace Program
                 log.Close();
         }
         
-        public static void logError(string File,string Line, string message)
+        public static void errorLog(string File,string Line, string message)
         {
                 string path = @"../../../Logs.txt";
                 bool isTimeToClean = (DateTime.Now.Hour == 19 && DateTime.Now.Minute == 00);
                 System.IO.StreamWriter log = new System.IO.StreamWriter(path, !isTimeToClean);
-                log.Write("Type: Error");
+                log.Write("Type: Error. ");
                 log.Write("Occured in " + DateTime.Now + " ,");
                 log.Write(" in File " + File + " in Line " + Line);
                 log.WriteLine();
-                
+                log.WriteLine("Reason: "+message);
                 log.WriteLine();
                 log.Close();
+        }
+        public static void debugLog(string input)
+        {
+            string path = @"../../../Logs.txt";
+            bool isTimeToClean = (DateTime.Now.Hour == 19 && DateTime.Now.Minute == 00);
+            System.IO.StreamWriter log = new System.IO.StreamWriter(path, !isTimeToClean);
+            log.Write("Type: Debug. Status: "+input);
+            log.WriteLine();
+            log.Close();
         }
 
     }
