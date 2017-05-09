@@ -44,6 +44,11 @@ namespace Program
             log.WriteLine();
             log.Close();
         }
+        public static void delete()
+        {
+            string path = @"../../../Logs.txt";
+            File.WriteAllText(path, String.Empty);
+        }
 
     }
 }

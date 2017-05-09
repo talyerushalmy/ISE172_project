@@ -1,19 +1,9 @@
-
-Type: Message ,25/04/2017 21:39:44 , The user opens the system
-Type: Message ,25/04/2017 21:39:45 , The request is sent to the parser
-Type: Error. Occured in 25/04/2017 21:39:45 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\Parser.cs in Line 108
+Type: Message ,09/05/2017 12:22:34 , The user opens the system
+Type: Message ,09/05/2017 12:22:35 , The request is sent to the parser
+Type: Error. Occured in 09/05/2017 12:22:35 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\Parser.cs in Line 108
 Reason: The user enters invalid input
 
-Type: Message ,25/04/2017 21:39:58 , The request is sent to the parser
-Type: Debug. Status: Request's kind: Buy. The request is sent to Project:BusinessLayer File:Socket.cs, Method:buy.
-Type: Debug. Status: Buy attempt details: Id Commodity 2, Amount: 2, Price: 2. The request is sent to Project: DataAccessLayer, File:MarketClient, Method:SendBuyRequest
-Type: Debug. Status: The buy request is sent to the server
-Type: Message ,25/04/2017 21:39:59 , The user have got his buy request. Id request: 2401051
-Type: Message ,25/04/2017 21:41:41 , The request is sent to the parser
-Type: Error. Occured in 25/04/2017 21:41:41 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\Parser.cs in Line 97
-Reason: Can not find information
+Type: Message ,09/05/2017 12:22:36 , The request is sent to the parser
+Type: Error. Occured in 09/05/2017 12:22:36 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\Parser.cs in Line 108
+Reason: The user enters invalid input
 
-Type: Message ,25/04/2017 21:42:07 , The request is sent to the parser
-Type: Debug. Status: Request's kind: Buy. The request is sent to Project:BusinessLayer File:Socket.cs, Method:findInfo.
-Type: Debug. Status: The id of the deal to be searched :2401051.The request is sent to Project: DataAccessLayer, File:MarketClient, Method:SendQueryBuySellRequest
-Type: Debug. Status: Find buy/sell request is sent to the server
