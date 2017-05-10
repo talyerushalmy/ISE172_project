@@ -12,43 +12,36 @@ namespace Program
     {
         public static void infoLog(string input)
         {
-                string path = @"../../../Logs.txt";
-                bool isTimeToClean = (DateTime.Now.Hour == 19 && DateTime.Now.Minute == 00);
-                System.IO.StreamWriter log = new System.IO.StreamWriter(path, !isTimeToClean);
-                log.Write("Type: Message ,");
-                log.Write(DateTime.Now + " , ");
-                log.Write(input);
-                log.WriteLine();
-                log.Close();
+            string path = @"../../../LogFiles/Logs.txt" + DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year;
+            System.IO.StreamWriter log = new System.IO.StreamWriter(path, true);
+            log.Write("Type: Message ,");
+            log.Write(DateTime.Now + " , ");
+            log.Write(input);
+            log.WriteLine();
+            log.Close();
         }
         
         public static void errorLog(string File,string Line, string message)
         {
-                string path = @"../../../Logs.txt";
-                bool isTimeToClean = (DateTime.Now.Hour == 19 && DateTime.Now.Minute == 00);
-                System.IO.StreamWriter log = new System.IO.StreamWriter(path, !isTimeToClean);
-                log.Write("Type: Error. ");
-                log.Write("Occured in " + DateTime.Now + " ,");
-                log.Write(" in File " + File + " in Line " + Line);
-                log.WriteLine();
-                log.WriteLine("Reason: "+message);
-                log.WriteLine();
-                log.Close();
+            string path = @"../../../LogFiles/Logs.txt" + DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year;
+            System.IO.StreamWriter log = new System.IO.StreamWriter(path, true);
+            log.Write("Type: Error. ");
+            log.Write("Occured in " + DateTime.Now + " ,");
+            log.Write(" in File " + File + " in Line " + Line);
+            log.WriteLine();
+            log.WriteLine("Reason: "+message);
+            log.WriteLine();
+            log.Close();
         }
         public static void debugLog(string input)
         {
-            string path = @"../../../Logs.txt";
-            bool isTimeToClean = (DateTime.Now.Hour == 19 && DateTime.Now.Minute == 00);
-            System.IO.StreamWriter log = new System.IO.StreamWriter(path, !isTimeToClean);
+            string path = @"../../../LogFiles/Logs.txt" + DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year;
+            System.IO.StreamWriter log = new System.IO.StreamWriter(path, true);
             log.Write("Type: Debug. Status: "+input);
             log.WriteLine();
             log.Close();
         }
-        public static void delete()
-        {
-            string path = @"../../../Logs.txt";
-            File.WriteAllText(path, String.Empty);
-        }
+
 
     }
 }

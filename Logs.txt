@@ -1,9 +1,0 @@
-Type: Message ,09/05/2017 12:22:34 , The user opens the system
-Type: Message ,09/05/2017 12:22:35 , The request is sent to the parser
-Type: Error. Occured in 09/05/2017 12:22:35 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\Parser.cs in Line 108
-Reason: The user enters invalid input
-
-Type: Message ,09/05/2017 12:22:36 , The request is sent to the parser
-Type: Error. Occured in 09/05/2017 12:22:36 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\Parser.cs in Line 108
-Reason: The user enters invalid input
-

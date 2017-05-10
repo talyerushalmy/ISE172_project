@@ -51,8 +51,6 @@ namespace Program
 
             // "exit" was recieved as input - print Goodbye and exit program
             Logger.infoLog("The user exits the system");
-            if(DateTime.Now.Day%6==0&& DateTime.Now.Hour==13)
-                Logger.delete();
             ast.PrintGoodbye();
         }
     }
