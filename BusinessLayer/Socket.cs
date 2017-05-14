@@ -115,6 +115,33 @@ namespace Program
             }
         }
 
+        public void cancelAll()
+        {
+            MarketUserData userData = (MarketUserData) this.marketClient.SendQueryUserRequest();
+            int[] userRequests = userData.requests;
+            if (userRequests.Length != 0)
+            {
+                String uncancelledRequests = "";
+                foreach (int id in userRequests)
+                {
+                    if (!(this.marketClient.SendCancelBuySellRequest(id)))
+                        uncancelledRequests += "Cannot cancel trade number " + id + "\n";
+                }
+                if (uncancelledRequests.Length == 0)
+                    uncancelledRequests = "All requests cancelled successfully";
+                Console.WriteLine(uncancelledRequests);
+            }
+            else
+                Console.WriteLine("No requests to cancel were found");
+
+        }
+
+        public void runAutoMarketAgent()
+        {
+            AutoMarketAgent autoMarketAgent = new AutoMarketAgent(true);
+            autoMarketAgent.autoPilot();
+        }
+
         //Query Buy/Sell/Market Request
         public void findInfo(String str)
         {
@@ -142,6 +169,16 @@ namespace Program
             }
             else
                 printNoValidCommandError();
+        }
+
+        public void allMarketRequest()
+        {
+            Console.WriteLine(this.marketClient.sendQueryAllMarketRequest());
+        }
+
+        public void userRequestsInfo()
+        {
+            Console.WriteLine(this.marketClient.sendQueryUserRequestsRequest());
         }
 
         //Query User Request

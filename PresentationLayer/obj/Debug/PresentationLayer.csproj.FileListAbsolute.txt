@@ -60,3 +60,5 @@ C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLa
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\AutoMarketAgent.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\AutoMarketAgent.pdb

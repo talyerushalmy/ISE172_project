@@ -129,5 +129,17 @@ namespace Program
                 return false;
             return data.Equals("Ok");
         }
+
+        public QueryUserRequestsRequest sendQueryUserRequestsRequest()
+        {
+            object obj = SendRequest<QueryUserRequestsRequest, QueryUserRequestsRequest>(new QueryUserRequestsRequest());
+            return (QueryUserRequestsRequest) obj;
+        }
+
+        public QueryAllMarketRequest sendQueryAllMarketRequest()
+        {
+            object obj = SendRequest<QueryAllMarketRequest, QueryAllMarketRequest>(new QueryAllMarketRequest());
+            return (QueryAllMarketRequest) obj;
+        }
     }
 }
