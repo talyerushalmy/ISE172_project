@@ -14,5 +14,12 @@ namespace Program
         {
             this.type = "queryAllMarket";
         }
+
+        /*public override string ToString()
+        {
+            string s = "";
+            s += " ask: " + info.ask + ", bid: " + info.bid + " id: " + id;
+            return s;
+        }*/
     }
 }

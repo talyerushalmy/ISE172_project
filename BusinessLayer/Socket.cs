@@ -173,12 +173,14 @@ namespace Program
 
         public void allMarketRequest()
         {
-            Console.WriteLine(this.marketClient.sendQueryAllMarketRequest());
+            Commodity[] commodities = this.marketClient.sendQueryAllMarketRequest();
+            Console.WriteLine(string.Join<Commodity>("\n", commodities));
         }
 
         public void userRequestsInfo()
         {
-            Console.WriteLine(this.marketClient.sendQueryUserRequestsRequest());
+            UserRequest[] requests = this.marketClient.sendQueryUserRequestsRequest();
+            Console.WriteLine(string.Join<UserRequest>("\n", requests));
         }
 
         //Query User Request

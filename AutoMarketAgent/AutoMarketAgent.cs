@@ -7,29 +7,7 @@ using System.Timers;
 
 namespace Program
 {
-    struct Commodity
-    {
-        public int id;
-        public int amount;
-        public int ask;
-        public int bid;
 
-        public Commodity(int id, int amount)
-        {
-            this.id = id;
-            this.amount = amount;
-            this.ask = Int32.MaxValue;
-            this.bid = 0;
-        }
-
-        public Commodity(int id, int amount, int ask, int bid)
-        {
-            this.id = id;
-            this.amount = amount;
-            this.ask = ask;
-            this.bid = bid;
-        }
-    }
 
     public class AutoMarketAgent
     {
@@ -52,12 +30,6 @@ namespace Program
         {
             int length = this._userData.commodities.Keys.Count;
             Commodity[] commodities = new Commodity[length];
-            foreach (var commodity in this._userData.commodities)
-            {
-                int commID = Convert.ToInt32(commodity.Key);
-                commodities[commID] = new Commodity(commID, commodity.Value);
-                System.Threading.Thread.Sleep(500);
-            }
             return commodities;
         }
 
@@ -72,9 +44,6 @@ namespace Program
             foreach (var commodity in this._userData.commodities)
             {
                 int commID = Convert.ToInt32(commodity.Key);
-                MarketCommodityOffer offer = (MarketCommodityOffer)this._marketClient.SendQueryMarketRequest(commID);
-                this._commodities[commID] = new Commodity(commID, commodity.Value, offer.ask, offer.bid);
-                System.Threading.Thread.Sleep(500);
             }
         }
 
@@ -88,7 +57,7 @@ namespace Program
                 // Value - commodity amount
                 #endregion
 
-                makeBestSellDeal();
+                test();
 
                 /*int commID = -1;
                 int commAmount = -1;
@@ -171,7 +140,7 @@ namespace Program
 
         private double getAskToBidRatio(Commodity comm)
         {
-            double ratio = ((double)comm.ask / (double)comm.bid);
+            double ratio = ((double)comm.info.ask / (double)comm.info.bid);
             if (ratio <= 1)
                 return ratio;
             else
@@ -180,7 +149,7 @@ namespace Program
 
         private double getAmountToAskToBidRatio(Commodity comm)
         {
-            double ratio = (comm.amount) / (getAskToBidRatio(comm));
+            double ratio = 1;// (comm.amount) / (getAskToBidRatio(comm));
             if (ratio <= 1)
                 return ratio;
             else
@@ -190,16 +159,16 @@ namespace Program
         public void makeBestBuyDeal()
         {
             updateCommodities();
-            Console.WriteLine(string.Join(",", this._commodities));
+            //Console.WriteLine(string.Join(",", this._commodities));
             int index = getIdealCommToBuy();
             Commodity comm = this._commodities[index];
             Console.WriteLine("indexOfCommToBuy:" + index);
             int buyAmount = checkAmountToBuy(comm);
             Console.WriteLine("we need to buy " + buyAmount + " of comm num " + index);
             MarketCommodityOffer offer = (MarketCommodityOffer)this._marketClient.SendQueryMarketRequest(comm.id);
-            if (offer.ask <= comm.ask)
+            if (offer.ask <= comm.info.ask)
             {
-                comm.ask = offer.ask;
+                comm.info.ask = offer.ask;
                 int buyID = this._marketClient.SendBuyRequest(offer.ask, comm.id, buyAmount);
                 /*if (!isRequestSuccessful(buyID))
                 {
@@ -219,21 +188,21 @@ namespace Program
             {
                 double askToBidRatio = getAskToBidRatio(comm);
                 Console.WriteLine("commID : " + comm.id);
-                Console.WriteLine("ammount : " + comm.amount);
-                Console.WriteLine("ask: " + comm.ask);
-                Console.WriteLine("bid: " + comm.bid);
+                //Console.WriteLine("ammount : " + comm.amount);
+                Console.WriteLine("ask: " + comm.info.ask);
+                Console.WriteLine("bid: " + comm.info.bid);
                 Console.WriteLine("ratio: " + askToBidRatio);
                 if (askToBidRatio <= 1 && askToBidRatio < minAmount * bestRatio)
                 {
                     double specialRatio = getAmountToAskToBidRatio(comm);
                     Console.WriteLine("special ratio :" + specialRatio);
-                    if (comm.amount <= minAmount && specialRatio <= bestSpecialRatio)
+                    /*if (comm.amount <= minAmount && specialRatio <= bestSpecialRatio)
                     {
                         bestRatio = askToBidRatio;
-                        minAmount = comm.amount;
+                        //minAmount = comm.amount;
                         bestSpecialRatio = specialRatio;
                         index = comm.id;
-                    }
+                    }*/
                 }
                 Console.WriteLine();
             }
@@ -243,17 +212,16 @@ namespace Program
         public void makeBestSellDeal()
         {
             updateCommodities();
-            Console.WriteLine(string.Join(",", this._commodities));
+            //Console.WriteLine(string.Join(",", this._commodities));
             int index = getIdealCommToSell();
             Commodity comm = this._commodities[index];
             Console.WriteLine("indexOfCommToSell:" + index);
-            int sellAmount = checkAmountToSell(comm);
-            Console.WriteLine("we need to sell " + sellAmount + " of comm num " + index);
+            //int sellAmount = checkAmountToSell(comm);
             MarketCommodityOffer offer = (MarketCommodityOffer)this._marketClient.SendQueryMarketRequest(comm.id);
-            if (offer.bid >= comm.bid)
+            if (offer.bid >= comm.info.bid)
             {
-                comm.bid = offer.bid;
-                int sellID = this._marketClient.SendSellRequest(comm.bid, comm.id, sellAmount);
+                comm.info.bid = offer.bid;
+                //int sellID = this._marketClient.SendSellRequest(comm.info.bid, comm.id, sellAmount);
             }
             
         }
@@ -270,19 +238,16 @@ namespace Program
         private int checkAmountToBuy(Commodity comm)
         {
             int avg = getAvgCommAmount();
-            int diff = avg - comm.amount;
-            Console.WriteLine("ammount of comm num " + comm.id + " : " + comm.amount);
-            Console.WriteLine("average comms : " + avg);
-            Console.WriteLine("diff " + diff);
             double ratio = getAskToBidRatio(comm);
-            while (diff > 0)
+            /*while (diff > 0)
             {
                 if (diff * comm.ask <= this._userData.funds * ratio)
                     return diff;
                 else
                     diff--;
             }
-            return diff;
+            return diff;*/
+            return 0;
         }
 
         private int getIdealCommToSell()
@@ -294,28 +259,25 @@ namespace Program
             foreach (Commodity comm in this._commodities)
             {
                 double askToBidRatio = getAskToBidRatio(comm);
-                Console.WriteLine("commID : " + comm.id);
-                Console.WriteLine("ammount : " + comm.amount);
-                Console.WriteLine("ask: " + comm.ask);
-                Console.WriteLine("bid: " + comm.bid);
-                Console.WriteLine("ratio: " + askToBidRatio);
+     
+           
                 if (askToBidRatio <= 1 && askToBidRatio > maxAmount * bestRatio)
                 {
                     double specialRatio = getAmountToAskToBidRatio(comm);
-                    Console.WriteLine("special ratio :" + specialRatio);
+                    /*Console.WriteLine("special ratio :" + specialRatio);
                     if (comm.amount >= maxAmount && specialRatio >= bestSpecialRatio)
                     {
                         bestRatio = askToBidRatio;
                         maxAmount = comm.amount;
                         bestSpecialRatio = specialRatio;
                         index = comm.id;
-                    }
+                    }*/
                 }
                 Console.WriteLine();
             }
             return index;
         }
-
+        /*
         private int checkAmountToSell(Commodity comm)
         {
             int avg = getAvgCommAmount();
@@ -330,13 +292,13 @@ namespace Program
             }
             return (comm.amount / ratio);
         }
-        
+        */
         private int getTotalAmmountOfComms()
         {
             int sum = 0;
             foreach(Commodity comm in this._commodities)
             {
-                sum += comm.amount;
+                //sum += comm.amount;
             }
             return sum;
         }
@@ -346,7 +308,7 @@ namespace Program
             return getTotalAmmountOfComms()/ this._commodities.Length;
         }
 
-        private int indexOfMaxComm()
+        /*private int indexOfMaxComm()
         {
             int max = Int32.MinValue;
             int index = 0;
@@ -374,7 +336,7 @@ namespace Program
                 }
             }
             return index;
-        }
+        }*/
 
         private bool isRequestSuccessful(int id)
         {
@@ -390,12 +352,12 @@ namespace Program
             int diff = offer.ask - offer.bid;
             double askToBidRatio = (double)ask / (double)bid;
             int fixedRatio = (int)Math.Ceiling(askToBidRatio);
-            int amountToRatio = comm.amount / fixedRatio;
+            //int amountToRatio = comm.amount / fixedRatio;
             double currFunds = this._userData.funds;
             System.Threading.Thread.Sleep(2000);
             if (askToBidRatio > 1)
             {
-                if (amountToRatio > 1)
+                /*if (amountToRatio > 1)
                 {
                     int sellID = this._marketClient.SendSellRequest(bid, comm.id, amountToRatio);
                     if (isRequestSuccessful(sellID))
@@ -413,12 +375,17 @@ namespace Program
                     }
                     else
                         this._marketClient.SendCancelBuySellRequest(sellID);
-                }
+                }*/
             }
             else if (askToBidRatio < 1)
             {
 
             }
+
+        }
+
+        private void test()
+        {
 
         }
 

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commodity.cs" />
     <Compile Include="BuyRequest.cs" />
     <Compile Include="CancelBuySellRequest.cs" />
     <Compile Include="MarketCommodityOffer.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="QueryUserRequestsRequest.cs" />
     <Compile Include="RequestBase.cs" />
     <Compile Include="SellRequest.cs" />
+    <Compile Include="UserRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

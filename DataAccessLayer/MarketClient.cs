@@ -130,16 +130,16 @@ namespace Program
             return data.Equals("Ok");
         }
 
-        public QueryUserRequestsRequest sendQueryUserRequestsRequest()
+        public UserRequest[] sendQueryUserRequestsRequest()
         {
-            object obj = SendRequest<QueryUserRequestsRequest, QueryUserRequestsRequest>(new QueryUserRequestsRequest());
-            return (QueryUserRequestsRequest) obj;
+            UserRequest[] obj = SendRequest<QueryUserRequestsRequest, UserRequest[]>(new QueryUserRequestsRequest());
+            return obj;
         }
 
-        public QueryAllMarketRequest sendQueryAllMarketRequest()
+        public Commodity[] sendQueryAllMarketRequest()
         {
-            object obj = SendRequest<QueryAllMarketRequest, QueryAllMarketRequest>(new QueryAllMarketRequest());
-            return (QueryAllMarketRequest) obj;
+            Commodity[] obj = SendRequest<QueryAllMarketRequest, Commodity[]>(new QueryAllMarketRequest());    
+            return obj;
         }
     }
 }
