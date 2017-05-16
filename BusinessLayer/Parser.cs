@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,84 +19,46 @@ namespace Program
                 case "buy":
                     {
                         if (words.Length == 4)
-                        {
-                            Logger.debugLog("Request's kind: Buy. The request is sent to Project:BusinessLayer File:Socket.cs, Method:buy.");
                             socket.buy(str.Substring(command.Length + 1));
-                        }
                         else
-                        {
-                            StackFrame st = new StackFrame(0, true);
-                            String file = st.GetFileName();
-                            String line = Convert.ToString(st.GetFileLineNumber());
-                            Logger.errorLog(file, line,"Can not perform buy request");
                             socket.printNoValidCommandError();
-                        }
                     }
                     break;
                 case "sell":
                     {
                         if (words.Length == 4)
-                        {
-                            Logger.debugLog("Request's kind: Sell. The request is sent to Project:BusinessLayer File:Socket.cs, Method:sell.");
                             socket.sell(str.Substring(command.Length + 1));
-                        }
                         else
-                        {
-                            StackFrame st = new StackFrame(0, true);
-                            String file = st.GetFileName();
-                            String line = Convert.ToString(st.GetFileLineNumber());
-                            Logger.errorLog(file, line, "Can not perform sell request");
                             socket.printNoValidCommandError();
-                        }
                     }
                     break;
                 case "cancel":
                     {
                         if (words.Length == 2)
                         {
-                            Logger.debugLog("Request's kind: Buy. The request is sent to Project:BusinessLayer File:Socket.cs, Method:cancel.");
                             socket.cancel(words[1]);
                         }
                         else
-                        {
-                            StackFrame st = new StackFrame(0, true);
-                            String file = st.GetFileName();
-                            String line = Convert.ToString(st.GetFileLineNumber());
-                            Logger.errorLog(file, line, "Can not perform cancel request");
                             socket.printNoValidCommandError();
-                        }
                     }
                     break;
                 case "info":
                     {
                         if (words.Length == 1)
-                        {
-                            Logger.debugLog("Request's kind: Buy. The request is sent to Project:BusinessLayer File:Socket.cs, Method:userinfo.");
+                            //print info about the user
                             socket.userInfo();
-                        }
                         else
-                        {
-                            StackFrame st = new StackFrame(0, true);
-                            String file = st.GetFileName();
-                            String line = Convert.ToString(st.GetFileLineNumber());
-                            Logger.errorLog(file, line, "Can not perform user's information request");
                             socket.printNoValidCommandError();
-                        }
                     }
                     break;
                 case "find":
                     {
                         if(words.Length == 3)
                         {
-                            Logger.debugLog("Request's kind: Buy. The request is sent to Project:BusinessLayer File:Socket.cs, Method:findInfo.");
                             socket.findInfo(str.Substring(words[0].Length + 1));
                         }
                         else
                         {
-                            StackFrame st = new StackFrame(0, true);
-                            String file = st.GetFileName();
-                            String line = Convert.ToString(st.GetFileLineNumber());
-                            Logger.errorLog(file, line, "Can not perfom find commodity/sell/buy request");
                             socket.printNoValidCommandError();
                         }
                     }
@@ -105,10 +66,6 @@ namespace Program
                 default:
                     {
                         // no command was identified
-                        StackFrame st = new StackFrame(0, true);
-                        String file = st.GetFileName();
-                        String line = Convert.ToString(st.GetFileLineNumber());
-                        Logger.errorLog(file, line, "The user enters invalid input");
                         socket.printNoValidCommandError();
                     }
                     break;

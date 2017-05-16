@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +32,6 @@ namespace Program
             catch
             {
                 Console.WriteLine(errorMsg);
-                //Log-Conversion failed.
                 return errorVal;
             }
         }
@@ -48,14 +46,12 @@ namespace Program
                 else
                 {
                     Console.WriteLine("The " + errorMsg + " ID should be a non-negative number");
-                    //Log-Conversion failed.
                     return errorVal;
                 }
             }
             catch
             {
                 Console.WriteLine("The " + errorMsg + " ID should be a non-negative number");
-                //Log-Conversion failed.
                 return errorVal;
             }
         }
@@ -74,30 +70,13 @@ namespace Program
                 //goes to buy request
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
-                    Logger.debugLog("Buy attempt details: Id Commodity "+commodity+", Amount: "+amount+", Price: " + price+". The request is sent to Project: DataAccessLayer, File:MarketClient, Method:SendBuyRequest");
                     int resp = marketClient.SendBuyRequest(price, commodity, amount);
-                    if (resp >= 0)
-                    {
-                        Logger.infoLog("The user have got his buy request. Id request: " + resp);
+                    if (resp >=0)
                         Console.WriteLine("Success! Trade id: " + resp);
-                    }
-                    if (resp == 0)
-                    {
-                        StackFrame st = new StackFrame(0, true);
-                        String file = st.GetFileName();
-                        String line = Convert.ToString(st.GetFileLineNumber());
-                        Logger.errorLog(file, line, "Maybe the communication with the server have failed,while the user tried to perform buy request");
-                    }
                 }
             }
             else
-            {
                 printNoValidCommandError();
-                StackFrame st = new StackFrame(0, true);
-                String file = st.GetFileName();
-                String line = Convert.ToString(st.GetFileLineNumber());
-                Logger.errorLog(file, line, "The user enters invalid/unrellevant values when he tries to perform buy request.");
-            }
 
         }
 
@@ -113,31 +92,13 @@ namespace Program
                 //goes to sell request
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
-                    Logger.debugLog("Sell attempt details: Id Commodity " + commodity + ", Amount: " + amount + ", Price: " + price + ". The request is sent to Project: DataAccessLayer, File:MarketClient, Method:SendSellRequest");
                     int resp = this.marketClient.SendSellRequest(price, commodity, amount);
-                    if (resp >= 0)
-                    {
-                        Logger.infoLog("The user have got his sell request. Id request: "+resp);
+                    if (resp >=0)
                         Console.WriteLine("Success! Trade id: " + resp);
-                    }
-                    if (resp == 0)
-                    {
-                        StackFrame st = new StackFrame(0, true);
-                        String file = st.GetFileName();
-                        String line = Convert.ToString(st.GetFileLineNumber());
-                        Logger.errorLog(file, line, "Maybe the communication with the server have failed, while the user tried to perform sell request");
-                    }
                 }
             }
             else
-            {
                 printNoValidCommandError();
-                StackFrame st = new StackFrame(0, true);
-                String file = st.GetFileName();
-                String line = Convert.ToString(st.GetFileLineNumber());
-                Logger.errorLog(file, line, "The user enters invalid/unrellevant values when he tries to perform sell request.");
-
-            }
         }
 
         //Cancel Request
@@ -146,22 +107,11 @@ namespace Program
             int id = idStringToInt(str, -1, "cancel request");
             if (id > -1)
             {
-                Logger.debugLog("The id of the deal to be removed :" +id+ ".The request is sent to Project: DataAccessLayer, File:MarketClient, Method:SendCancelBuySellRequest");
-
                 //goes to cancel request
                 if (this.marketClient.SendCancelBuySellRequest(id))
-                {
                     Console.WriteLine("Cancelled successfully");
-                    Logger.infoLog("The request with id: "+id+" canceled");
-                }
                 else
-                {
                     Console.WriteLine("Cannot cancel trade number " + id);
-                    StackFrame st = new StackFrame(0, true);
-                    String file = st.GetFileName();
-                    String line = Convert.ToString(st.GetFileLineNumber());
-                    Logger.errorLog(file, line, "Cancel request with id "+id+" failed.");
-                }
             }
         }
 
@@ -178,47 +128,26 @@ namespace Program
                     //goes to query market request
                     int id = idStringToInt(words[1], -1, "commodity");
                     if (id > -1)
-                    {
                         Console.WriteLine(this.marketClient.SendQueryMarketRequest(id));
-                        Logger.debugLog("The id of the commodity to be searched :" + id + ".The request is sent to Project: DataAccessLayer, File:MarketClient, Method:SendQueryMarketRequest");
-                    }
                 }
                 else if (type.Equals("sell") || type.Equals("buy"))
                 {
                     //goes to query buy/sell request
                     int id = idStringToInt(words[1], -1, "" + type + " request");
                     if (id > -1)
-                    {
-                        Logger.debugLog("The id of the deal to be searched :" + id + ".The request is sent to Project: DataAccessLayer, File:MarketClient, Method:SendQueryBuySellRequest");
                         Console.WriteLine(this.marketClient.SendQueryBuySellRequest(id));
-                    }
                 }
                 else
-                {
                     printNoValidCommandError();
-                    StackFrame st = new StackFrame(0, true);
-                    String file = st.GetFileName();
-                    String line = Convert.ToString(st.GetFileLineNumber());
-                    Logger.errorLog(file, line, "The user typed invalid id");
-                }
             }
             else
-            {
                 printNoValidCommandError();
-                StackFrame st = new StackFrame(0, true);
-                String file = st.GetFileName();
-                String line = Convert.ToString(st.GetFileLineNumber());
-                Logger.errorLog(file, line, "The user typed unrellevant information.");
-
-            }
         }
 
         //Query User Request
         public void userInfo()
         {
-            Logger.debugLog("UserInfo requests is sent to Project: DataAccessLayer, File:MarketClient, Method:SendQueryUserRequest");
             Console.WriteLine(this.marketClient.SendQueryUserRequest());
-            Logger.infoLog("The user got his own information");
         }
     }
 }

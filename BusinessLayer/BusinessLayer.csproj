@@ -56,10 +56,6 @@
       <Project>{1970e9f1-ab4d-4270-baef-5417e47f03c3}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Logger\Logger.csproj">
-      <Project>{fe03d863-1675-4151-bae7-5ff9e6927c42}</Project>
-      <Name>Logger</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MarketClient\MarketClient.csproj">
       <Project>{371e8ea8-ce7a-4ab2-85e5-eac135df4a26}</Project>
       <Name>MarketClient</Name>
