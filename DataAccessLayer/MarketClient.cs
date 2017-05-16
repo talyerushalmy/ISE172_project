@@ -130,9 +130,9 @@ namespace Program
             return data.Equals("Ok");
         }
 
-        public UserRequest[] sendQueryUserRequestsRequest()
+        public QueryUserRequest[] sendQueryUserRequestsRequest()
         {
-            UserRequest[] obj = SendRequest<QueryUserRequestsRequest, UserRequest[]>(new QueryUserRequestsRequest());
+            QueryUserRequest[] obj = SendRequest<QueryUserRequestsRequest, QueryUserRequest[]>(new QueryUserRequestsRequest());
             return obj;
         }
 

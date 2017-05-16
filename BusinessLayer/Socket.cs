@@ -179,8 +179,11 @@ namespace Program
 
         public void userRequestsInfo()
         {
-            UserRequest[] requests = this.marketClient.sendQueryUserRequestsRequest();
-            Console.WriteLine(string.Join<UserRequest>("\n", requests));
+            QueryUserRequest[] requests = this.marketClient.sendQueryUserRequestsRequest();
+            if (requests.Length ==0)
+                Console.WriteLine("No active requests were found");
+            else
+                Console.WriteLine(string.Join<QueryUserRequest>("\n", requests));
         }
 
         //Query User Request

@@ -13,7 +13,7 @@ namespace Program
 
         public override string ToString()
         {
-            string s = "id: " + id + " info: " + "[ ask: " + info.ask + ", bid " + info.bid + " ]";
+            string s = "id: " + id + "\tinfo: " + "[ ask: " + info.ask + ", bid " + info.bid + " ]";
             return s;
         }
     }

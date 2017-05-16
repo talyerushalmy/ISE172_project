@@ -59,7 +59,6 @@
     <Compile Include="QueryUserRequestsRequest.cs" />
     <Compile Include="RequestBase.cs" />
     <Compile Include="SellRequest.cs" />
-    <Compile Include="UserRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
