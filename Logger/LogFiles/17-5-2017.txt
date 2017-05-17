@@ -1,0 +1,72 @@
+Type: Error. Occured in 17/05/2017 17:59:43 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Logger\Logger.cs in Line 26
+Reason: djiifdj
+
+Type: Error. Occured in 17/05/2017 18:06:04 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Logger\Logger.cs in Line 26
+Reason: djiifdj
+
+Type: Error. Occured in 17/05/2017 18:10:23 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\DataAccessLayer\MarketClient.cs in Line 114
+Reason: djiifdj
+
+Type: Error. Occured in 17/05/2017 18:11:27 , in File C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\DataAccessLayer\MarketClient.cs in Line 114
+Reason: djiifdj
+
+Type: Error. Occured in 17/05/2017 18:16:15 , in File Program.IMarketUserData SendQueryUserRequest() in Line 114
+Reason: djiifdj
+
+Type: Error. Occured in 17/05/2017 18:36:03 , in File Program.IMarketUserData SendQueryUserRequest() in Line 118
+Reason: There's a problem with the communication with the server
+
+Type: Error. Occured in 17/05/2017 18:37:02 , in File Program.IMarketUserData SendQueryUserRequest() in Line 118
+Reason: There's a problem with the communication with the server
+
+Type: Error. Occured in 17/05/2017 18:40:09 , in File Program.IMarketUserData SendQueryUserRequest() in Line 118
+Reason: There's a problem with the communication with the server
+
+Type: Error. Occured in 17/05/2017 18:41:10 , in File Program.IMarketUserData SendQueryUserRequest() in Line 118
+Reason: There's a problem with the communication with the server
+
+Type: Error. Occured in 17/05/2017 18:44:15 , in File Void .ctor() in Line 40
+Reason: There's a problem with reading the private key
+
+Type: Message ,17/05/2017 19:11:04 , Fail of Cancel Request
+Type: Debug. Status: The user opened auto market agent
+Type: Debug. Status: Auto market Agent finished the algorythm
+Type: Debug. Status: The user opened auto market agent
+Type: Debug. Status: Auto market Agent finished the algorythm
+Type: Message ,17/05/2017 19:39:56 , Fail of Cancel Request
+Type: Message ,17/05/2017 19:42:21 , Fail of Cancel Request
+Type: Message ,17/05/2017 19:55:20 , Sell 6200235 successed
+Type: Message ,17/05/2017 20:01:39 , Sell 6201153 successed
+Type: Message ,17/05/2017 20:02:13 , Sell 6201236 successed
+Type: Message ,17/05/2017 20:03:42 , Buy 6201456 successed
+Type: Message ,17/05/2017 20:04:05 , Success of cancel Request 6201456
+Type: Message ,17/05/2017 20:04:17 , Buy 6201536 successed
+Type: Message ,17/05/2017 20:04:33 , Success of cancel Request 6201536
+Type: Message ,17/05/2017 20:24:27 , Buy 6205057 successed
+Type: Message ,17/05/2017 20:24:49 , The user got his requests
+Type: Message ,17/05/2017 20:26:58 , The user got his requests
+Type: Message ,17/05/2017 20:27:16 , All requests cancelled successfully
+Type: Message ,17/05/2017 20:35:30 , Sell 6207060 successed
+Type: Message ,17/05/2017 20:35:43 , Sell 6207089 successed
+Type: Message ,17/05/2017 20:35:55 , Buy 6207117 successed
+Type: Message ,17/05/2017 20:36:09 , All requests cancelled successfully
+Type: Message ,17/05/2017 20:36:36 , Buy 6207215 successed
+Type: Message ,17/05/2017 20:37:51 , Sell 6207398 successed
+Type: Message ,17/05/2017 20:38:19 , The user got his requests
+Type: Message ,17/05/2017 20:38:24 , All requests cancelled successfully
+Type: Message ,17/05/2017 20:40:18 , All requests cancelled successfully
+Type: Message ,17/05/2017 20:44:19 , The user got his requests
+Type: Message ,17/05/2017 20:46:01 , The user got his requests
+Type: Message ,17/05/2017 20:55:50 , The user got his information
+Type: Message ,17/05/2017 20:55:54 , The user got his information
+Type: Message ,17/05/2017 20:56:01 , The user got his requests
+Type: Message ,17/05/2017 20:56:56 , The user got his information
+Type: Error. Occured in 17/05/2017 20:57:07 , in File Program.IMarketUserData SendQueryUserRequest() in Line 118
+Reason: There's a problem with the communication with the server
+
+Type: Message ,17/05/2017 20:57:07 , The user got his information
+Type: Message ,17/05/2017 21:01:02 , The user got his requests
+Type: Error. Occured in 17/05/2017 21:01:52 , in File Program.Commodity[] sendQueryAllMarketRequest() in Line 154
+Reason: There's a problem with the communication with the server
+
+Type: Message ,17/05/2017 21:17:25 , Sell 0 successed

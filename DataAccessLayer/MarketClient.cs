@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,8 @@ namespace Program
             catch (Exception e)
             {
                 // in case of an error, print the error message
+                StackFrame sf = new StackFrame(1, true);
+                Logger.ErrorLog(sf.GetMethod(),sf.GetFileLineNumber(), "There's a problem with the communication with the server");
                 Console.WriteLine(e.Message);
                 return null;
             }
@@ -76,6 +79,8 @@ namespace Program
             }
             catch
             {
+                StackFrame sf = new StackFrame(1, true);
+                Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's a problem with send of buy request");
                 printError(response); // Print the error
                 return -1;
             }
@@ -93,6 +98,8 @@ namespace Program
             }
             catch
             {
+                StackFrame sf = new StackFrame(1, true);
+                Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's a problem with send of sell request");
                 printError(response); // Print the error
                 return -1;
             }
@@ -117,7 +124,11 @@ namespace Program
         {
             object obj = SendRequest<QueryMarketRequest, MarketCommodityOffer>(new QueryMarketRequest(commodity));
             if (obj == null)
+            {
+                StackFrame sf = new StackFrame(1, true);
+                Logger.InfoLog("Fail of Query Market Request");
                 Console.WriteLine("Could not fetch commodity data");
+            }
             return (MarketCommodityOffer) obj;
         }
 
@@ -126,7 +137,9 @@ namespace Program
         {
             string data = SendRequest<CancelBuySellRequest>(new CancelBuySellRequest(id));
             if (data == null)
+            {
                 return false;
+            }
             return data.Equals("Ok");
         }
 

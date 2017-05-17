@@ -64,6 +64,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logger\Log.csproj">
+      <Project>{c950ce16-ac0d-4449-9807-acaf995fe338}</Project>
+      <Name>Log</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MarketClient\MarketClient.csproj">
       <Project>{371e8ea8-ce7a-4ab2-85e5-eac135df4a26}</Project>
       <Name>MarketClient</Name>
