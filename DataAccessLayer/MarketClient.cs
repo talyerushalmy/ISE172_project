@@ -126,7 +126,7 @@ namespace Program
             if (obj == null)
             {
                 StackFrame sf = new StackFrame(1, true);
-                Logger.InfoLog("Fail of Query Market Request");
+                Logger.ErrorLog(sf.GetMethod(),sf.GetFileLineNumber(),"Fail of Query Market Request");
                 Console.WriteLine("Could not fetch commodity data");
             }
             return (MarketCommodityOffer) obj;

@@ -26,9 +26,9 @@ namespace Program
             System.IO.StreamWriter log = new System.IO.StreamWriter(path, true);
             log.Write("Type: Error. ");
             log.Write("Occured in " + DateTime.Now + " ,");
-            log.Write(" in File " + file + " in Line " + line);
+            log.Write(" in method " + file + " in Line " + line);
             log.WriteLine();
-            log.WriteLine("Reason: " + message);
+            log.Write("Reason: " + message);
             log.WriteLine();
             log.Close();
         }

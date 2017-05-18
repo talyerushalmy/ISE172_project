@@ -57,6 +57,10 @@
       <Project>{8de44456-b0a7-4e5b-86b5-88e65e9ba422}</Project>
       <Name>BusinessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logger\Log.csproj">
+      <Project>{c950ce16-ac0d-4449-9807-acaf995fe338}</Project>
+      <Name>Log</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -72,10 +72,16 @@ namespace Program
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
                     int resp = marketClient.SendBuyRequest(price, commodity, amount);
-                    if (resp >= 0)
+                    if (resp > 0)
                     {
                         Console.WriteLine("Success! Trade id: " + resp);
-                        Logger.InfoLog("Buy Attemp " + resp + " successed");
+                        Logger.DebugLog("Buy Attemp " + resp + " performed");
+                    }
+                    if (resp == 0)
+                    {
+                        Console.WriteLine("There's problem with the sending buy request");
+                        StackFrame sf = new StackFrame(1, true);
+                        Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's problem with the communication with the server");
                     }
                 }
             }
@@ -97,10 +103,16 @@ namespace Program
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
                     int resp = this.marketClient.SendSellRequest(price, commodity, amount);
-                    if (resp >= 0)
+                    if (resp > 0)
                     {
                         Console.WriteLine("Success! Trade id: " + resp);
-                        Logger.InfoLog("Sell Attemp " + resp + " successed");
+                        Logger.DebugLog("Sell Attemp " + resp + " performed");
+                    }
+                    if(resp == 0)
+                    {
+                        Console.WriteLine("There's problem with the communication with the server");
+                        StackFrame sf=new StackFrame (1, true);
+                        Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's problem with the sending sell request");
                     }
                 }
             }
@@ -122,8 +134,6 @@ namespace Program
                 }
                 else
                 {
-                    StackFrame sf = new StackFrame(1, true);
-                    Logger.InfoLog("Fail of Cancel Request");
                     Console.WriteLine("Cannot cancel trade number " + id);
                 }
             }
@@ -203,7 +213,7 @@ namespace Program
                 Console.WriteLine("No active requests were found");
             else
                 Console.WriteLine(string.Join<QueryUserRequest>("\n", requests));
-            Logger.InfoLog("The user got his requests");
+            Logger.DebugLog("Sending query of user's requests info has finished.");
         }
 
         //Query User Request

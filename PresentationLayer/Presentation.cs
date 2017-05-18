@@ -10,8 +10,8 @@ namespace Program
     {
         public static void MainLoop()  //Print the main communication loop with the user.
         {
+            Logger.InfoLog("The user started to work");
             AsciiSilverTongue ast = new AsciiSilverTongue();
-
             ast.PrintWelcome();
             ast.PrintMenu();
 
@@ -34,6 +34,7 @@ namespace Program
             }
 
             // "exit" was recieved as input - print Goodbye and exit program
+            Logger.InfoLog("The user finished to work in the system");
             ast.PrintGoodbye();
         }
     }
