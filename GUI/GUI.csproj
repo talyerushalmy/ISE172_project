@@ -58,8 +58,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UserControlActiveRequests.xaml.cs">
+      <DependentUpon>UserControlActiveRequests.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlBuy.xaml.cs">
+      <DependentUpon>UserControlBuy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlInfo.xaml.cs">
       <DependentUpon>UserControlInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSearch.xaml.cs">
+      <DependentUpon>UserControlSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSell.xaml.cs">
+      <DependentUpon>UserControlSell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSessionHistory.xaml.cs">
+      <DependentUpon>UserControlSessionHistory.xaml</DependentUpon>
     </Compile>
     <Page Include="AlgoTradingWindow.xaml">
       <SubType>Designer</SubType>
@@ -80,7 +95,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControlActiveRequests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlBuy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSessionHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
