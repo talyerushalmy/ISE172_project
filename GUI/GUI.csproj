@@ -61,20 +61,26 @@
     <Compile Include="UserControlActiveRequests.xaml.cs">
       <DependentUpon>UserControlActiveRequests.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlAMA.xaml.cs">
+      <DependentUpon>UserControlAMA.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlBuy.xaml.cs">
       <DependentUpon>UserControlBuy.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlInfo.xaml.cs">
       <DependentUpon>UserControlInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlSearch.xaml.cs">
-      <DependentUpon>UserControlSearch.xaml</DependentUpon>
+    <Compile Include="UserControlQuery.xaml.cs">
+      <DependentUpon>UserControlQuery.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlSell.xaml.cs">
       <DependentUpon>UserControlSell.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlSessionHistory.xaml.cs">
       <DependentUpon>UserControlSessionHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlWelcome.xaml.cs">
+      <DependentUpon>UserControlWelcome.xaml</DependentUpon>
     </Compile>
     <Page Include="AlgoTradingWindow.xaml">
       <SubType>Designer</SubType>
@@ -99,6 +105,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControlAMA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlBuy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -107,7 +117,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlSearch.xaml">
+    <Page Include="UserControlQuery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlSessionHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlWelcome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

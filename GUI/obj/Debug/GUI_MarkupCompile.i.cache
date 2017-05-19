@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\GUI\App.xaml
-81482845560
+101718330507
 
-16-1228705324
+181322845038
 16491754179
-AlgoTradingWindow.xaml;MainWindow.xaml;UserControlActiveRequests.xaml;UserControlBuy.xaml;UserControlInfo.xaml;UserControlSearch.xaml;UserControlSell.xaml;UserControlSessionHistory.xaml;
+AlgoTradingWindow.xaml;MainWindow.xaml;UserControlActiveRequests.xaml;UserControlAMA.xaml;UserControlBuy.xaml;UserControlInfo.xaml;UserControlQuery.xaml;UserControlSell.xaml;UserControlSessionHistory.xaml;UserControlWelcome.xaml;
 
 False
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    class MarketItemQuery : IMarketItemQuery
+    public class MarketItemQuery : IMarketItemQuery
     {
         // variables relevant for holding the server's resonse
         public int price;

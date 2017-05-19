@@ -23,6 +23,8 @@ namespace GUI
         public AlgoTradingWindow()
         {
             InitializeComponent();
+            UserControlWelcome userControlWelcome = new UserControlWelcome();
+            this.ContentControl.Content = userControlWelcome;
         }
 
         public void ExitProgram()
@@ -62,8 +64,8 @@ namespace GUI
 
         private void buttonSearch_Click(object sender, RoutedEventArgs e)
         {
-            UserControlSearch userControlSearch = new UserControlSearch();
-            this.ContentControl.Content = userControlSearch;
+            UserControlQuery userControlQuery = new UserControlQuery();
+            this.ContentControl.Content = userControlQuery;
         }
 
         private void buttonSessionHistory_Click(object sender, RoutedEventArgs e)
@@ -76,6 +78,12 @@ namespace GUI
         {
             UserControlActiveRequests userControlActiveRequests = new UserControlActiveRequests();
             this.ContentControl.Content = userControlActiveRequests;
+        }
+
+        private void buttonAMA_Click(object sender, RoutedEventArgs e)
+        {
+            UserControlAMA userControlAma = new UserControlAMA();
+            this.ContentControl.Content = userControlAma;
         }
     }
 }

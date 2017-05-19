@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    class MarketCommodityOffer : IMarketCommodityOffer
+    public class MarketCommodityOffer : IMarketCommodityOffer
     {
         // variables relevant for holding the server's resonse
         public int ask;
