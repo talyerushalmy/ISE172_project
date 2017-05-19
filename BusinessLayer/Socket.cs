@@ -199,7 +199,10 @@ namespace Program
             else
                 printNoValidCommandError();
         }
-
+        public void allHistory()
+        {
+             HistoryTable.PrintHistory();
+        }
         public void allMarketRequest()
         {
             Commodity[] commodities = this.marketClient.sendQueryAllMarketRequest();

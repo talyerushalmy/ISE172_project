@@ -75,7 +75,13 @@ namespace Program
             {
                 BuyRequest data = new BuyRequest(commodity, amount, price);
                 response = SendRequest(data);
-                return Convert.ToInt32(response);
+                int id = Convert.ToInt32(response);
+                if (id > 1)
+                {
+                    HistoryItem newItem = new HistoryItem(DateTime.Now, "BuyRequest", data.ToString(), id);
+                    HistoryTable.Add(newItem);
+                }
+                return id;
             }
             catch
             {
@@ -94,7 +100,13 @@ namespace Program
             {
                 SellRequest data = new SellRequest(commodity, amount, price);
                 response = SendRequest(data);
-                return Convert.ToInt32(response);
+                int id= Convert.ToInt32(response);
+                if (id > 1)
+                {
+                    HistoryItem newItem = new HistoryItem(DateTime.Now, "SellRequest", data.ToString(), id);
+                    HistoryTable.Add(newItem);
+                }
+                return id;
             }
             catch
             {
@@ -116,6 +128,7 @@ namespace Program
         public IMarketUserData SendQueryUserRequest()
         {
             object obj = SendRequest<QueryUserRequest, MarketUserData>(new QueryUserRequest());
+
             return (MarketUserData)obj;
         }
 
@@ -140,7 +153,21 @@ namespace Program
             {
                 return false;
             }
-            return data.Equals("Ok");
+
+            if (data.Equals("Ok"))
+            {   //In case when history table's size is 1
+                if(HistoryTable.getHistoryList().Last()== HistoryTable.getHistoryList().First())
+                {
+                    HistoryTable.getHistoryList().First()._status = Status.cancelled;
+                }
+                else
+                {
+                    HistoryItem item = HistoryTable.getHistoryList().Where(x => x._id == id).First();
+                    item._status = Status.cancelled;
+                }
+                return true;
+            }
+            return false;
         }
 
         public QueryUserRequest[] sendQueryUserRequestsRequest()
