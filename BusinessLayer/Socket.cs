@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace Program
 {
@@ -15,6 +16,7 @@ namespace Program
         public Socket()
         {
             this.marketClient = new MarketClient();
+            RequestTimer.initializeArray();
         }
 
         public void printNoValidCommandError()
@@ -121,15 +123,15 @@ namespace Program
             int[] userRequests = userData.requests;
             if (userRequests.Length != 0)
             {
-                String uncancelledRequests = "";
+                String cancelledRequests = "";
                 foreach (int id in userRequests)
                 {
                     if (!(this.marketClient.SendCancelBuySellRequest(id)))
-                        uncancelledRequests += "Cannot cancel trade number " + id + "\n";
+                        cancelledRequests += "Cannot cancel trade number " + id + "\n";
                 }
-                if (uncancelledRequests.Length == 0)
-                    uncancelledRequests = "All requests cancelled successfully";
-                Console.WriteLine(uncancelledRequests);
+                if (cancelledRequests.Length == 0)
+                    cancelledRequests = "All requests cancelled successfully";
+                Console.WriteLine(cancelledRequests);
             }
             else
                 Console.WriteLine("No requests to cancel were found");

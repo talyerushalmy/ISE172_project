@@ -24,13 +24,14 @@ namespace Program
         // a constructor that resets the local variables
         public MarketClient()
         {
+
             this.client = new SimpleHTTPClient();
             this.req = new RequestBase();
         }
 
         private void printError(string error)
-            // Prints the error string only if it's relevant to the user
-            // The error variable contains a response from the server that was marked as error
+        // Prints the error string only if it's relevant to the user
+        // The error variable contains a response from the server that was marked as error
         {
             if (!MarketClient.errorsNotToPrint.Contains(error))
                 Console.WriteLine(error);
@@ -41,7 +42,9 @@ namespace Program
         {
             try
             {
-                return this.client.SendPostRequest<T>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
+                var resp = this.client.SendPostRequest<T>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
+                RequestTimer.addRequest();
+                return resp;
             }
             catch
             {
@@ -54,7 +57,9 @@ namespace Program
         {
             try
             {
-                return this.client.SendPostRequest<T1, T2>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
+                var resp = this.client.SendPostRequest<T1, T2>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
+                RequestTimer.addRequest();
+                return resp;
             }
             catch (Exception e)
             {
@@ -118,7 +123,7 @@ namespace Program
             object obj = SendRequest<QueryMarketRequest, MarketCommodityOffer>(new QueryMarketRequest(commodity));
             if (obj == null)
                 Console.WriteLine("Could not fetch commodity data");
-            return (MarketCommodityOffer) obj;
+            return (MarketCommodityOffer)obj;
         }
 
         // send a cancel buy/sell request using the MarketClient project API
@@ -138,7 +143,7 @@ namespace Program
 
         public Commodity[] sendQueryAllMarketRequest()
         {
-            Commodity[] obj = SendRequest<QueryAllMarketRequest, Commodity[]>(new QueryAllMarketRequest());    
+            Commodity[] obj = SendRequest<QueryAllMarketRequest, Commodity[]>(new QueryAllMarketRequest());
             return obj;
         }
     }
