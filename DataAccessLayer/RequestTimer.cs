@@ -8,13 +8,13 @@ namespace Program
 {
     public static class RequestTimer
     {
-        private static int _length = 18;
+        private static int _length = 20;
         //private static Queue<DateTime> queue = new Queue<DateTime>(LENGTH);
         private static DateTime[] _lastRequests = new DateTime[_length];
         private static int _index = 0;
 
         public static void addRequest()
-        {
+        { 
             _lastRequests[_index] = DateTime.Now;
             _index++;
             _index %= _length;

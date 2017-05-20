@@ -12,3 +12,10 @@ C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\b
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\obj\Debug\MarketClient.csprojResolveAssemblyReference.cache
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\obj\Debug\MarketClient.dll
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\obj\Debug\MarketClient.pdb
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\bin\Debug\MarketClient.dll
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\bin\Debug\MarketClient.pdb
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\obj\Debug\MarketClient.csprojResolveAssemblyReference.cache
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\obj\Debug\MarketClient.dll
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\MarketClient\obj\Debug\MarketClient.pdb

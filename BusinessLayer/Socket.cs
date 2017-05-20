@@ -140,8 +140,7 @@ namespace Program
 
         public void runAutoMarketAgent()
         {
-            AutoMarketAgent autoMarketAgent = new AutoMarketAgent(true);
-            autoMarketAgent.autoPilot();
+            AutoMarketAgent autoMarketAgent = new AutoMarketAgent();
         }
 
         //Query Buy/Sell/Market Request

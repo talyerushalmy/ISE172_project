@@ -38,3 +38,13 @@ C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLaye
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.exe.config
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.exe
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\bin\Debug\MarketClient.dll
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\bin\Debug\MarketClient.pdb
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.exe
+C:\Users\edna\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
