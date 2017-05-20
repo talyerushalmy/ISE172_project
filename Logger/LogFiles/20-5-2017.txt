@@ -14,3 +14,35 @@ Type: Error. Occured in 5/20/2017 3:18:57 PM , in method Program.Commodity[] sen
 Reason: There's a problem with the communication with the server
 Type: Error. Occured in 5/20/2017 3:19:57 PM , in method Program.Commodity[] sendQueryAllMarketRequest() in Line 154
 Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 5:03:10 PM , in method Program.IMarketCommodityOffer SendQueryMarketRequest(Int32) in Line 125
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 5:03:10 PM , in method Void Commodity(Int32) in Line 77
+Reason: Fail of Query Market Request
+Type: Message ,5/20/2017 5:43:28 PM , The user started to work
+Type: Debug.Occured in 5/20/2017 5:43:35 PM,Status: Sending query of user's requests info has finished.
+Type: Message ,5/20/2017 5:43:51 PM , The user finished to work in the system
+Type: Message ,5/20/2017 5:49:03 PM , The user started to work
+Type: Debug.Occured in 5/20/2017 5:49:06 PM,Status: Sending query of user's requests info has finished.
+Type: Error. Occured in 5/20/2017 6:48:19 PM , in method Program.IMarketCommodityOffer SendQueryMarketRequest(Int32) in Line 125
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 6:48:19 PM , in method Void Commodity(Int32) in Line 77
+Reason: Fail of Query Market Request
+Type: Error. Occured in 5/20/2017 6:48:23 PM , in method Program.IMarketCommodityOffer SendQueryMarketRequest(Int32) in Line 125
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 6:48:23 PM , in method Void Commodity(Int32) in Line 77
+Reason: Fail of Query Market Request
+Type: Error. Occured in 5/20/2017 6:48:27 PM , in method Program.IMarketCommodityOffer SendQueryMarketRequest(Int32) in Line 125
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 6:48:27 PM , in method Void Commodity(Int32) in Line 77
+Reason: Fail of Query Market Request
+Type: Error. Occured in 5/20/2017 6:48:31 PM , in method Program.IMarketCommodityOffer SendQueryMarketRequest(Int32) in Line 125
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 6:48:31 PM , in method Void Commodity(Int32) in Line 77
+Reason: Fail of Query Market Request
+Type: Error. Occured in 5/20/2017 6:48:44 PM , in method Program.IMarketItemQuery SendQueryBuySellRequest(Int32) in Line 111
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 7:50:17 PM , in method Program.QueryUserRequest[] sendQueryUserRequestsRequest() in Line 148
+Reason: There's a problem with the communication with the server
+Type: Message ,5/20/2017 8:17:54 PM , The user started to work
+Type: Debug.Occured in 5/20/2017 8:18:03 PM,Status: Sending query of user's requests info has finished.
+Type: Message ,5/20/2017 8:18:07 PM , The user finished to work in the system

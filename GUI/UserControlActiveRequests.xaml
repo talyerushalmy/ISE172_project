@@ -7,6 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="251" d:DesignWidth="358">
     <Grid>
-            
+        <Label x:Name="labelHeader" Content="Label" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGridData" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="171" Width="338">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="CancelRequest">Cancel</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </UserControl>
