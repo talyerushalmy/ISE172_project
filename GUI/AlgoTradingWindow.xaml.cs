@@ -36,7 +36,6 @@ namespace GUI
 
         private void InitAma()
         {
-            AmaThread = new Thread(new ThreadStart(CallAma));
             this.buttonAMA.Background = Brushes.Red;
             this.AmaWorking = false;
         }
@@ -51,7 +50,7 @@ namespace GUI
             }
             catch
             {
-                if (!this.AmaWorking)
+                if (this.AmaWorking)
                 {
                     MessageBoxResult popup = MessageBox.Show("The Auto Agent has failed", "Automatic Market Agent");
                 }
@@ -122,6 +121,7 @@ namespace GUI
         {
             if (AmaWorking)
             {
+                AmaThread = new Thread(new ThreadStart(CallAma));
                 AmaThread.Start();
                 this.buttonAMA.Background = Brushes.Green;
                 MessageBoxResult popup = MessageBox.Show("The Auto Agent has started working", "Automatic Market Agent");
