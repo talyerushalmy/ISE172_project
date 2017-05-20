@@ -46,6 +46,7 @@ namespace Program
             }
             catch
             {
+
                 return null;
             }
         }
@@ -159,11 +160,13 @@ namespace Program
                 if(HistoryTable.getHistoryList().Last()== HistoryTable.getHistoryList().First())
                 {
                     HistoryTable.getHistoryList().First()._status = Status.cancelled;
+                    Logger.InfoLog("Requeest " + HistoryTable.getHistoryList().Last()._id + " has cancelled");
                 }
                 else
                 {
                     HistoryItem item = HistoryTable.getHistoryList().Where(x => x._id == id).First();
                     item._status = Status.cancelled;
+                    Logger.InfoLog(item._id + " has cancelled");
                 }
                 return true;
             }

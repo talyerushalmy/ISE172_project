@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +23,9 @@ namespace Program
                 if (item._status == Status.pending && !requests.Contains(item._id))
                 {
                     item._status = Status.completed;
-                } 
+                    Logger.InfoLog("Request " + HistoryTable.getHistoryList().First()._id + " has completed");
+
+                }
             }
         }
         public static LinkedList<HistoryItem> getHistoryList()
