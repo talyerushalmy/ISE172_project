@@ -1,0 +1,16 @@
+Type: Message ,5/20/2017 1:12:40 PM , The user started to work
+Type: Debug.Occured in 5/20/2017 1:12:51 PM,Status: The user opened auto market agent
+Type: Debug.Occured in 5/20/2017 1:12:51 PM,Status: Auto market Agent finished the algorythm
+Type: Message ,5/20/2017 1:13:56 PM , The user finished to work in the system
+Type: Error. Occured in 5/20/2017 1:15:43 PM , in method Program.IMarketItemQuery SendQueryBuySellRequest(Int32) in Line 111
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 1:18:12 PM , in method Program.IMarketItemQuery SendQueryBuySellRequest(Int32) in Line 111
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 3:18:50 PM , in method Program.Commodity[] sendQueryAllMarketRequest() in Line 154
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 3:18:54 PM , in method Program.Commodity[] sendQueryAllMarketRequest() in Line 154
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 3:18:57 PM , in method Program.Commodity[] sendQueryAllMarketRequest() in Line 154
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 3:19:57 PM , in method Program.Commodity[] sendQueryAllMarketRequest() in Line 154
+Reason: There's a problem with the communication with the server

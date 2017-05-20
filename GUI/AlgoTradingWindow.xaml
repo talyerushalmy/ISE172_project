@@ -16,14 +16,14 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*" />
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" x:Name="buttonInformation" Content="Information" Click="buttonInformation_Click" />
+                <Button Grid.Row="0" x:Name="buttonInformation" Content="My Profile" Click="buttonInformation_Click" Margin="0,0,0.2,0.2" />
                 <Button Grid.Row="0" x:Name="buttonBuy" Content="Buy" Margin="0,35,0.2,-34.8" Click="buttonBuy_Click" />
                 <Button Grid.Row="0" x:Name="buttonSell" Content="Sell" Margin="0,70,0.2,-69.8" Click="buttonSell_Click" />
                 <Button Grid.Row="0" x:Name="buttonActiveRequests" Content="Active Requests" Margin="0,105,0.2,-104.8" Click="buttonActiveRequests_Click" />
-                <Button Grid.Row="0" x:Name="buttonSearch" Content="Query" Margin="0,140,0.2,-139.8" Click="buttonSearch_Click" />
-                <Button Grid.Row="0" x:Name="buttonSessionHistory" Content="Session History" Margin="0,175,0.2,-174.8" Click="buttonSessionHistory_Click" />
-                <Button x:Name="buttonExit" Content="Exit" Click="buttonExit_Click" Margin="0,266,0.2,-265.8" />
-                <Button Grid.Row="0" x:Name="buttonAMA" Content="Automatic Agent" Margin="0,210,0.2,-209.8" Click="buttonAMA_Click" />
+                <Button Grid.Row="0" x:Name="buttonSearch" Content="Query" Margin="0,210,0.2,-209.8" Click="buttonSearch_Click" />
+                <Button Grid.Row="0" x:Name="buttonSessionHistory" Content="Session History" Margin="0,245,0.2,-244.8" Click="buttonSessionHistory_Click" />
+                <Button Grid.Row="0" x:Name="buttonAMA" Content="Automatic Agent" Margin="0,175,0.2,-174.8" Click="buttonAMA_Click" />
+                <Button x:Name="buttonMarketStatus" Content="Market Status" Click="buttonExit_Click" Margin="0,140,0.2,-139.8" />
             </Grid>
         </Border>
         <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" Margin="120,10,10.4,10.2">

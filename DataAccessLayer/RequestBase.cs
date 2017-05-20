@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,8 @@ namespace Program
             }
             catch
             {
+                StackFrame sf = new StackFrame(1, true);
+                Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's a problem with reading the private key");
                 throw new Exception("Error reading the private key file");
             }
         }

@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="GUI.UserControlMarketStatus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="251" d:DesignWidth="358">
+    <Grid>
+        <Label x:Name="labelHeader" Content="" HorizontalAlignment="Left" Margin="56,25,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGridData" Margin="56,66,10,30.2" />
+    </Grid>
+</UserControl>

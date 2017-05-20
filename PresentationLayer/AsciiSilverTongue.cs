@@ -46,9 +46,11 @@ namespace Program
             Console.WriteLine("\tmenu - Print this menu");
             Console.WriteLine("\tbuy [COMMODITY ID (number)] [QUANTITY (number)] [PRICE(number)] - Buy [COMMODITY] by the number of [QUANTITY] for the price of [PRICE] each");
             Console.WriteLine("\tsell [COMMODITY ID (number)] [QUANTITY (number)] [PRICE(number)] - Sell [COMMODITY] by the number of [QUANTITY] for the price of [PRICE] each");
-            Console.WriteLine("\tcancel [TRADE ID (number)] - Cancel trade identified by [TRADE ID]");
+            Console.WriteLine("\tcancel [TRADE ID (number)] - Cancel trade identified by [TRADE ID]\n\tcancel all - Cancel all the current user requests");
             Console.WriteLine("\tinfo - Query the server for information about the user and show the results");
+            Console.WriteLine("\trequests - Query the server for detailed information about the user requests and show the result");
             Console.WriteLine("\tfind sell/buy/commodity [REQUEST/COMMODITY ID (number)] - Query the server for [REQUEST/COMMODITY ID] and show the results");
+            Console.WriteLine("\tmarket - Query the server for ask and bid prices of all the commodities and show the result");
             Console.WriteLine("\tclear - Clear the user activity history");
             Console.WriteLine("\texit - Exit the program");
         }

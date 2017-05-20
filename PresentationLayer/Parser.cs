@@ -12,7 +12,7 @@ namespace Program
         public static void parse(String str)
         {
             Socket socket = new Socket();
-            string [] words = str.Split(' ');
+            string[] words = str.Split(' ');
             string command = words[0];
             switch (command.ToLower())
             {
@@ -36,7 +36,10 @@ namespace Program
                     {
                         if (words.Length == 2)
                         {
-                            socket.cancel(words[1]);
+                            if (words[1].Equals("all"))
+                                socket.cancelAll();                 
+                            else
+                                socket.cancel(words[1]);
                         }
                         else
                             socket.printNoValidCommandError();
@@ -51,16 +54,32 @@ namespace Program
                             socket.printNoValidCommandError();
                     }
                     break;
+                case "requests":
+                    if (words.Length == 1)
+                        socket.userRequestsInfo();
+                    else
+                        socket.printNoValidCommandError();
+                    break;
+                case "market":
+                    if (words.Length == 1)
+                        socket.allMarketRequest();
+                    else
+                        socket.printNoValidCommandError();
+                    break;
                 case "find":
                     {
-                        if(words.Length == 3)
-                        {
+                        if (words.Length == 3)
                             socket.findInfo(str.Substring(words[0].Length + 1));
-                        }
                         else
-                        {
                             socket.printNoValidCommandError();
-                        }
+                    }
+                    break;
+                case "auto":
+                    {
+                        if (words.Length == 1)
+                            socket.runAutoMarketAgent();
+                        else
+                            socket.printNoValidCommandError();
                     }
                     break;
                 default:

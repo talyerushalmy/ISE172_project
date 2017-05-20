@@ -34,14 +34,11 @@ namespace GUI
 
         private void AlgoTradingWindow_OnClosing(object sender, CancelEventArgs e)
         {
-            ExitProgram();
-        }
-
-        private void buttonExit_Click(object sender, RoutedEventArgs e)
-        {
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure you want to exit?", "Exit Algo-Trading", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
                 ExitProgram();
+            else
+                e.Cancel = true;
         }
 
         private void buttonInformation_Click(object sender, RoutedEventArgs e)
@@ -84,6 +81,12 @@ namespace GUI
         {
             UserControlAMA userControlAma = new UserControlAMA();
             this.ContentControl.Content = userControlAma;
+        }
+
+        private void buttonExit_Click(object sender, RoutedEventArgs e)
+        {
+            UserControlMarketStatus userControlMarketStatus = new UserControlMarketStatus();
+            this.ContentControl.Content = userControlMarketStatus;
         }
     }
 }

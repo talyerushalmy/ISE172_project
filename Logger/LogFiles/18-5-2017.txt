@@ -1,0 +1,11 @@
+Type: Debug.Occured in 18/05/2017 19:56:44,Status: The user started to work
+Type: Message ,18/05/2017 19:56:48 , Sell Attemp 0 performed
+Type: Debug.Occured in 18/05/2017 20:04:38,Status: The user started to work
+Type: Debug.Occured in 18/05/2017 20:09:18,Status: The user started to work
+Type: Debug.Occured in 18/05/2017 20:10:19,Status: The user started to work
+Type: Error. Occured in 18/05/2017 20:10:26 , in File Void sell(System.String) in Line 99
+Reason: There's a problem with send of sell request
+Type: Message ,18/05/2017 20:11:21 , Buy Attemp 6428231 performed
+Type: Message ,18/05/2017 20:11:30 , All requests cancelled successfully
+Type: Debug.Occured in 18/05/2017 20:15:10,Status: The user started to work
+Type: Debug.Occured in 18/05/2017 20:17:14,Status: The user started to work

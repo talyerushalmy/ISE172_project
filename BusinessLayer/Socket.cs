@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,8 +72,17 @@ namespace Program
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
                     int resp = marketClient.SendBuyRequest(price, commodity, amount);
-                    if (resp >=0)
+                    if (resp > 0)
+                    {
                         Console.WriteLine("Success! Trade id: " + resp);
+                        Logger.DebugLog("Buy Attemp " + resp + " performed");
+                    }
+                    if (resp == 0)
+                    {
+                        Console.WriteLine("There's problem with the sending buy request");
+                        StackFrame sf = new StackFrame(1, true);
+                        Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's problem with the communication with the server");
+                    }
                 }
             }
             else
@@ -93,8 +103,17 @@ namespace Program
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
                     int resp = this.marketClient.SendSellRequest(price, commodity, amount);
-                    if (resp >=0)
+                    if (resp > 0)
+                    {
                         Console.WriteLine("Success! Trade id: " + resp);
+                        Logger.DebugLog("Sell Attemp " + resp + " performed");
+                    }
+                    if(resp == 0)
+                    {
+                        Console.WriteLine("There's problem with the communication with the server");
+                        StackFrame sf=new StackFrame (1, true);
+                        Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's problem with the sending sell request");
+                    }
                 }
             }
             else
@@ -109,10 +128,47 @@ namespace Program
             {
                 //goes to cancel request
                 if (this.marketClient.SendCancelBuySellRequest(id))
+                {
                     Console.WriteLine("Cancelled successfully");
+                    Logger.InfoLog("Success of cancel Request "+id);
+                }
                 else
+                {
                     Console.WriteLine("Cannot cancel trade number " + id);
+                }
             }
+        }
+
+        public void cancelAll()
+        {
+            MarketUserData userData = (MarketUserData) this.marketClient.SendQueryUserRequest();
+            int[] userRequests = userData.requests;
+            if (userRequests.Length != 0)
+            {
+                String uncancelledRequests = "";
+                foreach (int id in userRequests)
+                {
+                    if (!(this.marketClient.SendCancelBuySellRequest(id)))
+                        uncancelledRequests += "Cannot cancel trade number " + id + "\n";
+                }
+                if (uncancelledRequests.Length == 0)
+                {
+                    uncancelledRequests = "All requests cancelled successfully";
+                    Logger.InfoLog("All requests cancelled successfully");
+                }
+                Console.WriteLine(uncancelledRequests);
+            }
+            else
+                Console.WriteLine("No requests to cancel were found");
+
+        }
+
+        public void runAutoMarketAgent()
+        {
+            Logger.DebugLog("The user opened auto market agent");
+            AutoMarketAgent autoMarketAgent = new AutoMarketAgent(true);
+            autoMarketAgent.autoPilot();
+            Logger.DebugLog("Auto market Agent finished the algorythm");
         }
 
         //Query Buy/Sell/Market Request
@@ -142,6 +198,22 @@ namespace Program
             }
             else
                 printNoValidCommandError();
+        }
+
+        public void allMarketRequest()
+        {
+            Commodity[] commodities = this.marketClient.sendQueryAllMarketRequest();
+            Console.WriteLine(string.Join<Commodity>("\n", commodities));
+        }
+
+        public void userRequestsInfo()
+        {
+            QueryUserRequest[] requests = this.marketClient.sendQueryUserRequestsRequest();
+            if (requests.Length ==0)
+                Console.WriteLine("No active requests were found");
+            else
+                Console.WriteLine(string.Join<QueryUserRequest>("\n", requests));
+            Logger.DebugLog("Sending query of user's requests info has finished.");
         }
 
         //Query User Request
