@@ -61,9 +61,6 @@
     <Compile Include="UserControlActiveRequests.xaml.cs">
       <DependentUpon>UserControlActiveRequests.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlAMA.xaml.cs">
-      <DependentUpon>UserControlAMA.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControlBuy.xaml.cs">
       <DependentUpon>UserControlBuy.xaml</DependentUpon>
     </Compile>
@@ -105,10 +102,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControlActiveRequests.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControlAMA.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

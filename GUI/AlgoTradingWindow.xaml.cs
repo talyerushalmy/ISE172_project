@@ -20,11 +20,20 @@ namespace GUI
     /// </summary>
     public partial class AlgoTradingWindow : Window
     {
+        private bool AmaWorking;
+
         public AlgoTradingWindow()
         {
             InitializeComponent();
+            InitAma();
             UserControlWelcome userControlWelcome = new UserControlWelcome();
             this.ContentControl.Content = userControlWelcome;
+        }
+
+        private void InitAma()
+        {
+            this.buttonAMA.Background = Brushes.Red;
+            this.AmaWorking = false;
         }
 
         public void ExitProgram()
@@ -79,8 +88,22 @@ namespace GUI
 
         private void buttonAMA_Click(object sender, RoutedEventArgs e)
         {
-            UserControlAMA userControlAma = new UserControlAMA();
-            this.ContentControl.Content = userControlAma;
+            this.AmaWorking = !this.AmaWorking;
+            ToggleAMA();
+        }
+
+        private void ToggleAMA()
+        {
+            if (AmaWorking)
+            {
+                this.buttonAMA.Background = Brushes.Green;
+                MessageBoxResult popup = MessageBox.Show("The Auto Agent has started working", "Automatic Market Agent");
+            }
+            else
+            {
+                this.buttonAMA.Background = Brushes.Red;
+                MessageBoxResult popup = MessageBox.Show("The Auto Agent has stopped working", "Automatic Market Agent");
+            }
         }
 
         private void buttonExit_Click(object sender, RoutedEventArgs e)

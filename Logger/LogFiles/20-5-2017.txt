@@ -46,3 +46,9 @@ Reason: There's a problem with the communication with the server
 Type: Message ,5/20/2017 8:17:54 PM , The user started to work
 Type: Debug.Occured in 5/20/2017 8:18:03 PM,Status: Sending query of user's requests info has finished.
 Type: Message ,5/20/2017 8:18:07 PM , The user finished to work in the system
+Type: Error. Occured in 5/20/2017 8:36:05 PM , in method Program.Commodity[] sendQueryAllMarketRequest() in Line 154
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 8:36:07 PM , in method Program.QueryUserRequest[] sendQueryUserRequestsRequest() in Line 148
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 5/20/2017 8:36:10 PM , in method Program.QueryUserRequest[] sendQueryUserRequestsRequest() in Line 148
+Reason: There's a problem with the communication with the server
