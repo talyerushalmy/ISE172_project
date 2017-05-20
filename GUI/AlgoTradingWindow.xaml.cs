@@ -51,7 +51,10 @@ namespace GUI
             }
             catch
             {
-                MessageBoxResult popup = MessageBox.Show("The Auto Agent has failed", "Automatic Market Agent");
+                if (!this.AmaWorking)
+                {
+                    MessageBoxResult popup = MessageBox.Show("The Auto Agent has failed", "Automatic Market Agent");
+                }
             }
             finally
             {
