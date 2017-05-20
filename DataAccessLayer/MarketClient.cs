@@ -43,6 +43,7 @@ namespace Program
             try
             {
                 var resp = this.client.SendPostRequest<T>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
+                RequestTimer.wait();
                 RequestTimer.addRequest();
                 return resp;
             }
@@ -58,6 +59,7 @@ namespace Program
             try
             {
                 var resp = this.client.SendPostRequest<T1, T2>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
+                RequestTimer.wait();
                 RequestTimer.addRequest();
                 return resp;
             }

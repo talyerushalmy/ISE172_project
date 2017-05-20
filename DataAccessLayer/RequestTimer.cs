@@ -8,7 +8,7 @@ namespace Program
 {
     public static class RequestTimer
     {
-        private static int _length = 20;
+        private static int _length = 18;
         //private static Queue<DateTime> queue = new Queue<DateTime>(LENGTH);
         private static DateTime[] _lastRequests = new DateTime[_length];
         private static int _index = 0;
@@ -76,6 +76,24 @@ namespace Program
         public static DateTime[] getLastRequests()
         {
             return _lastRequests;
+        }
+
+        public static void wait()
+        {
+            if (RequestTimer.availableRequests() <= 0)
+            {
+                Console.WriteLine("wait time :" + RequestTimer.getWaitTime());
+                System.Threading.Thread.Sleep((RequestTimer.getWaitTime() + 1) * 1000);
+            }
+        }
+
+        public static void wait(int n)
+        {
+            if (RequestTimer.availableRequests() <= 0)
+            {
+                Console.WriteLine("wait time :" + RequestTimer.getWaitTime(n));
+                System.Threading.Thread.Sleep((RequestTimer.getWaitTime(n) + 1) * 1000);
+            }
         }
     }
 }

@@ -22,24 +22,24 @@ namespace Program
 
         public void autoPilot()
         {
-            // Functions to test
-            //n00bTrade();
-            //raiseCommAvg();
-            //sell();
+            //Functions to test
+            n00bTrade();
+            raiseCommAvg();
+            sell();
         }
 
 
 
         private void updateCommodities()
         {
-            wait();
+            //wait();
             this._commodities = this._marketClient.sendQueryAllMarketRequest();
             updateUserData();
         }
 
         private void updateUserData()
         {
-            wait();
+            //wait();
             this._userData = (MarketUserData)this._marketClient.SendQueryUserRequest();
             updateAmount();
         }
@@ -79,7 +79,7 @@ namespace Program
         {
             updateCommodities();
             Commodity[] askLowerThanBid = _commodities.Where(x => x.getAskToBid() < 1).ToArray();
-            wait(askLowerThanBid.Length);
+            //wait(askLowerThanBid.Length);
             foreach(Commodity comm in askLowerThanBid)
             {
                 int toBuy = checkAmountToBuy(comm);
@@ -91,7 +91,7 @@ namespace Program
         {
             updateCommodities();
             Commodity[] askLowerThanBid = _commodities.Where(x => x.getAskToBid() < 1).ToArray();
-            wait(askLowerThanBid.Length);
+            //wait(askLowerThanBid.Length);
             foreach (Commodity comm in askLowerThanBid)
             {
                 int toSell = checkAmountToSell(comm);
@@ -115,7 +115,7 @@ namespace Program
                     int amountToBuy = checkAmountToBuy(comm);
                     if (amountToBuy > 0 && budget >= amountToBuy * comm.info.ask)
                     {
-                        wait();
+                        //wait();
                         this._marketClient.SendBuyRequest(comm.info.ask, comm.id, amountToBuy);
                         budget -= amountToBuy * comm.info.ask;
                     }
@@ -128,7 +128,7 @@ namespace Program
                 int amount = checkAmountToBuy(commodity);
                 if (budget >= amount * commodity.info.ask)
                 {
-                    wait();
+                    //wait();
                     this._marketClient.SendBuyRequest(commodity.info.ask, commodity.id, amount);
                     budget -= amount * commodity.info.ask;
                 }
@@ -147,9 +147,10 @@ namespace Program
             while (avgAmount >= newAvg)
             {
                 Commodity[] sortedByRatio = getSortedByDescending(x => x.getAskToBid());
-                wait(sortedByRatio.Length);
+                // //wait(sortedByRatio.Length);
                 foreach (Commodity comm in sortedByRatio)
                 {
+                    //wait();
                     this._marketClient.SendSellRequest(comm.info.bid, comm.id, checkAmountToSell(comm));
                 }
                 updateCommodities();
@@ -185,7 +186,7 @@ namespace Program
         {
             double ratio = comm.getAskToBid();
             int avg = getAvgCommAmount();
-            int toBuy = Math.Max((int)Math.Ceiling((comm.amount == 0 ? 1 : comm.amount) / (ratio)), avg - comm.amount);
+            int toBuy = (int)Math.Ceiling((comm.amount == 0 ? 1 : comm.amount) / (ratio));
             while (toBuy > 1)
             {
                 if (toBuy * comm.info.ask <= this._userData.funds / (ratio >= 1 ? ratio : 1.0 / ratio))
@@ -214,7 +215,6 @@ namespace Program
         {
             updateCommodities();
             Commodity[] askLowerThanBid = getAskLowerThanBid();
-            wait(askLowerThanBid.Length*2);
             foreach (Commodity comm in askLowerThanBid)
             {
                 int toBuy = (int) Math.Min(checkAmountToBuy(comm), _userData.funds / comm.info.ask);
@@ -245,29 +245,6 @@ namespace Program
         {
             updateUserData();
             return (!(this._userData.requests.Contains(id)));
-        }
-
-        private void wait()
-        {
-            if (RequestTimer.availableRequests() <= 0)
-            {
-                Console.WriteLine("wait time :" + RequestTimer.getWaitTime());
-                System.Threading.Thread.Sleep(RequestTimer.getWaitTime() * 1000);
-            }
-        }
-
-        private void wait(int n)
-        { 
-            if (RequestTimer.availableRequests() <= 0)
-            {
-                Console.WriteLine("wait time :" + RequestTimer.getWaitTime());
-                System.Threading.Thread.Sleep(RequestTimer.getWaitTime(n) * 1000);
-            }
-        }
-
-        private void waitAll()
-        {
-            wait(RequestTimer.getLastRequests().Length);
         }
 
         private Commodity getLowestAskComm()
