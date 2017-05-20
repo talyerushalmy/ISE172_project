@@ -25,6 +25,7 @@ namespace GUI
         public MainWindow()
         {
             InitializeComponent();
+            RequestTimer.initializeArray();
         }
         [DllImport("Kernel32")]
         public static extern void AllocConsole();

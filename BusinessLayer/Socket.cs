@@ -16,7 +16,6 @@ namespace Program
         public Socket()
         {
             this.marketClient = new MarketClient();
-            RequestTimer.initializeArray();
         }
 
         public void printNoValidCommandError()

@@ -96,6 +96,10 @@ namespace GUI
                 this.labelHeader.Content = "Could not fetch data. Refreshed: " + DateTime.Now.ToLongTimeString();
                 this.dataGridData.Visibility = Visibility.Hidden;
             }
+            finally
+            {
+                
+            }
         }
 
         private void CancelRequest(object sender, RoutedEventArgs e)
@@ -111,19 +115,13 @@ namespace GUI
 
                     // cancel request #id
                     global::Program.MarketClient marketClient = new global::Program.MarketClient();
-                    if (marketClient.SendCancelBuySellRequest(id))
-                    {
-                        MessageBoxResult popup = MessageBox.Show("Successfuly cancelled request #" + id, "Success");
-                    }
-                    else
-                    {
-                        MessageBoxResult popup = MessageBox.Show("Could not cancel request #" + id, "Failure");
-                    }
+                    marketClient.SendCancelBuySellRequest(id);
+                    // MessageBoxResult popup = MessageBox.Show("Successfuly cancelled request #" + id, "Success");
                 }
             }
             catch
             {
-                MessageBoxResult popup = MessageBox.Show("Could not cancel the request", "Error");
+                // MessageBoxResult popup = MessageBox.Show("Could not cancel the request", "Error");
             }
             finally
             {
