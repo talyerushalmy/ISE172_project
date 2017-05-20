@@ -4,20 +4,6 @@ C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\bin\Debug\
 C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
 C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Users\roee9\Desktop\Project in ISE\ISE17_project\PresentationLayer\obj\Debug\PresentationLayer.pdb
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe.config
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.exe
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.pdb
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.pdb
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\BusinessLayer.exe
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\BusinessLayer.pdb
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\DataAccessLayer.exe
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\MarketClient.dll
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\DataAccessLayer.pdb
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\MarketClient.pdb
 C:\Users\roee9\Desktop\Project in ISE\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe.config
 C:\Users\roee9\Desktop\Project in ISE\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe
 C:\Users\roee9\Desktop\Project in ISE\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.pdb
@@ -80,7 +66,21 @@ C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.pdb
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\PresentationLayer\bin\Debug\Logger.exe
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\PresentationLayer\bin\Debug\Logger.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe.config
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\BusinessLayer.exe
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\Logger.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\DataAccessLayer.exe
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\AutoMarketAgent.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\MarketClient.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\BusinessLayer.pdb
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\Logger.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\DataAccessLayer.pdb
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\AutoMarketAgent.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\MarketClient.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.pdb

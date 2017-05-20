@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace Program
 {
@@ -16,6 +16,7 @@ namespace Program
         public Socket()
         {
             this.marketClient = new MarketClient();
+            RequestTimer.initializeArray();
         }
 
         public void printNoValidCommandError()
@@ -72,17 +73,8 @@ namespace Program
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
                     int resp = marketClient.SendBuyRequest(price, commodity, amount);
-                    if (resp > 0)
-                    {
+                    if (resp >=0)
                         Console.WriteLine("Success! Trade id: " + resp);
-                        Logger.DebugLog("Buy Attemp " + resp + " performed");
-                    }
-                    if (resp == 0)
-                    {
-                        Console.WriteLine("There's problem with the sending buy request");
-                        StackFrame sf = new StackFrame(1, true);
-                        Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's problem with the communication with the server");
-                    }
                 }
             }
             else
@@ -103,17 +95,8 @@ namespace Program
                 if (commodity >= 0 && amount != 0 && price != 0)
                 {
                     int resp = this.marketClient.SendSellRequest(price, commodity, amount);
-                    if (resp > 0)
-                    {
+                    if (resp >=0)
                         Console.WriteLine("Success! Trade id: " + resp);
-                        Logger.DebugLog("Sell Attemp " + resp + " performed");
-                    }
-                    if(resp == 0)
-                    {
-                        Console.WriteLine("There's problem with the communication with the server");
-                        StackFrame sf=new StackFrame (1, true);
-                        Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's problem with the sending sell request");
-                    }
                 }
             }
             else
@@ -128,14 +111,9 @@ namespace Program
             {
                 //goes to cancel request
                 if (this.marketClient.SendCancelBuySellRequest(id))
-                {
                     Console.WriteLine("Cancelled successfully");
-                    Logger.InfoLog("Success of cancel Request "+id);
-                }
                 else
-                {
                     Console.WriteLine("Cannot cancel trade number " + id);
-                }
             }
         }
 
@@ -145,18 +123,15 @@ namespace Program
             int[] userRequests = userData.requests;
             if (userRequests.Length != 0)
             {
-                String uncancelledRequests = "";
+                String cancelledRequests = "";
                 foreach (int id in userRequests)
                 {
                     if (!(this.marketClient.SendCancelBuySellRequest(id)))
-                        uncancelledRequests += "Cannot cancel trade number " + id + "\n";
+                        cancelledRequests += "Cannot cancel trade number " + id + "\n";
                 }
-                if (uncancelledRequests.Length == 0)
-                {
-                    uncancelledRequests = "All requests cancelled successfully";
-                    Logger.InfoLog("All pending requests cancelled successfully");
-                }
-                Console.WriteLine(uncancelledRequests);
+                if (cancelledRequests.Length == 0)
+                    cancelledRequests = "All requests cancelled successfully";
+                Console.WriteLine(cancelledRequests);
             }
             else
                 Console.WriteLine("No requests to cancel were found");
@@ -165,10 +140,7 @@ namespace Program
 
         public void runAutoMarketAgent()
         {
-            Logger.DebugLog("The user opened auto market agent");
-            AutoMarketAgent autoMarketAgent = new AutoMarketAgent(true);
-            autoMarketAgent.autoPilot();
-            Logger.DebugLog("Auto market Agent finished the algorythm");
+            AutoMarketAgent autoMarketAgent = new AutoMarketAgent();
         }
 
         //Query Buy/Sell/Market Request
@@ -199,10 +171,7 @@ namespace Program
             else
                 printNoValidCommandError();
         }
-        public void allHistory()
-        {
-             HistoryTable.PrintHistory();
-        }
+
         public void allMarketRequest()
         {
             Commodity[] commodities = this.marketClient.sendQueryAllMarketRequest();
@@ -216,13 +185,17 @@ namespace Program
                 Console.WriteLine("No active requests were found");
             else
                 Console.WriteLine(string.Join<QueryUserRequest>("\n", requests));
-            Logger.DebugLog("Sending query of user's requests info has finished.");
         }
 
         //Query User Request
         public void userInfo()
         {
             Console.WriteLine(this.marketClient.SendQueryUserRequest());
+        }
+
+        public void allHistory()
+        {
+            HistoryTable.PrintHistory();
         }
     }
 }

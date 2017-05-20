@@ -60,6 +60,7 @@
     <Compile Include="MarketClient.cs" />
     <Compile Include="QueryUserRequestsRequest.cs" />
     <Compile Include="RequestBase.cs" />
+    <Compile Include="RequestTimer.cs" />
     <Compile Include="SellRequest.cs" />
   </ItemGroup>
   <ItemGroup>

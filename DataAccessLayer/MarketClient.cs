@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +11,8 @@ namespace Program
     public class MarketClient : IMarketClient
     {
         // a dictionary (or an array, to be precise) of errors not to print on occurrence
-        static string[] errorsNotToPrint = {
+        static string[] errorsNotToPrint =
+        {
             "No auth key",
             "No user or auth token",
             "Verification failure",
@@ -25,13 +25,14 @@ namespace Program
         // a constructor that resets the local variables
         public MarketClient()
         {
+
             this.client = new SimpleHTTPClient();
             this.req = new RequestBase();
         }
 
         private void printError(string error)
-            // Prints the error string only if it's relevant to the user
-            // The error variable contains a response from the server that was marked as error
+        // Prints the error string only if it's relevant to the user
+        // The error variable contains a response from the server that was marked as error
         {
             if (!MarketClient.errorsNotToPrint.Contains(error))
                 Console.WriteLine(error);
@@ -42,11 +43,14 @@ namespace Program
         {
             try
             {
-                return this.client.SendPostRequest<T>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
+                var resp = this.client.SendPostRequest<T>(this.req.getUrl(), this.req.getUser(), this.req.getToken(),
+                    data);
+                RequestTimer.wait();
+                RequestTimer.addRequest();
+                return resp;
             }
             catch
             {
-
                 return null;
             }
         }
@@ -56,13 +60,15 @@ namespace Program
         {
             try
             {
-                return this.client.SendPostRequest<T1, T2>(this.req.getUrl(), this.req.getUser(), this.req.getToken(), data);
+                var resp = this.client.SendPostRequest<T1, T2>(this.req.getUrl(), this.req.getUser(),
+                    this.req.getToken(), data);
+                RequestTimer.wait();
+                RequestTimer.addRequest();
+                return resp;
             }
             catch (Exception e)
             {
                 // in case of an error, print the error message
-                StackFrame sf = new StackFrame(1, true);
-                Logger.ErrorLog(sf.GetMethod(),sf.GetFileLineNumber(), "There's a problem with the communication with the server");
                 Console.WriteLine(e.Message);
                 return null;
             }
@@ -86,8 +92,6 @@ namespace Program
             }
             catch
             {
-                StackFrame sf = new StackFrame(1, true);
-                Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's a problem with send of buy request");
                 printError(response); // Print the error
                 return -1;
             }
@@ -101,18 +105,16 @@ namespace Program
             {
                 SellRequest data = new SellRequest(commodity, amount, price);
                 response = SendRequest(data);
-                int id= Convert.ToInt32(response);
+                int id = Convert.ToInt32(response);
                 if (id > 1)
                 {
-                    HistoryItem newItem = new HistoryItem(DateTime.Now, "SellRequest", data.ToString(), id);
+                    HistoryItem newItem = new HistoryItem(DateTime.Now, "BuyRequest", data.ToString(), id);
                     HistoryTable.Add(newItem);
                 }
                 return id;
             }
             catch
             {
-                StackFrame sf = new StackFrame(1, true);
-                Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's a problem with send of sell request");
                 printError(response); // Print the error
                 return -1;
             }
@@ -129,7 +131,6 @@ namespace Program
         public IMarketUserData SendQueryUserRequest()
         {
             object obj = SendRequest<QueryUserRequest, MarketUserData>(new QueryUserRequest());
-
             return (MarketUserData)obj;
         }
 
@@ -138,12 +139,8 @@ namespace Program
         {
             object obj = SendRequest<QueryMarketRequest, MarketCommodityOffer>(new QueryMarketRequest(commodity));
             if (obj == null)
-            {
-                StackFrame sf = new StackFrame(1, true);
-                Logger.ErrorLog(sf.GetMethod(),sf.GetFileLineNumber(),"Fail of Query Market Request");
                 Console.WriteLine("Could not fetch commodity data");
-            }
-            return (MarketCommodityOffer) obj;
+            return (MarketCommodityOffer)obj;
         }
 
         // send a cancel buy/sell request using the MarketClient project API
@@ -154,10 +151,10 @@ namespace Program
             {
                 return false;
             }
-
             if (data.Equals("Ok"))
-            {   //In case when history table's size is 1
-                if(HistoryTable.getHistoryList().Last()== HistoryTable.getHistoryList().First())
+            {
+                //In case when history table's size is 1
+                if (HistoryTable.getHistoryList().Last() == HistoryTable.getHistoryList().First())
                 {
                     HistoryTable.getHistoryList().First()._status = Status.cancelled;
                     Logger.InfoLog("Requeest " + HistoryTable.getHistoryList().Last()._id + " has cancelled");
@@ -179,9 +176,13 @@ namespace Program
             return obj;
         }
 
+        public void allHistory()
+        {
+            HistoryTable.PrintHistory();
+        }
         public Commodity[] sendQueryAllMarketRequest()
         {
-            Commodity[] obj = SendRequest<QueryAllMarketRequest, Commodity[]>(new QueryAllMarketRequest());    
+            Commodity[] obj = SendRequest<QueryAllMarketRequest, Commodity[]>(new QueryAllMarketRequest());
             return obj;
         }
     }

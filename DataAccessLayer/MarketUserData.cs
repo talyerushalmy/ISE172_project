@@ -23,7 +23,6 @@ namespace Program
             }
             toPrint += String.Format("\nFunds:\t\t{0}\n", this.funds);
             toPrint += String.Format("\nRequests:\t{0}\n", string.Join(", ", requests));
-            toPrint += "\n";
             return toPrint;
         }
 

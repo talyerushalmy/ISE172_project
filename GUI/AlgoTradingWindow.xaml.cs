@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AutoMarketAgent = Program.AutoMarketAgent;
 
 namespace GUI
 {
@@ -21,6 +24,7 @@ namespace GUI
     public partial class AlgoTradingWindow : Window
     {
         private bool AmaWorking;
+        private Thread AmaThread;
 
         public AlgoTradingWindow()
         {
@@ -32,8 +36,27 @@ namespace GUI
 
         private void InitAma()
         {
+            AmaThread = new Thread(new ThreadStart(CallAma));
             this.buttonAMA.Background = Brushes.Red;
             this.AmaWorking = false;
+        }
+
+        private void CallAma()
+        {
+            try
+            {
+                Program.AutoMarketAgent ama = new Program.AutoMarketAgent();
+                ama.autoPilot();
+                this.AmaWorking = false;
+            }
+            catch
+            {
+                MessageBoxResult popup = MessageBox.Show("The Auto Agent has failed", "Automatic Market Agent");
+            }
+            finally
+            {
+                ToggleAMA();
+            }
         }
 
         public void ExitProgram()
@@ -96,11 +119,13 @@ namespace GUI
         {
             if (AmaWorking)
             {
+                AmaThread.Start();
                 this.buttonAMA.Background = Brushes.Green;
                 MessageBoxResult popup = MessageBox.Show("The Auto Agent has started working", "Automatic Market Agent");
             }
             else
             {
+                AmaThread.Abort();
                 this.buttonAMA.Background = Brushes.Red;
                 MessageBoxResult popup = MessageBox.Show("The Auto Agent has stopped working", "Automatic Market Agent");
             }

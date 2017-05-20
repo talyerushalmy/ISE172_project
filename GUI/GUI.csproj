@@ -165,6 +165,10 @@
     <Resource Include="graph.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AutoMarketAgent\AutoMarketAgent.csproj">
+      <Project>{850998d6-30da-4718-bc86-c604a44cb1b5}</Project>
+      <Name>AutoMarketAgent</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
       <Project>{1970e9f1-ab4d-4270-baef-5417e47f03c3}</Project>
       <Name>DataAccessLayer</Name>

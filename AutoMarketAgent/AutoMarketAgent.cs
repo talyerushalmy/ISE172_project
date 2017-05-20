@@ -7,425 +7,299 @@ using System.Timers;
 
 namespace Program
 {
-
-
     public class AutoMarketAgent
     {
-        private bool _autoPilot;
         private MarketClient _marketClient;
         private MarketUserData _userData;
         private Commodity[] _commodities;
-        private System.Timers.Timer _timer;
 
-        public AutoMarketAgent(bool autoPilot)
+        public AutoMarketAgent()
         {
-            this._autoPilot = autoPilot;
             this._marketClient = new MarketClient();
-            this._timer = new Timer(10000);
-            updateUserData();
-            this._commodities = initializeCommodities();
-        }
-
-        private Commodity[] initializeCommodities()
-        {
-            int length = this._userData.commodities.Keys.Count;
-            Commodity[] commodities = new Commodity[length];
-            return commodities;
-        }
-
-        private void updateUserData()
-        {
-            this._userData = (MarketUserData)this._marketClient.SendQueryUserRequest();
-        }
-
-        private void updateCommodities()
-        {
-            updateUserData();
-            foreach (var commodity in this._userData.commodities)
-            {
-                int commID = Convert.ToInt32(commodity.Key);
-            }
+            updateCommodities();
+            autoPilot();
         }
 
         public void autoPilot()
         {
-            int numOfItems = _userData.commodities.Values.Sum();
-            while (_autoPilot)
+            //Functions to test
+            n00bTrade();
+            raiseCommAvg();
+            sell();
+        }
+
+
+
+        private void updateCommodities()
+        {
+            //wait();
+            this._commodities = this._marketClient.sendQueryAllMarketRequest();
+            updateUserData();
+        }
+
+        private void updateUserData()
+        {
+            //wait();
+            this._userData = (MarketUserData)this._marketClient.SendQueryUserRequest();
+            updateAmount();
+        }
+
+        private void updateAmount()
+        {
+            foreach (var comm in this._userData.commodities)
             {
-                #region Terminology
-                // Key - commodity type
-                // Value - commodity amount
-                #endregion
-
-                test();
-
-                /*int commID = -1;
-                int commAmount = -1;
-                double askToBidRatio = Double.PositiveInfinity;
-                MarketCommodityOffer bestOffer = null;
-                foreach (var commodity in this._userData.commodities)
-                {
-                    MarketCommodityOffer offer = (MarketCommodityOffer)this._marketClient.SendQueryMarketRequest(Convert.ToInt32(commodity.Key));
-                    double bestRatio = ((double)offer.ask / (double)offer.bid);
-                    if (bestRatio < askToBidRatio && bestRatio != 1)
-                    {
-                        bestOffer = offer;
-                        askToBidRatio = bestRatio;
-                        commID = Convert.ToInt32(commodity.Key);
-                        commAmount = commodity.Value;
-                    }
-
-                }
-                int fixedAskToBitRatio = (int)(Math.Ceiling(askToBidRatio));
-                int amountToAskToBidRatio = commAmount / fixedAskToBitRatio;
-                if (askToBidRatio > 1)
-                {
-                    Console.WriteLine("ask is bigger");
-                    if (amountToAskToBidRatio > 1)
-                    {
-                        int sellID = this._marketClient.SendSellRequest(bestOffer.bid, commID, fixedAskToBitRatio);
-                        this._userData = (MarketUserData)this._marketClient.SendQueryUserRequest();
-                        if (!_userData.requests.Contains(sellID))
-                        {
-                            int buyID = this._marketClient.SendBuyRequest(bestOffer.ask, commID, amountToAskToBidRatio);
-                        }
-                        else
-                        {
-                            this._marketClient.SendCancelBuySellRequest(sellID);
-                        }
-                    }
-                }
-                else if (askToBidRatio < 1)
-                {
-                    Console.WriteLine("Tom");
-                    bool success = false;
-                    int count = 1;
-                    int maxAmountToBuy = checkAmountToBuy((int)this._userData.funds, bestOffer.ask, commAmount);
-                    Console.WriteLine("maxAmountToBuy: " + maxAmountToBuy);
-                    while (!success && count <= maxAmountToBuy)
-                    {
-                        Console.WriteLine("bid is bigger");
-                        Console.WriteLine(commID);
-                        int buyID = this._marketClient.SendBuyRequest(bestOffer.ask, commID, count);
-                        if (isRequestSuccessful(buyID))
-                        {
-                            int buyCount = count;
-                            Console.WriteLine("did buy, buyCount:" + buyCount);
-                            count = 1;
-                            int sellID = this._marketClient.SendSellRequest(bestOffer.bid, commID, count);
-                            while (!isRequestSuccessful(sellID))
-                            {
-                                Console.WriteLine("Trying to sell");
-                                this._marketClient.SendCancelBuySellRequest(sellID);
-                                System.Threading.Thread.Sleep(3000);
-                                count++;
-                                sellID = this._marketClient.SendSellRequest(bestOffer.bid, commID, count);
-                            }
-                            Console.WriteLine("sold successfully");
-                            success = true;
-                        }
-                        else
-                        {
-                            this._marketClient.SendCancelBuySellRequest(buyID);
-                            count++;
-                            System.Threading.Thread.Sleep(3000);
-                        }
-                    }
-                }
-                Console.WriteLine("autoPilotOff");*/
-                _autoPilot = false;
+                int id = Convert.ToInt32(comm.Key);
+                this._commodities[id].amount = comm.Value;
             }
-
         }
 
-        private double getAskToBidRatio(Commodity comm)
-        {
-            double ratio = ((double)comm.info.ask / (double)comm.info.bid);
-            if (ratio <= 1)
-                return ratio;
-            else
-                return Math.Ceiling(ratio);
-        }
-
-        private double getAmountToAskToBidRatio(Commodity comm)
-        {
-            double ratio = 1;// (comm.amount) / (getAskToBidRatio(comm));
-            if (ratio <= 1)
-                return ratio;
-            else
-                return Math.Ceiling(ratio);
-        }
-
-        public void makeBestBuyDeal()
+        private void buy()
         {
             updateCommodities();
-            //Console.WriteLine(string.Join(",", this._commodities));
-            int index = getIdealCommToBuy();
-            Commodity comm = this._commodities[index];
-            Console.WriteLine("indexOfCommToBuy:" + index);
-            int buyAmount = checkAmountToBuy(comm);
-            Console.WriteLine("we need to buy " + buyAmount + " of comm num " + index);
-            MarketCommodityOffer offer = (MarketCommodityOffer)this._marketClient.SendQueryMarketRequest(comm.id);
-            if (offer.ask <= comm.info.ask)
+            int avg = getAvgCommAmount();
+            Commodity[] askLowerThanBid = getAskLowerThanBid();
+            foreach (Commodity comm in askLowerThanBid)
             {
-                comm.info.ask = offer.ask;
-                int buyID = this._marketClient.SendBuyRequest(offer.ask, comm.id, buyAmount);
-                /*if (!isRequestSuccessful(buyID))
+                if (comm.amount < avg)
                 {
-                    this._marketClient.SendCancelBuySellRequest(buyID);
-                }*/
-                Console.WriteLine(buyID);
-            }
-        }
-
-        private int getIdealCommToBuy()
-        {
-            int minAmount = Int32.MaxValue;
-            int index = 0;
-            double bestRatio = 1;
-            double bestSpecialRatio = Math.Ceiling((minAmount / bestRatio));
-            foreach (Commodity comm in this._commodities)
-            {
-                double askToBidRatio = getAskToBidRatio(comm);
-                Console.WriteLine("commID : " + comm.id);
-                //Console.WriteLine("ammount : " + comm.amount);
-                Console.WriteLine("ask: " + comm.info.ask);
-                Console.WriteLine("bid: " + comm.info.bid);
-                Console.WriteLine("ratio: " + askToBidRatio);
-                if (askToBidRatio <= 1 && askToBidRatio < minAmount * bestRatio)
-                {
-                    double specialRatio = getAmountToAskToBidRatio(comm);
-                    Console.WriteLine("special ratio :" + specialRatio);
-                    /*if (comm.amount <= minAmount && specialRatio <= bestSpecialRatio)
+                    int amount = checkAmountToBuy(comm);
+                    if (amount > 0)
                     {
-                        bestRatio = askToBidRatio;
-                        //minAmount = comm.amount;
-                        bestSpecialRatio = specialRatio;
-                        index = comm.id;
-                    }*/
+                        this._marketClient.SendBuyRequest(comm.info.ask, comm.id, amount);
+                    }
                 }
-                Console.WriteLine();
             }
-            return index;
+            Commodity commodity  = getBidLowerEqualToAsk().First();
+            int toBuy = checkAmountToBuy(commodity);
+            if (toBuy > 0)
+                this._marketClient.SendBuyRequest(commodity.info.ask, commodity.id, checkAmountToBuy(commodity));
         }
 
-        public void makeBestSellDeal()
+        private void buyAskLowerThanBid()
         {
             updateCommodities();
-            //Console.WriteLine(string.Join(",", this._commodities));
-            int index = getIdealCommToSell();
-            Commodity comm = this._commodities[index];
-            Console.WriteLine("indexOfCommToSell:" + index);
-            //int sellAmount = checkAmountToSell(comm);
-            MarketCommodityOffer offer = (MarketCommodityOffer)this._marketClient.SendQueryMarketRequest(comm.id);
-            if (offer.bid >= comm.info.bid)
+            Commodity[] askLowerThanBid = _commodities.Where(x => x.getAskToBid() < 1).ToArray();
+            //wait(askLowerThanBid.Length);
+            foreach(Commodity comm in askLowerThanBid)
             {
-                comm.info.bid = offer.bid;
-                //int sellID = this._marketClient.SendSellRequest(comm.info.bid, comm.id, sellAmount);
+                int toBuy = checkAmountToBuy(comm);
+                _marketClient.SendBuyRequest(comm.info.ask, comm.id, toBuy);
             }
-            
         }
 
-        private int checkAmountToBuy(int gain, int ask, int amount)
+        private void sellAskLowerThanBid()
         {
-            Console.WriteLine("checking amount to buy");
-            int price = amount * ask;
-            if (2 * price <= gain || amount == 0)
-                return amount;
-            return checkAmountToBuy(gain, ask, amount - 1);
+            updateCommodities();
+            Commodity[] askLowerThanBid = _commodities.Where(x => x.getAskToBid() < 1).ToArray();
+            //wait(askLowerThanBid.Length);
+            foreach (Commodity comm in askLowerThanBid)
+            {
+                int toSell = checkAmountToSell(comm);
+                _marketClient.SendBuyRequest(comm.info.ask, comm.id, toSell);
+            }
+        }
+        private void buy(double budget)
+        {
+            updateCommodities();
+            int avg = getAvgCommAmount();
+            Commodity lowestAsk = getLowestAskComm();
+            while (budget > 0 && budget > Math.Abs(lowestAsk.info.ask * (getAvgCommAmount() - lowestAsk.amount)))
+            {
+                Commodity[] askLowerThanBid = getAskLowerThanBid();
+                foreach (Commodity comm in askLowerThanBid)
+                {
+                    if (budget <= 0 || budget < Math.Abs(lowestAsk.info.ask * (getAvgCommAmount() - lowestAsk.amount)))
+                    {
+                        break;
+                    }
+                    int amountToBuy = checkAmountToBuy(comm);
+                    if (amountToBuy > 0 && budget >= amountToBuy * comm.info.ask)
+                    {
+                        //wait();
+                        this._marketClient.SendBuyRequest(comm.info.ask, comm.id, amountToBuy);
+                        budget -= amountToBuy * comm.info.ask;
+                    }
+         
+                }
+                updateCommodities();
+                if (budget <= 0 || budget < Math.Abs(lowestAsk.info.ask * (getAvgCommAmount() - lowestAsk.amount)))
+                    break;
+                Commodity commodity = getBidLowerEqualToAsk().First();
+                int amount = checkAmountToBuy(commodity);
+                if (budget >= amount * commodity.info.ask)
+                {
+                    //wait();
+                    this._marketClient.SendBuyRequest(commodity.info.ask, commodity.id, amount);
+                    budget -= amount * commodity.info.ask;
+                }
+                updateCommodities();
+                avg = getAvgCommAmount();
+                lowestAsk = getLowestAskComm();
+            }
+        }
+
+        private void sell()
+        {
+            updateCommodities();
+            int avgAmount = getAvgCommAmount();
+            double avgRatio = getAvgAskToBid();
+            int newAvg = (int)((double) avgAmount / (avgRatio > 1 ? avgRatio : 1 / avgRatio));
+            while (avgAmount >= newAvg)
+            {
+                Commodity[] sortedByRatio = getSortedByDescending(x => x.getAskToBid());
+                // //wait(sortedByRatio.Length);
+                foreach (Commodity comm in sortedByRatio)
+                {
+                    //wait();
+                    this._marketClient.SendSellRequest(comm.info.bid, comm.id, checkAmountToSell(comm));
+                }
+                updateCommodities();
+                avgAmount = getAvgCommAmount();
+                avgRatio = getAvgAskToBid();
+            }
+        }
+
+        private void raiseCommAvg()
+        {
+            updateCommodities();
+            double avgRatio = getAvgAskToBid();
+            int commAmount = getTotalAmountOfComms();
+            double budget = 0;
+            if (avgRatio > 1)
+            {
+                budget = this._userData.funds / (avgRatio);
+            }
+            else
+            {
+                budget = this._userData.funds / (commAmount * avgRatio);
+            }
+            buy(budget);
+        }
+
+        private double getAvgAskToBid()
+        {
+            double sum = _commodities.Sum(x => x.getAskToBid());
+            return sum / this._commodities.Length;
         }
 
         private int checkAmountToBuy(Commodity comm)
         {
+            double ratio = comm.getAskToBid();
             int avg = getAvgCommAmount();
-            double ratio = getAskToBidRatio(comm);
-            /*while (diff > 0)
+            int toBuy = (int)Math.Ceiling((comm.amount == 0 ? 1 : comm.amount) / (ratio));
+            while (toBuy > 1)
             {
-                if (diff * comm.ask <= this._userData.funds * ratio)
-                    return diff;
+                if (toBuy * comm.info.ask <= this._userData.funds / (ratio >= 1 ? ratio : 1.0 / ratio))
+                    return toBuy;
                 else
-                    diff--;
+                    toBuy--;
             }
-            return diff;*/
-            return 0;
+            return toBuy;
         }
 
-        private int getIdealCommToSell()
-        {
-            int maxAmount = Int32.MinValue;
-            int index = this._commodities.Length - 1;
-            double bestRatio = Double.PositiveInfinity;
-            double bestSpecialRatio = Math.Ceiling((maxAmount / bestRatio));
-            foreach (Commodity comm in this._commodities)
-            {
-                double askToBidRatio = getAskToBidRatio(comm);
-     
-           
-                if (askToBidRatio <= 1 && askToBidRatio > maxAmount * bestRatio)
-                {
-                    double specialRatio = getAmountToAskToBidRatio(comm);
-                    /*Console.WriteLine("special ratio :" + specialRatio);
-                    if (comm.amount >= maxAmount && specialRatio >= bestSpecialRatio)
-                    {
-                        bestRatio = askToBidRatio;
-                        maxAmount = comm.amount;
-                        bestSpecialRatio = specialRatio;
-                        index = comm.id;
-                    }*/
-                }
-                Console.WriteLine();
-            }
-            return index;
-        }
-        /*
+
         private int checkAmountToSell(Commodity comm)
         {
             int avg = getAvgCommAmount();
+            if (comm.amount == 0)
+                return 0;
             int diff = comm.amount - avg;
-            Console.WriteLine("ammount of comm num " + comm.id + " : " + comm.amount);
-            Console.WriteLine("average comms : " + avg);
-            Console.WriteLine("diff " + diff);
-            int ratio = (int)Math.Ceiling(getAskToBidRatio(comm));
             if (diff > 0)
             {
                 return diff;
             }
-            return (comm.amount / ratio);
+            return 1;
         }
-        */
-        private int getTotalAmmountOfComms()
+
+        public void n00bTrade()
         {
-            int sum = 0;
-            foreach(Commodity comm in this._commodities)
+            updateCommodities();
+            Commodity[] askLowerThanBid = getAskLowerThanBid();
+            foreach (Commodity comm in askLowerThanBid)
             {
-                //sum += comm.amount;
+                int toBuy = (int) Math.Min(checkAmountToBuy(comm), _userData.funds / comm.info.ask);
+                if (toBuy > 0)
+                {
+                    int buyID = this._marketClient.SendBuyRequest(comm.info.ask, comm.id, toBuy);
+                    int toSell = checkAmountToSell(comm);
+                    if (toSell > 0)
+                    {
+                        int sellID = this._marketClient.SendSellRequest(comm.info.bid, comm.id, toSell);
+                    }
+                }
             }
+        }
+
+        private int getTotalAmountOfComms()
+        {
+            int sum = (this._commodities.Sum(x => x.amount));
             return sum;
         }
 
         private int getAvgCommAmount()
         {
-            return getTotalAmmountOfComms()/ this._commodities.Length;
+            return getTotalAmountOfComms() / this._commodities.Length;
         }
-
-        /*private int indexOfMaxComm()
-        {
-            int max = Int32.MinValue;
-            int index = 0;
-            foreach (Commodity comm in this._commodities)
-            {
-                if (comm.amount > max)
-                {
-                    max = comm.amount;
-                    index = comm.id;
-                }
-            }
-            return index;
-        }
-
-        private int indexOfMinComm()
-        {
-            int min = Int32.MaxValue;
-            int index = 0;
-            foreach (Commodity comm in this._commodities)
-            {
-                if (comm.amount > min)
-                {
-                    min = comm.amount;
-                    index = comm.id;
-                }
-            }
-            return index;
-        }*/
 
         private bool isRequestSuccessful(int id)
         {
-            System.Threading.Thread.Sleep(3000);
             updateUserData();
             return (!(this._userData.requests.Contains(id)));
         }
 
-        private void checkCommodityOffer(Commodity comm)
+        private Commodity getLowestAskComm()
         {
-            MarketCommodityOffer offer = (MarketCommodityOffer)this._marketClient.SendQueryMarketRequest(comm.id);
-            int bid = offer.bid, ask = offer.ask;
-            int diff = offer.ask - offer.bid;
-            double askToBidRatio = (double)ask / (double)bid;
-            int fixedRatio = (int)Math.Ceiling(askToBidRatio);
-            //int amountToRatio = comm.amount / fixedRatio;
-            double currFunds = this._userData.funds;
-            System.Threading.Thread.Sleep(2000);
-            if (askToBidRatio > 1)
-            {
-                /*if (amountToRatio > 1)
-                {
-                    int sellID = this._marketClient.SendSellRequest(bid, comm.id, amountToRatio);
-                    if (isRequestSuccessful(sellID))
-                    {
-                        double gain = this._userData.funds - currFunds;
-                        int amountToBuy = checkAmountToBuy(bid * amountToRatio, ask, amountToRatio);
-                        if (amountToBuy > 0)
-                        {
-                            int buyID = this._marketClient.SendBuyRequest(ask, comm.id, amountToBuy);
-                            if (!isRequestSuccessful(buyID))
-                            {
-                                this._marketClient.SendCancelBuySellRequest(buyID);
-                            }
-                        }
-                    }
-                    else
-                        this._marketClient.SendCancelBuySellRequest(sellID);
-                }*/
-            }
-            else if (askToBidRatio < 1)
-            {
-
-            }
-
+            return _commodities.OrderBy(x => x.info.ask).First();
         }
 
-        private void test()
+        private Commodity getHighestAskComm()
         {
-
+            return _commodities.OrderBy(x => x.info.ask).Last();
         }
 
-        /*while (offer.ask < offer.bid)
-    {
-    Console.WriteLine(offer);
-    if (this._userData.funds >= offer.ask)
-    {
-        bool buy = true;
-        bool sell = true;
-        foreach (int request in this._userData.requests)
+        private Commodity getLowestBidComm()
         {
-            MarketItemQuery marketItem = (MarketItemQuery)this._marketClient.SendQueryBuySellRequest(request);
-            if (marketItem.type.Equals("sell") && marketItem.commodity == commodityID && marketItem.price == offer.ask)
-            {
-                sell = false;
-                break;
-            }
-            else if (marketItem.type.Equals("buy") && marketItem.commodity == commodityID && marketItem.price == offer.bid)
-            {
-                buy = false;
-                break;
-            }
+            return _commodities.OrderBy(x => x.info.bid).First();
         }
-        if (buy)
-        {
-            int buyID = this._marketClient.SendBuyRequest(offer.ask, commodityID, 1);
-            if (this._userData.requests.Contains(buyID))
-            {
-                sell = false;
-            }
-        }
-        if (sell)
-        {
-            int sellID = this._marketClient.SendSellRequest(offer.bid, commodityID, 1);
-        }
-        Console.WriteLine(this._userData.requests);
 
-    }
-    offer = (MarketCommodityOffer)_marketClient.SendQueryMarketRequest(commodityID);
-    }*/
+        private Commodity getHighestBidComm()
+        {
+            return _commodities.OrderBy(x => x.info.bid).Last();
+        }
+
+        private Commodity getLowestAskToBidRatioComm()
+        {
+            return _commodities.OrderBy(x => x.getAskToBid()).First();
+        }
+
+        private Commodity getHighestAskToBidRatioComm()
+        {
+            return _commodities.OrderBy(x => x.getAskToBid()).Last();
+        }
+
+        private Commodity[] getSortedBy(Func<Commodity, double> selector)
+        {
+            return _commodities.OrderBy(selector).ToArray();
+        }
+
+        private Commodity[] getSortedByDescending(Func<Commodity, double> selector)
+        {
+            return _commodities.OrderByDescending(selector).ToArray();
+        }
+
+        private Commodity[] getAskLowerThanBid()
+        {
+            return _commodities.Where(x => x.getAskToBid() < 1).OrderBy(x => x.getAskToBid()).ToArray();
+        }
+        
+        private Commodity[] getBidLowerThanAsk()
+        {
+            return _commodities.Where(x => x.getAskToBid() > 1).OrderBy(x => x.getAskToBid()).ToArray();
+        }
+
+        private Commodity[] getBidLowerEqualToAsk()
+        {
+            return _commodities.Where(x => x.getAskToBid() >= 1).OrderBy(x => x.getAskToBid()).ToArray();
+        }
     }
 }

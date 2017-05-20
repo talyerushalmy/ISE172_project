@@ -59,3 +59,9 @@ Type: Message ,5/20/2017 9:11:05 PM , Success of cancel Request 6959081
 Type: Message ,5/20/2017 9:13:35 PM , The user finished to work in the system
 Type: Message ,5/20/2017 9:25:06 PM , 6961492 has cancelled
 Type: Message ,5/20/2017 9:25:08 PM , 6961505 has cancelled
+Type: Message ,5/20/2017 11:46:09 PM , The user started to work
+Type: Message ,5/20/2017 11:46:21 PM , The user started to work
+Type: Message ,5/20/2017 11:46:31 PM , The user finished to work in the system
+Type: Message ,5/20/2017 11:50:35 PM , The user started to work
+Type: Message ,5/20/2017 11:50:43 PM , The user finished to work in the system
+Type: Message ,5/20/2017 11:55:15 PM , Requeest 6988594 has cancelled
