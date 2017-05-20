@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Program;
 
 namespace GUI
 {
@@ -23,6 +24,21 @@ namespace GUI
         public UserControlSessionHistory()
         {
             InitializeComponent();
+            PopulateGrid();
+        }
+
+        private void PopulateGrid()
+        {
+            try
+            {
+                this.labelHeader.Content = "Session history as of " + DateTime.Now.ToLongTimeString();
+                var history = HistoryTable.getHistoryList();
+                this.dataGridHistory.ItemsSource = history;
+            }
+            catch
+            {
+                this.labelHeader.Content = "Could not fetch history. Refreshed: " + DateTime.Now.ToLongTimeString();
+            }
         }
     }
 }

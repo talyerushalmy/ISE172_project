@@ -57,3 +57,5 @@ Type: Debug.Occured in 5/20/2017 9:10:54 PM,Status: Buy Attemp 6959081 performed
 Type: Message ,5/20/2017 9:11:05 PM , Requeest 6959081 has cancelled
 Type: Message ,5/20/2017 9:11:05 PM , Success of cancel Request 6959081
 Type: Message ,5/20/2017 9:13:35 PM , The user finished to work in the system
+Type: Message ,5/20/2017 9:25:06 PM , 6961492 has cancelled
+Type: Message ,5/20/2017 9:25:08 PM , 6961505 has cancelled

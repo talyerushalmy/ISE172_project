@@ -7,6 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="251" d:DesignWidth="358">
     <Grid>
-            
+        <Label x:Name="labelHeader" Content="" HorizontalAlignment="Left" Margin="19,16,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGridHistory" HorizontalAlignment="Left" Margin="19,47,0,-12.8" VerticalAlignment="Top" Height="217" Width="339"/>
+
     </Grid>
 </UserControl>
