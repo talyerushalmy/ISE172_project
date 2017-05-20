@@ -82,6 +82,16 @@ namespace Program
                             socket.printNoValidCommandError();
                     }
                     break;
+                case "history":
+                    {
+                        if (words.Length == 1)
+                        {
+                            socket.allHistory();
+                        }   
+                        else
+                            socket.printNoValidCommandError();
+                    }
+                    break;
                 default:
                     {
                         // no command was identified

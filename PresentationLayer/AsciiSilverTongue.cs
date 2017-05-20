@@ -51,6 +51,7 @@ namespace Program
             Console.WriteLine("\trequests - Query the server for detailed information about the user requests and show the result");
             Console.WriteLine("\tfind sell/buy/commodity [REQUEST/COMMODITY ID (number)] - Query the server for [REQUEST/COMMODITY ID] and show the results");
             Console.WriteLine("\tmarket - Query the server for ask and bid prices of all the commodities and show the result");
+            Console.WriteLine("\thistory - show user's history of activities");
             Console.WriteLine("\tclear - Clear the user activity history");
             Console.WriteLine("\texit - Exit the program");
         }

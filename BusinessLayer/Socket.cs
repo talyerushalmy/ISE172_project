@@ -154,7 +154,7 @@ namespace Program
                 if (uncancelledRequests.Length == 0)
                 {
                     uncancelledRequests = "All requests cancelled successfully";
-                    Logger.InfoLog("All requests cancelled successfully");
+                    Logger.InfoLog("All pending requests cancelled successfully");
                 }
                 Console.WriteLine(uncancelledRequests);
             }
@@ -199,7 +199,10 @@ namespace Program
             else
                 printNoValidCommandError();
         }
-
+        public void allHistory()
+        {
+             HistoryTable.PrintHistory();
+        }
         public void allMarketRequest()
         {
             Commodity[] commodities = this.marketClient.sendQueryAllMarketRequest();

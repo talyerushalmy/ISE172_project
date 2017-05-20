@@ -1,0 +1,102 @@
+Type: Message ,19/05/2017 04:22:31 , The user started to work
+Type: Debug.Occured in 19/05/2017 04:23:05,Status: Sell Attemp 6509356 performed
+Type: Debug.Occured in 19/05/2017 04:25:06,Status: Buy Attemp 6509675 performed
+Type: Debug.Occured in 19/05/2017 04:25:21,Status: Sending query of user's requests info has finished.
+Type: Debug.Occured in 19/05/2017 04:25:25,Status: Sending query of user's requests info has finished.
+Type: Message ,19/05/2017 04:25:31 , All requests cancelled successfully
+Type: Message ,19/05/2017 04:43:13 , The user started to work
+Type: Debug.Occured in 19/05/2017 04:43:25,Status: Sell Attemp 6512518 performed
+Type: Message ,19/05/2017 04:52:58 , The user started to work
+Type: Message ,19/05/2017 04:54:38 , The user started to work
+Type: Debug.Occured in 19/05/2017 04:54:59,Status: Sell Attemp 6514309 performed
+Type: Debug.Occured in 19/05/2017 04:55:20,Status: Sell Attemp 6514371 performed
+Type: Message ,19/05/2017 04:56:09 , All requests cancelled successfully
+Type: Message ,19/05/2017 05:00:50 , The user started to work
+Type: Debug.Occured in 19/05/2017 05:01:07,Status: Sell Attemp 6515260 performed
+Type: Debug.Occured in 19/05/2017 05:01:40,Status: Sell Attemp 6515348 performed
+Type: Message ,19/05/2017 05:04:28 , The user started to work
+Type: Debug.Occured in 19/05/2017 05:04:39,Status: Sell Attemp 6515798 performed
+Type: Message ,19/05/2017 17:08:39 , The user started to work
+Type: Debug.Occured in 19/05/2017 17:09:24,Status: Sell Attemp 6638077 performed
+Type: Debug.Occured in 19/05/2017 17:10:40,Status: Sending query of user's requests info has finished.
+Type: Message ,19/05/2017 17:37:32 , The user started to work
+Type: Debug.Occured in 19/05/2017 17:37:52,Status: Sell Attemp 6643409 performed
+Type: Debug.Occured in 19/05/2017 17:38:35,Status: Buy Attemp 6643551 performed
+Type: Message ,19/05/2017 17:40:00 , The user started to work
+Type: Debug.Occured in 19/05/2017 17:40:15,Status: Sell Attemp 6643863 performed
+Type: Debug.Occured in 19/05/2017 17:40:22,Status: Buy Attemp 6643896 performed
+Type: Debug.Occured in 19/05/2017 17:41:34,Status: Sell Attemp 6644140 performed
+Type: Debug.Occured in 19/05/2017 17:43:26,Status: Buy Attemp 6644503 performed
+Type: Debug.Occured in 19/05/2017 17:43:57,Status: Buy Attemp 6644597 performed
+Type: Message ,19/05/2017 17:44:07 , Success of cancel Request 6644597
+Type: Message ,19/05/2017 17:50:48 , The user started to work
+Type: Debug.Occured in 19/05/2017 17:51:09,Status: Buy Attemp 6646041 performed
+Type: Message ,19/05/2017 17:52:48 , The user started to work
+Type: Message ,19/05/2017 17:53:27 , The user started to work
+Type: Debug.Occured in 19/05/2017 17:53:42,Status: Buy Attemp 6646559 performed
+Type: Message ,19/05/2017 17:54:56 , The user started to work
+Type: Debug.Occured in 19/05/2017 17:55:28,Status: Sell Attemp 6646910 performed
+Type: Debug.Occured in 19/05/2017 17:56:55,Status: Sell Attemp 6647178 performed
+Type: Debug.Occured in 19/05/2017 17:56:57,Status: Sell Attemp 6647188 performed
+Type: Message ,19/05/2017 17:57:03 , All requests cancelled successfully
+Type: Message ,19/05/2017 18:21:32 , The user started to work
+Type: Debug.Occured in 19/05/2017 18:31:30,Status: Sell Attemp 6654007 performed
+Type: Debug.Occured in 19/05/2017 18:32:00,Status: Sell Attemp 6654088 performed
+Type: Message ,19/05/2017 18:32:01 , All requests cancelled successfully
+Type: Debug.Occured in 19/05/2017 18:33:42,Status: Buy Attemp 6654450 performed
+Type: Debug.Occured in 19/05/2017 18:33:52,Status: Buy Attemp 6654475 performed
+Type: Debug.Occured in 19/05/2017 18:38:49,Status: Sell Attemp 6655418 performed
+Type: Message ,19/05/2017 18:59:50 , All requests cancelled successfully
+Type: Message ,19/05/2017 20:23:35 , The user started to work
+Type: Message ,19/05/2017 20:24:27 , The user started to work
+Type: Message ,19/05/2017 20:40:35 , The user started to work
+Type: Debug.Occured in 19/05/2017 20:41:28,Status: Sell Attemp 6676992 performed
+Type: Message ,19/05/2017 20:41:38 , Reeuest 6676992 has completed
+Type: Debug.Occured in 19/05/2017 20:42:27,Status: Sell Attemp 6677208 performed
+Type: Debug.Occured in 19/05/2017 20:43:52,Status: Sell Attemp 6677503 performed
+Type: Message ,19/05/2017 20:44:23 , Reeuest 6676992 has completed
+Type: Message ,19/05/2017 20:45:38 , Reeuest 6676992 has cancelled
+Type: Message ,19/05/2017 20:45:38 , Success of cancel Request 6677208
+Type: Message ,19/05/2017 21:03:20 , The user started to work
+Type: Error. Occured in 19/05/2017 21:04:11 , in method Void parse(System.String) in Line 22
+Reason: There's problem with the communication with the server
+Type: Error. Occured in 19/05/2017 21:05:03 , in method Void parse(System.String) in Line 30
+Reason: There's problem with the sending sell request
+Type: Error. Occured in 19/05/2017 21:05:11 , in method Void parse(System.String) in Line 22
+Reason: There's problem with the communication with the server
+Type: Message ,19/05/2017 21:06:04 , The user started to work
+Type: Error. Occured in 19/05/2017 21:06:08 , in method Void parse(System.String) in Line 22
+Reason: There's problem with the communication with the server
+Type: Error. Occured in 19/05/2017 21:06:13 , in method Void parse(System.String) in Line 30
+Reason: There's problem with the sending sell request
+Type: Message ,19/05/2017 21:07:39 , The user started to work
+Type: Error. Occured in 19/05/2017 21:07:42 , in method Int32 SendBuyRequest(Int32, Int32, Int32) in Line 79
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 19/05/2017 21:07:42 , in method Void parse(System.String) in Line 22
+Reason: There's problem with the communication with the server
+Type: Error. Occured in 19/05/2017 21:07:47 , in method Int32 SendSellRequest(Int32, Int32, Int32) in Line 104
+Reason: There's a problem with the communication with the server
+Type: Error. Occured in 19/05/2017 21:07:47 , in method Void parse(System.String) in Line 30
+Reason: There's problem with the sending sell request
+Type: Message ,19/05/2017 21:08:33 , The user started to work
+Type: Error. Occured in 19/05/2017 21:08:35 , in method Void parse(System.String) in Line 30
+Reason: There's problem with the sending sell request
+Type: Message ,19/05/2017 21:08:49 , The user started to work
+Type: Error. Occured in 19/05/2017 21:08:53 , in method Void parse(System.String) in Line 30
+Reason: There's problem with the sending sell request
+Type: Message ,19/05/2017 21:09:05 , The user started to work
+Type: Error. Occured in 19/05/2017 21:09:11 , in method Void parse(System.String) in Line 30
+Reason: There's problem with the sending sell request
+Type: Message ,19/05/2017 21:09:28 , The user started to work
+Type: Error. Occured in 19/05/2017 21:09:32 , in method Void parse(System.String) in Line 30
+Reason: There's problem with the sending sell request
+Type: Message ,19/05/2017 21:09:49 , The user started to work
+Type: Error. Occured in 19/05/2017 21:09:54 , in method Void parse(System.String) in Line 30
+Reason: There's problem with the sending sell request
+Type: Message ,19/05/2017 21:10:17 , The user started to work
+Type: Message ,19/05/2017 21:38:39 , The user started to work
+Type: Debug.Occured in 19/05/2017 21:38:51,Status: Sell Attemp 6688423 performed
+Type: Debug.Occured in 19/05/2017 21:39:00,Status: Buy Attemp 6688454 performed
+Type: Message ,19/05/2017 21:39:05 , Request 6688423 has completed
+Type: Message ,19/05/2017 21:39:13 , 6688454 has cancelled
+Type: Message ,19/05/2017 21:39:13 , All requests cancelled successfully

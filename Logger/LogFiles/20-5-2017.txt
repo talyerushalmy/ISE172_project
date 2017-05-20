@@ -52,3 +52,8 @@ Type: Error. Occured in 5/20/2017 8:36:07 PM , in method Program.QueryUserReques
 Reason: There's a problem with the communication with the server
 Type: Error. Occured in 5/20/2017 8:36:10 PM , in method Program.QueryUserRequest[] sendQueryUserRequestsRequest() in Line 148
 Reason: There's a problem with the communication with the server
+Type: Message ,5/20/2017 9:10:48 PM , The user started to work
+Type: Debug.Occured in 5/20/2017 9:10:54 PM,Status: Buy Attemp 6959081 performed
+Type: Message ,5/20/2017 9:11:05 PM , Requeest 6959081 has cancelled
+Type: Message ,5/20/2017 9:11:05 PM , Success of cancel Request 6959081
+Type: Message ,5/20/2017 9:13:35 PM , The user finished to work in the system
