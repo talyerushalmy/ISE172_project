@@ -22,5 +22,12 @@ namespace Program
             this.amount = amount;
             this.price = price;
         }
+
+        public override string ToString()
+        {
+            string s = "";
+            s += "commodity: " + commodity + " amount: " + amount + " price: " + price;
+            return s;
+        }
     }
 }

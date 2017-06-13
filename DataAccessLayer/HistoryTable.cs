@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,20 +18,17 @@ namespace Program
         public static void update()
         {
             int[] requests = ((MarketUserData)_marketClient.SendQueryUserRequest()).requests;
-            foreach (HistoryItem item in _historyList)
+            foreach (HistoryItem item in _historyList.Where(x => x._status == Status.pending).Where(x => !requests.Contains(x._id)))
             {
-                if (item._status == Status.pending && !requests.Contains(item._id))
-                {
-                    item._status = Status.completed;
-                    Logger.InfoLog("Request " + HistoryTable.getHistoryList().First()._id + " has completed");
-
-                }
+                item._status = Status.completed;
+                Logger.InfoLog("Request " + item._id + " has completed");
             }
         }
         public static LinkedList<HistoryItem> getHistoryList()
         {
             return _historyList;
         }
+
         public static void PrintHistory()
         {
             update();
@@ -39,9 +36,9 @@ namespace Program
             Console.WriteLine("-------");
             foreach (var item in getHistoryList())
             {
-                Console.WriteLine("id "+item._id+", type request: "+item._requestType+", date: "+item._date+", information: "+item._info+", Status: "+item._status);
+                Console.WriteLine("id " + item._id + ", type request: " + item._requestType + ", date: " + item._date + ", information: " + item._info + ", Status: " + item._status);
             }
         }
     }
-    
+
 }

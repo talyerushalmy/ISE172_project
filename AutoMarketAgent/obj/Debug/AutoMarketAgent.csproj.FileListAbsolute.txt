@@ -38,3 +38,5 @@ C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנד�
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\AutoMarketAgent\obj\Debug\AutoMarketAgent.csprojResolveAssemblyReference.cache
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\AutoMarketAgent\obj\Debug\AutoMarketAgent.exe
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\AutoMarketAgent\obj\Debug\AutoMarketAgent.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\AutoMarketAgent\bin\Debug\Logger.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\AutoMarketAgent\bin\Debug\Logger.pdb

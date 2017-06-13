@@ -17,7 +17,7 @@ namespace Program
         {
             this._marketClient = new MarketClient();
             updateCommodities();
-            autoPilot();
+            //autoPilot();
         }
 
         public void autoPilot()
@@ -147,10 +147,8 @@ namespace Program
             while (avgAmount >= newAvg)
             {
                 Commodity[] sortedByRatio = getSortedByDescending(x => x.getAskToBid());
-                // //wait(sortedByRatio.Length);
                 foreach (Commodity comm in sortedByRatio)
                 {
-                    //wait();
                     this._marketClient.SendSellRequest(comm.info.bid, comm.id, checkAmountToSell(comm));
                 }
                 updateCommodities();

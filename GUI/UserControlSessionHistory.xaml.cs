@@ -31,6 +31,7 @@ namespace GUI
         {
             try
             {
+                HistoryTable.update();
                 this.labelHeader.Content = "Session history as of " + DateTime.Now.ToLongTimeString();
                 var history = HistoryTable.getHistoryList();
                 this.dataGridHistory.ItemsSource = history;

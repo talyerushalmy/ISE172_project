@@ -84,3 +84,5 @@ C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנד�
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\bin\Debug\MarketClient.pdb
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\PresentationLayer\obj\Debug\PresentationLayer.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\Logger.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\Logger.pdb

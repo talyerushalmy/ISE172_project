@@ -83,9 +83,9 @@ namespace Program
                 BuyRequest data = new BuyRequest(commodity, amount, price);
                 response = SendRequest(data);
                 int id = Convert.ToInt32(response);
-                if (id > 1)
+                if (id >= 1)
                 {
-                    HistoryItem newItem = new HistoryItem(DateTime.Now, "BuyRequest", data.ToString(), id);
+                    HistoryItem newItem = new HistoryItem(DateTime.Now, data.type, data.ToString(), id);
                     HistoryTable.Add(newItem);
                 }
                 return id;
@@ -106,9 +106,9 @@ namespace Program
                 SellRequest data = new SellRequest(commodity, amount, price);
                 response = SendRequest(data);
                 int id = Convert.ToInt32(response);
-                if (id > 1)
+                if (id >= 1)
                 {
-                    HistoryItem newItem = new HistoryItem(DateTime.Now, "BuyRequest", data.ToString(), id);
+                    HistoryItem newItem = new HistoryItem(DateTime.Now, data.type, data.ToString(), id);
                     HistoryTable.Add(newItem);
                 }
                 return id;
@@ -157,7 +157,7 @@ namespace Program
                 if (HistoryTable.getHistoryList().Last() == HistoryTable.getHistoryList().First())
                 {
                     HistoryTable.getHistoryList().First()._status = Status.cancelled;
-                    Logger.InfoLog("Requeest " + HistoryTable.getHistoryList().Last()._id + " has cancelled");
+                    Logger.InfoLog("Request " + HistoryTable.getHistoryList().Last()._id + " has cancelled");
                 }
                 else
                 {
