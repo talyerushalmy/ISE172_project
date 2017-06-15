@@ -46,6 +46,7 @@
     <Compile Include="Commodity.cs" />
     <Compile Include="BuyRequest.cs" />
     <Compile Include="CancelBuySellRequest.cs" />
+    <Compile Include="DatabaseSocket.cs" />
     <Compile Include="HistoryItem.cs" />
     <Compile Include="HistoryTable.cs" />
     <Compile Include="MarketCommodityOffer.cs" />
