@@ -73,7 +73,7 @@ namespace GUI
             try
             {
                 global::Program.MarketClient marketClient = new global::Program.MarketClient();
-                QueryUserRequest[] resp = marketClient.sendQueryUserRequestsRequest();
+                QueryUserRequest[] resp = marketClient.SendQueryUserRequestsRequest();
 
                 this.dataGridData.Items.Clear();
                 foreach (var curr in resp)

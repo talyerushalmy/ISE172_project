@@ -42,22 +42,6 @@ C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\BusinessLayer\
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.pdb
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\BusinessLayer\bin\Debug\AutoMarketAgent.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\BusinessLayer\bin\Debug\AutoMarketAgent.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.exe.config
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\AutoMarketAgent.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\DataAccessLayer.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\MarketClient.dll
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\Newtonsoft.Json.dll
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\AutoMarketAgent.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\DataAccessLayer.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\MarketClient.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\Logger.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\Logger.pdb
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.exe.config
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.exe
@@ -76,3 +60,19 @@ C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנד�
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.pdb
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\BusinessLayer\bin\Debug\Logger.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\BusinessLayer\bin\Debug\Logger.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.exe.config
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\AutoMarketAgent.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\DataAccessLayer.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\Logger.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\MarketClient.dll
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\AutoMarketAgent.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\Logger.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\bin\Debug\MarketClient.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\BusinessLayer\obj\Debug\BusinessLayer.pdb

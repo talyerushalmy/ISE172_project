@@ -63,6 +63,8 @@
     <Compile Include="RequestBase.cs" />
     <Compile Include="RequestTimer.cs" />
     <Compile Include="SellRequest.cs" />
+    <Compile Include="Statistics.cs" />
+    <Compile Include="Transaction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

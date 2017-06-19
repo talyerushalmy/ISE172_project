@@ -43,8 +43,11 @@ namespace Program
         {
             try
             {
-                var resp = this.client.SendPostRequest<T>(this.req.getUrl(), this.req.getUser(), this.req.getToken(),
-                    data);
+                Random rand = new Random();
+                int nonce = rand.Next(Int32.MinValue, Int32.MaxValue);
+                string token = req.createToken(nonce);
+
+                var resp = this.client.SendPostRequest<T>(this.req.getUrl(), this.req.getUser(), token, data, nonce);
                 RequestTimer.wait();
                 RequestTimer.addRequest();
                 return resp;
@@ -60,8 +63,10 @@ namespace Program
         {
             try
             {
-                var resp = this.client.SendPostRequest<T1, T2>(this.req.getUrl(), this.req.getUser(),
-                    this.req.getToken(), data);
+                Random rand = new Random();
+                int nonce = rand.Next(Int32.MinValue, Int32.MaxValue);
+                string token = req.createToken(nonce);
+                var resp = this.client.SendPostRequest<T1, T2>(this.req.getUrl(), this.req.getUser(), token, data, nonce);
                 RequestTimer.wait();
                 RequestTimer.addRequest();
                 return resp;
@@ -170,7 +175,7 @@ namespace Program
             return false;
         }
 
-        public QueryUserRequest[] sendQueryUserRequestsRequest()
+        public QueryUserRequest[] SendQueryUserRequestsRequest()
         {
             QueryUserRequest[] obj = SendRequest<QueryUserRequestsRequest, QueryUserRequest[]>(new QueryUserRequestsRequest());
             return obj;
@@ -180,7 +185,7 @@ namespace Program
         {
             HistoryTable.PrintHistory();
         }
-        public Commodity[] sendQueryAllMarketRequest()
+        public Commodity[] SendQueryAllMarketRequest()
         {
             Commodity[] obj = SendRequest<QueryAllMarketRequest, Commodity[]>(new QueryAllMarketRequest());
             return obj;

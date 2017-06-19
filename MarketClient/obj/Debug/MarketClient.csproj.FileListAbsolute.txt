@@ -22,6 +22,5 @@ C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\MarketClient\bin\Debug\MarketClient.pdb
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\MarketClient\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\MarketClient\bin\Debug\Newtonsoft.Json.dll
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\MarketClient\obj\Debug\MarketClient.csprojResolveAssemblyReference.cache
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\MarketClient\obj\Debug\MarketClient.dll
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\MarketClient\obj\Debug\MarketClient.pdb

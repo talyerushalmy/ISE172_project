@@ -59,7 +59,7 @@ namespace GUI
             try
             {
                 global::Program.MarketClient marketClient = new global::Program.MarketClient();
-                Commodity[] commodities = marketClient.sendQueryAllMarketRequest();
+                Commodity[] commodities = marketClient.SendQueryAllMarketRequest();
 
                 this.dataGridData.Items.Clear();
                 foreach (var comm in commodities)

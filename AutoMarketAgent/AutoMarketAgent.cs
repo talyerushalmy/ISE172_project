@@ -33,7 +33,7 @@ namespace Program
         private void updateCommodities()
         {
             //wait();
-            this._commodities = this._marketClient.sendQueryAllMarketRequest();
+            this._commodities = this._marketClient.SendQueryAllMarketRequest();
             updateUserData();
         }
 

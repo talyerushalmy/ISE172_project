@@ -90,19 +90,17 @@ C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\GUI\obj\Debug\
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\GUI\obj\Debug\GUI.g.resources
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\GUI\obj\Debug\GUI.Properties.Resources.resources
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\GUI.exe.config
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\obj\Debug\GUI.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\obj\Debug\GUI.pdb
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\GUI.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\GUI.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\AutoMarketAgent.exe
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\DataAccessLayer.exe
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\MarketClient.dll
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\PresentationLayer.exe
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\Logger.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\BusinessLayer.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\GUI.exe.config
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\GUI.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\AutoMarketAgent.exe
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\Newtonsoft.Json.dll
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\BusinessLayer.exe
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\AutoMarketAgent.pdb
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\DataAccessLayer.pdb
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\bin\Debug\MarketClient.pdb
@@ -136,3 +134,5 @@ C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\obj\Debug\GUI.g.resources
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\obj\Debug\GUI.Properties.Resources.resources
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\obj\Debug\GUI.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\obj\Debug\GUI.pdb
