@@ -9,15 +9,21 @@ namespace Program
 {
     public static class Statistics
     {
-        public static int GetKthTradedStock(int [,] marketShare,int k)
+        public static int GetKthTradedComm(int [,] marketShare,int k)
         {
             return marketShare[k, 0];
         }
-        public static int GetMostTradedStock(int[,] marketShare)
+
+        public static int GetKthTradedComm(int numOfTrades, int numOfComms, int k)
+        {
+            int[,] marketShare = DatabaseSocket.marketShare(numOfTrades, numOfComms);
+            return GetKthTradedComm(marketShare, k);
+        }
+        public static int GetMostTradedComm(int[,] marketShare)
         {
             return marketShare[0, 0];
         }
-        public static int GetLeastTradedStock(int[,] marketShare)
+        public static int GetLeastTradedComm(int[,] marketShare)
         {
             return marketShare[marketShare.GetLength(0), 0];
         }
