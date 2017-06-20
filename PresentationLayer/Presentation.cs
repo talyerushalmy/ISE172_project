@@ -10,7 +10,7 @@ namespace Program
     {
         public static void MainLoop()  //Print the main communication loop with the user.
         {
-            Logger.InfoLog("The user started to work");
+            Logger.InfoLog("The user started to work\n");
             AsciiSilverTongue ast = new AsciiSilverTongue();
             ast.PrintWelcome();
             ast.PrintMenu();

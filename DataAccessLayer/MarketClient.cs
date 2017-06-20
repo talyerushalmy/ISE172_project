@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,6 +76,8 @@ namespace Program
             {
                 // in case of an error, print the error message
                 Console.WriteLine(e.Message);
+                StackFrame sf = new StackFrame(1, true);
+                Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's a problem with the communication with the server");
                 return null;
             }
         }
@@ -97,6 +100,8 @@ namespace Program
             }
             catch
             {
+                StackFrame sf = new StackFrame(1, true);
+                Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's a problem with send of buy request");
                 printError(response); // Print the error
                 return -1;
             }
@@ -121,6 +126,8 @@ namespace Program
             catch
             {
                 printError(response); // Print the error
+                StackFrame sf = new StackFrame(1, true);
+                Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "There's a problem with send of sell request");
                 return -1;
             }
         }
@@ -144,7 +151,11 @@ namespace Program
         {
             object obj = SendRequest<QueryMarketRequest, MarketCommodityOffer>(new QueryMarketRequest(commodity));
             if (obj == null)
+            {
+                StackFrame sf = new StackFrame(1, true);
+                Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "Fail of Query Market Request");
                 Console.WriteLine("Could not fetch commodity data");
+            }
             return (MarketCommodityOffer)obj;
         }
 

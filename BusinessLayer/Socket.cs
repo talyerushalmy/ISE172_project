@@ -129,7 +129,10 @@ namespace Program
                         cancelledRequests += "Cannot cancel trade number " + id + "\n";
                 }
                 if (cancelledRequests.Length == 0)
+                {
                     cancelledRequests = "All requests cancelled successfully";
+                    Logger.InfoLog("All pending requests cancelled successfully");
+                }
                 Console.WriteLine(cancelledRequests);
             }
             else
@@ -139,7 +142,10 @@ namespace Program
 
         public void runAutoMarketAgent()
         {
+            Logger.DebugLog("The user opened auto market agent");
             AutoMarketAgent autoMarketAgent = new AutoMarketAgent();
+            autoMarketAgent.autoPilot();
+            Logger.DebugLog("Auto market Agent finished the algorythm");
         }
 
         //Query Buy/Sell/Market Request
