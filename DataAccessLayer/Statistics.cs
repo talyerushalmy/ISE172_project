@@ -9,34 +9,69 @@ namespace Program
 {
     public static class Statistics
     {
-        public static int GetKthTradedComm(int [,] marketShare,int k)
+        public static int GetKthTradedComm(int[,] marketShare, int k)
         {
-            return marketShare[k, 0];
+            try
+            {
+                return marketShare[k, 0];
+            }
+            catch
+            {
+                return -1;
+            }
         }
 
-        public static int GetKthTradedComm(int numOfTrades, int numOfComms, int k)
+        public static int GetKthTradedComm(int numOfTrades, int k)
         {
-            int[,] marketShare = DatabaseSocket.marketShare(numOfTrades, numOfComms);
-            return GetKthTradedComm(marketShare, k);
+            try
+            {
+                int[,] marketShare = DatabaseSocket.getMarketShare(numOfTrades);
+                return GetKthTradedComm(marketShare, k);
+            }
+            catch
+            {
+                return -1;
+            }
         }
+
         public static int GetMostTradedComm(int[,] marketShare)
+        {
+            return marketShare[marketShare.GetLength(0)-1, 0];
+        }
+
+        public static int GetMostTradedComm(int numOfTrades, int k)
+        {
+            int[,] marketShare = DatabaseSocket.getMarketShare(numOfTrades);
+            return GetMostTradedComm(marketShare);
+        }
+
+        public static int GetLeastTradedComm(int[,] marketShare)
         {
             return marketShare[0, 0];
         }
-        public static int GetLeastTradedComm(int[,] marketShare)
+
+        public static int GetLeastTradedComm(int numOfTrades)
         {
-            return marketShare[marketShare.GetLength(0), 0];
+            int[,] marketShare = DatabaseSocket.getMarketShare(numOfTrades);
+            return GetLeastTradedComm(marketShare);
         }
 
-        public static double CalcAvgPrice(Transaction[] transactions)
+        public static double CalcAvgCommPrice(Transaction[] transactions)
         {
             double sum = 0;
-            for(int i = 0; i < transactions.Length; i++)
+            for (int i = 0; i < transactions.Length; i++)
             {
                 sum += transactions[i].getPrice();
             }
-            return sum/ (double)transactions.Length;
+            if (transactions.Length == 0)
+                return -1;
+            return sum / (double)transactions.Length;
         }
 
+        public static double CalcAvgCommPriceByLastNTrades(int commID, int n)
+        {
+            Transaction[] lastNTransactions = DatabaseSocket.getPriceOfCommByLastNTrades(commID, n);
+            return CalcAvgCommPrice(lastNTransactions);
+        }
     }
 }

@@ -51,6 +51,7 @@
     <Compile Include="HistoryTable.cs" />
     <Compile Include="MarketCommodityOffer.cs" />
     <Compile Include="MarketItemQuery.cs" />
+    <Compile Include="MarketShare.cs" />
     <Compile Include="MarketUserData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
