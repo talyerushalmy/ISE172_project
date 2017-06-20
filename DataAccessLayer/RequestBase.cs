@@ -37,6 +37,7 @@ namespace Program
             this.url = @"http://ise172.ise.bgu.ac.il/";
             this.user = "user46";
             this.privateKey = System.IO.File.ReadAllText(KEY_PATH);
+
         }
 
         public string getUser() { return this.user; }

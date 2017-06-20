@@ -25,7 +25,7 @@ namespace Program
         }
         public static int GetLeastTradedComm(int[,] marketShare)
         {
-            return marketShare[marketShare.GetLength(0)-1, 0];
+            return marketShare[marketShare.GetLength(0), 0];
         }
 
         public static double CalcAvgPrice(Transaction[] transactions)
