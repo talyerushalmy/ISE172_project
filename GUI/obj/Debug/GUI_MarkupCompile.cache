@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\GUI\obj\Debug\
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\obj\Debug\
 GUI
 none
 false
 DEBUG;TRACE
-C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\GUI\App.xaml
-10-999556467
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\App.xaml
+12-1451890635
 
-14627991877
-17-1924650816
-AlgoTradingWindow.xaml;MainWindow.xaml;UserControlActiveRequests.xaml;UserControlBuy.xaml;UserControlInfo.xaml;UserControlMarketStatus.xaml;UserControlQuery.xaml;UserControlSell.xaml;UserControlSessionHistory.xaml;UserControlWelcome.xaml;
+16590538489
+17-966730021
+AlgoTradingWindow.xaml;MainWindow.xaml;UserControlActiveRequests.xaml;UserControlBuySell.xaml;UserControlInfo.xaml;UserControlMarketStatus.xaml;UserControlQuery.xaml;UserControlSell.xaml;UserControlSessionHistory.xaml;UserControlAMAWorking.xaml;UserControlGraphs.xaml;UserControlWelcome.xaml;
 
 False
 

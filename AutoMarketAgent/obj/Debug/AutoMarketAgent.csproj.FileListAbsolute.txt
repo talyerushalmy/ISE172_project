@@ -40,3 +40,17 @@ C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנד�
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\AutoMarketAgent\obj\Debug\AutoMarketAgent.pdb
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\AutoMarketAgent\bin\Debug\Logger.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\AutoMarketAgent\bin\Debug\Logger.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\AutoMarketAgent.exe.config
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\AutoMarketAgent.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\AutoMarketAgent.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\DataAccessLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\MarketClient.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\Logger.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\DataAccessLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\MarketClient.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\bin\Debug\Logger.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\obj\Debug\AutoMarketAgent.csprojResolveAssemblyReference.cache
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\obj\Debug\AutoMarketAgent.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\AutoMarketAgent\obj\Debug\AutoMarketAgent.pdb

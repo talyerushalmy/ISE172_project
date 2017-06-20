@@ -4,11 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI"
-             mc:Ignorable="d" 
-             d:DesignHeight="251" d:DesignWidth="358">
-    <Grid>
-        <Label x:Name="labelHeader" Content="" HorizontalAlignment="Left" Margin="19,16,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="dataGridHistory" HorizontalAlignment="Left" Margin="19,47,0,-12.8" VerticalAlignment="Top" Height="217" Width="339"/>
+             mc:Ignorable="d" Height="371" Width="524">
+    <Grid Margin="0,0,0,0.2">
+        <Label x:Name="labelHeader" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGridHistory" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" Height="323" Width="517"/>
 
     </Grid>
 </UserControl>

@@ -4,19 +4,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI"
-             mc:Ignorable="d" 
-             d:DesignHeight="251" d:DesignWidth="358">
-    <Grid>
-        <Label x:Name="label" Content="Search for:" HorizontalAlignment="Left" Margin="41,41,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBoxType" HorizontalAlignment="Left" Margin="132,41,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBoxType_SelectionChanged">
+             mc:Ignorable="d" Height="371" Width="524">
+    <Grid Margin="0,0,0,0.2">
+        <Label x:Name="label" Content="Search for:" HorizontalAlignment="Left" Margin="4,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBoxType" HorizontalAlignment="Left" Margin="75,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBoxType_SelectionChanged">
             <ComboBoxItem Content="Buy Request" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Sell Request" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Commodity" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <Label x:Name="labelInsert" Content="Select type" HorizontalAlignment="Left" Margin="41,72,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBoxInput" HorizontalAlignment="Left" Height="23" Margin="132,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <Button x:Name="buttonSearch" Content="Search" HorizontalAlignment="Left" Margin="267,41,0,0" VerticalAlignment="Top" Width="65" Height="54" IsEnabled="False" Click="buttonSearch_Click"/>
-        <TextBox x:Name="textBoxOutput" HorizontalAlignment="Left" Height="82" Margin="105,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="178" Visibility="Hidden" IsReadOnly="True"/>
+        <Label x:Name="labelInsert" Content="Select type" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxInput" HorizontalAlignment="Left" Height="23" Margin="301,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <Button x:Name="buttonSearch" Content="Search" HorizontalAlignment="Left" Margin="426,10,0,0" VerticalAlignment="Top" Width="80" Height="23" IsEnabled="False" Click="buttonSearch_Click"/>
+        <TextBox x:Name="textBoxOutput" HorizontalAlignment="Left" Height="130" Margin="146,141,0,0" Visibility="Hidden" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="230" IsReadOnly="True"/>
 
     </Grid>
 </UserControl>

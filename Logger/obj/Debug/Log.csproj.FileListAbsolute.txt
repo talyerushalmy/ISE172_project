@@ -9,3 +9,9 @@ C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנד�
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\Logger\bin\Debug\Logger.pdb
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\Logger\obj\Debug\Logger.exe
 C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\Logger\obj\Debug\Logger.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\Logger\bin\Debug\Logger.exe.config
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\Logger\bin\Debug\Logger.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\Logger\bin\Debug\Logger.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\Logger\obj\Debug\Logger.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\Logger\obj\Debug\Logger.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\Logger\obj\Debug\Log.csprojResolveAssemblyReference.cache

@@ -78,3 +78,23 @@ C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\ISE172_project\obj\Debug\ISE172_project.csprojResolveAssemblyReference.cache
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\ISE172_project\bin\Debug\Logger.exe
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\ISE172_project\bin\Debug\Logger.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\ISE17_project.exe.config
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\ISE17_project.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\ISE17_project.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\PresentationLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\BusinessLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\Logger.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\DataAccessLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\AutoMarketAgent.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\MarketClient.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\PresentationLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\BusinessLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\Logger.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\DataAccessLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\AutoMarketAgent.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\bin\Debug\MarketClient.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\obj\Debug\ISE172_project.csprojResolveAssemblyReference.cache
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\obj\Debug\ISE17_project.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\ISE172_project\obj\Debug\ISE17_project.pdb

@@ -4,11 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI"
-             mc:Ignorable="d" 
-             d:DesignHeight="251" d:DesignWidth="358">
-    <Grid>
-        <TextBlock HorizontalAlignment="Center" Text="Welcome, User!" FontSize="42" Margin="-61,81,-81,110.2" FontFamily="Old English Text MT" FontWeight="Bold" TextDecorations="{x:Null}" Width="500" TextAlignment="Center" />
-        <Label x:Name="label" Content="Please select an activity from the menu to the left" HorizontalAlignment="Left" Margin="52,174,0,0" VerticalAlignment="Top"/>
+             mc:Ignorable="d" Width="524" Height="371">
+    <Grid Margin="0,0,0,0.2">
+        <TextBlock HorizontalAlignment="Center" Text="Welcome, User!" FontSize="60" Margin="-6,108,10,81" FontFamily="Old English Text MT" FontWeight="Bold" TextDecorations="{x:Null}" Width="520" TextAlignment="Center" />
+        <Label x:Name="label" Content="Please select an activity from the menu to the left" HorizontalAlignment="Left" Margin="134,200,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

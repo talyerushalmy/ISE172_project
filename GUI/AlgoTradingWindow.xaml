@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="AlgoTradingWindow" Height="350" Width="525" ResizeMode="NoResize"
+        Title="AlgoTradingWindow" Height="420" Width="666" ResizeMode="NoResize"
         Closing="AlgoTradingWindow_OnClosing">
-    <Grid>
-        <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" Margin="10,10,405.4,10.2">
+    <Grid x:Name="ProgramGrid">
+        <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" Margin="10,10,539.6,10.2">
             <Grid Margin="-0.8,-0.8,-1,264.6">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -16,22 +16,70 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*" />
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" x:Name="buttonInformation" Content="My Profile" Click="buttonInformation_Click" Margin="0,0,0.2,-19.8" />
             </Grid>
         </Border>
-        <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" Margin="120,10,10.4,10.2">
-            <DockPanel HorizontalAlignment="Left" Height="303" LastChildFill="False" Margin="-0.8,-0.8,-1.2,-3.4" VerticalAlignment="Top" Width="388">
+        <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" Margin="125,10,10.6,10.2">
+            <DockPanel HorizontalAlignment="Left" Height="371" LastChildFill="False" Margin="-0.8,-0.8,-1.2,-1" VerticalAlignment="Top" Width="524">
                 <ContentControl x:Name="ContentControl" />
             </DockPanel>
         </Border>
-        <Button Grid.Row="0" x:Name="buttonBuy" Content="Buy" Margin="10,66,405.4,220.2" Click="buttonBuy_Click" />
-        <Button Grid.Row="0" x:Name="buttonSell" Content="Sell" Margin="10,101,405.4,185.2" Click="buttonSell_Click" />
-        <Button Grid.Row="0" x:Name="buttonActiveRequests" Content="Active Requests" Margin="10,136,405.4,150.2" Click="buttonActiveRequests_Click" />
-        <Button Grid.Row="0" x:Name="buttonSearch" Content="Query" Margin="10,241,405.4,45.2" Click="buttonSearch_Click" />
-        <Button Grid.Row="0" x:Name="buttonSessionHistory" Content="Session History" Margin="10,171,405.4,115.2" Click="buttonSessionHistory_Click" />
-        <Button Grid.Row="0" x:Name="buttonAMA" Content="Automatic Agent" Margin="10,276,405.4,10.2" Click="buttonAMA_Click" />
-        <Button x:Name="buttonMarketStatus" Content="Market Status" Click="buttonExit_Click" Margin="10,206,405.4,80.2" />
-
-
+        <Grid x:Name="MenuGrid">
+            <Grid.Resources>
+                <Style x:Name="MenuButtonStyle" TargetType="{x:Type Button}">
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                    <Setter Property="Background" Value="#ffffff"/>
+                    <Setter Property="BorderBrush" Value="#cccccc"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Foreground" Value="#333333"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Padding" Value="16,3,16,3"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Name="Chrome"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        SnapsToDevicePixels="true">
+                                    <ContentPresenter Name="Presenter"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      RecognizesAccessKey="True"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsEnabled" Value="false">
+                                        <Setter Property="Foreground" Value="#333333" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Chrome" Property="BorderBrush" Value="#1ba1e2" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter Property="Background" Value="#dddddd" />
+                                        <Setter Property="BorderBrush" Value="#cccccc" />
+                                        <Setter Property="Foreground" Value="#333333" />
+                                    </Trigger>
+                                    <Trigger Property="IsFocused" Value="true">
+                                        <Setter Property="Background" Value="#1ba1e2" />
+                                        <Setter Property="BorderBrush" Value="#1ba1e2"/>
+                                        <Setter Property="Foreground" Value="#ffffff"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <Button Grid.Row="0" x:Name="ButtonBuy" Content="Buy / Sell" Margin="10,64,539.6,282.2" Click="buttonBuy_Click" />
+            <Button Grid.Row="0" x:Name="ButtonGraphs" Content="Graphs" Margin="10,109,539.6,237.2" Click="ButtonGraphs_Click" />
+            <Button Grid.Row="0" x:Name="ButtonActiveRequests" Content="Active Requests" Margin="10,154,539.6,192.2" Click="buttonActiveRequests_Click" />
+            <Button Grid.Row="0" x:Name="ButtonSearch" Content="Query" Margin="10,289,539.6,57.2" Click="buttonSearch_Click" />
+            <Button Grid.Row="0" x:Name="ButtonSessionHistory" Content="Session History" Margin="10,199,539.6,147.2" Click="buttonSessionHistory_Click" />
+            <Button Grid.Row="0" x:Name="ButtonAma" Content="Automatic Agent" Margin="10,334,539.6,10.2" Click="buttonAMA_Click" />
+            <Button x:Name="ButtonMarketStatus" Content="Market Status" Click="buttonExit_Click" Margin="10,244,539.6,102.2" />
+            <Button Grid.Row="0" x:Name="ButtonInformation" Content="My Profile" Click="buttonInformation_Click" Margin="10,10,539.6,327.2" />
+        </Grid>
     </Grid>
+
 </Window>
