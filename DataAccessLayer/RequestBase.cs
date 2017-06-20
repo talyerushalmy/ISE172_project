@@ -13,15 +13,14 @@ namespace Program
         // variables relevant for every request
         private string KEY_PATH = @"..\..\..\private_key";
         private string user;
-        private string token;
         private string url;
+        private string privateKey;
 
-        public void setToken(string KEY_PATH = @"..\..\..\private_key")
+        public string createToken(int nonce)
         {
             try
             {
-                string privateKey = System.IO.File.ReadAllText(KEY_PATH);
-                this.token = SimpleCtyptoLibrary.CreateToken(this.user, privateKey);
+                return SimpleCtyptoLibrary.CreateToken(user, privateKey, nonce);
             }
             catch
             {
@@ -37,14 +36,12 @@ namespace Program
             //this.url = "http://localhost";
             this.url = @"http://ise172.ise.bgu.ac.il/";
             this.user = "user46";
-            setToken(KEY_PATH);
+            this.privateKey = System.IO.File.ReadAllText(KEY_PATH);
+
         }
 
         public string getUser() { return this.user; }
 
-        public string getToken() { return this.token; }
-
         public string getUrl() { return this.url; }
-
     }
 }

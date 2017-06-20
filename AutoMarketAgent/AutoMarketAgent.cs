@@ -12,6 +12,7 @@ namespace Program
         private MarketClient _marketClient;
         private MarketUserData _userData;
         private Commodity[] _commodities;
+        //private Commodity[] _marketShare;
 
         public AutoMarketAgent()
         {
@@ -23,17 +24,22 @@ namespace Program
         public void autoPilot()
         {
             //Functions to test
-            n00bTrade();
-            raiseCommAvg();
-            sell();
+            int[,] marketShare = DatabaseSocket.getMarketShare(20000);
+            printMatrix(marketShare);
+            TradeMostTradedComm(marketShare);
+            trade();
+            //Functions from milestone 2
+            //n00bTrade();
+            //raiseCommAvg();
+            //sell();
         }
 
 
-
+        #region Update Functions
         private void updateCommodities()
         {
             //wait();
-            this._commodities = this._marketClient.sendQueryAllMarketRequest();
+            this._commodities = this._marketClient.SendQueryAllMarketRequest();
             updateUserData();
         }
 
@@ -52,6 +58,65 @@ namespace Program
                 this._commodities[id].amount = comm.Value;
             }
         }
+
+        private void updateMarketShare()
+        {
+
+        }
+        #endregion
+
+        #region Trade Functions Using The DB
+        private void trade()
+        {
+            int n = DatabaseSocket.GetHistoryOfLastDay().Rows.Count;
+            int[,] marketShare = DatabaseSocket.getMarketShare(n);
+            Console.WriteLine("Market share of the last " + n + " trades : ");
+            printMatrix(marketShare);
+            for (int i = 0; i < marketShare.GetLength(0); i++)
+            {
+                TradeComm(this._commodities[i], marketShare[i, 1]);
+            }
+        }
+
+        private void TradeComm(Commodity comm, int n)
+        {
+            updateCommodities();
+            double avgPrice = Statistics.CalcAvgCommPriceByLastNTrades(comm.id, n);
+            Console.WriteLine("Avg price : " + avgPrice);
+            if (avgPrice > 0)
+            {
+                if (avgPrice > comm.info.ask)
+                {
+                    int buyAmount = checkAmountToBuy(comm);
+                    if (buyAmount > 0)
+                    {
+                        this._marketClient.SendBuyRequest(comm.info.ask, comm.id, buyAmount);
+                        Console.WriteLine("Bought " + buyAmount + " from " + comm.id + " for the price of " + comm.info.ask + " each");
+                    }
+                }
+                else if (avgPrice < comm.info.bid)
+                {
+                    int sellAmount = checkAmountToSell(comm);
+                    if (sellAmount > 0)
+                    {
+                        this._marketClient.SendSellRequest(comm.info.bid, comm.id, sellAmount);
+                        Console.WriteLine("Sold " + sellAmount + " from " + comm.id + " for the price of " + comm.info.bid + " each");
+                    }
+                }
+            }
+        }
+        
+        private void TradeMostTradedComm(int[,] marketShare)
+        {
+            int commID = Statistics.GetMostTradedComm(marketShare);
+            TradeComm(this._commodities[commID], marketShare[marketShare.GetLength(0)-1, 1]);
+        }
+
+        private void TradeLeastTradedComm(int[,] marketShare)
+        {
+
+        }
+        #endregion
 
         private void buy()
         {
@@ -74,6 +139,8 @@ namespace Program
             if (toBuy > 0)
                 this._marketClient.SendBuyRequest(commodity.info.ask, commodity.id, checkAmountToBuy(commodity));
         }
+
+
 
         private void buyAskLowerThanBid()
         {
@@ -298,6 +365,18 @@ namespace Program
         private Commodity[] getBidLowerEqualToAsk()
         {
             return _commodities.Where(x => x.getAskToBid() >= 1).OrderBy(x => x.getAskToBid()).ToArray();
+        }
+
+        private void printMatrix(int[,] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write("{0} ", matrix[i, j]);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }

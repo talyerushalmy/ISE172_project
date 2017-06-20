@@ -92,6 +92,14 @@ namespace Program
                             socket.printNoValidCommandError();
                     }
                     break;
+                case "share":
+                    {
+                        if (words.Length == 1)
+                        {
+                            socket.marketShare();
+                        }
+                    }
+                    break;
                 default:
                     {
                         // no command was identified

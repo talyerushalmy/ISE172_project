@@ -140,6 +140,7 @@ namespace Program
         public void runAutoMarketAgent()
         {
             AutoMarketAgent autoMarketAgent = new AutoMarketAgent();
+            autoMarketAgent.autoPilot();
         }
 
         //Query Buy/Sell/Market Request
@@ -173,13 +174,13 @@ namespace Program
 
         public void allMarketRequest()
         {
-            Commodity[] commodities = this.marketClient.sendQueryAllMarketRequest();
+            Commodity[] commodities = this.marketClient.SendQueryAllMarketRequest();
             Console.WriteLine(string.Join<Commodity>("\n", commodities));
         }
 
         public void userRequestsInfo()
         {
-            QueryUserRequest[] requests = this.marketClient.sendQueryUserRequestsRequest();
+            QueryUserRequest[] requests = this.marketClient.SendQueryUserRequestsRequest();
             if (requests.Length ==0)
                 Console.WriteLine("No active requests were found");
             else
@@ -195,6 +196,32 @@ namespace Program
         public void allHistory()
         {
             HistoryTable.PrintHistory();
+        }
+
+        public void marketShare()
+        {
+            /*Transaction[] t = DatabaseSocket.getOurLastHistory();
+            foreach (Transaction item in t)
+            {
+                Console.WriteLine(item.ToString());
+            }*/
+            int[,] marketShare = DatabaseSocket.getMarketShare(1000);
+            printMatrix(marketShare);
+            
+            //Console.WriteLine("Least Traded: " + Statistics.GetLeastTradedStock(marketShare));
+            //Console.WriteLine("Most Traded: " + Statistics.GetMostTradedStock(marketShare));
+        }
+
+        public void printMatrix(int[,] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write("{0} ", matrix[i, j]);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }

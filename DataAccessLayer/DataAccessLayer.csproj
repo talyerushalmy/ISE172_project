@@ -46,10 +46,12 @@
     <Compile Include="Commodity.cs" />
     <Compile Include="BuyRequest.cs" />
     <Compile Include="CancelBuySellRequest.cs" />
+    <Compile Include="DatabaseSocket.cs" />
     <Compile Include="HistoryItem.cs" />
     <Compile Include="HistoryTable.cs" />
     <Compile Include="MarketCommodityOffer.cs" />
     <Compile Include="MarketItemQuery.cs" />
+    <Compile Include="MarketShare.cs" />
     <Compile Include="MarketUserData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +64,8 @@
     <Compile Include="RequestBase.cs" />
     <Compile Include="RequestTimer.cs" />
     <Compile Include="SellRequest.cs" />
+    <Compile Include="Statistics.cs" />
+    <Compile Include="Transaction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

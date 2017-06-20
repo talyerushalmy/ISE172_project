@@ -2,11 +2,14 @@
 using MarketClient.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 
 namespace Program
 {
     public class SimpleHTTPClient
     {
+        private string KEY_PATH = @"..\..\..\private_key";
+
         /// <summary>
         /// Send an object of type T1, @item, parsed as json string embedded with the 
         /// authentication token, that is build using @user and @token, 
@@ -20,9 +23,9 @@ namespace Program
         /// <param name="token">token for authentication data</param>
         /// <param name="item">the data item to send in the reuqest</param>
         /// <returns>the server response parsed as T2 object in json format</returns>
-        public T2 SendPostRequest<T1,T2>(string url, string user, string token, T1 item) where T2 : class 
-        {
-            var response = SendPostRequest(url, user, token, item);
+        public T2 SendPostRequest<T1,T2>(string url, string user, string token, T1 item, int nonce) where T2 : class
+        { 
+            var response = SendPostRequest(url, user, token, item, nonce);
             return response == null ? null : FromJson<T2>(response);
         }
 
@@ -38,17 +41,28 @@ namespace Program
         /// <param name="token">token for authentication data</param>
         /// <param name="item">the data item to send in the reuqest</param>
         /// <returns>the server response</returns>
-        public string SendPostRequest<T1>(string url, string user, string token, T1 item)
+        public string SendPostRequest<T1>(string url, string user, string token, T1 item, int nonce)
         {
-            var auth = new { user, token };
+            var auth = new { token, nonce, user };
             JObject jsonItem = JObject.FromObject(item);
             jsonItem.Add("auth", JObject.FromObject(auth));
             StringContent content = new StringContent(jsonItem.ToString());
+            string ans;
             using (var client = new HttpClient())
             {
                 var result = client.PostAsync(url, content).Result;
                 var responseContent = result?.Content?.ReadAsStringAsync().Result;
-                return responseContent;
+                if (responseContent.Equals("Non unique nonce"))
+                {
+                    nonce = new Random().Next(Int32.MinValue, Int32.MaxValue);
+                    return SendPostRequest(url, user, token, item, nonce);
+                }
+                else
+                {
+                    string privateKey = System.IO.File.ReadAllText(KEY_PATH);
+                    ans = SimpleCtyptoLibrary.decrypt(responseContent, privateKey);
+                }
+                return ans;
             }
         }
 
