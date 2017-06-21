@@ -170,10 +170,10 @@ namespace GUI
             this.ContentControl.Content = userControlMarketStatus;
         }
 
-        private void ButtonGraphs_Click(object sender, RoutedEventArgs e)
+        private void ButtonStatistics_Click(object sender, RoutedEventArgs e)
         {
-            UserControlGraphs userControlGraphs = new UserControlGraphs();
-            this.ContentControl.Content = userControlGraphs;
+            UserControlStatistics userControlStatistics = new UserControlStatistics();
+            this.ContentControl.Content = userControlStatistics;
         }
     }
 }

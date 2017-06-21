@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="GUI.UserControlStatisticsTabMarketShare"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="364" d:DesignWidth="517">
+    <Grid>
+        <lvc:PieChart Name="PieChartMarketShare"  LegendLocation="Bottom" Hoverable="True" DataTooltip="{x:Null}" Series="{Binding MarketShareCollection}" Margin="0,37,-0.2,3">
+        </lvc:PieChart>
+        <ComboBox x:Name="comboBoxRange" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBoxRange_SelectionChanged">
+            <ComboBoxItem IsSelected="True">Last hour</ComboBoxItem>
+            <ComboBoxItem >Last day</ComboBoxItem>
+            <ComboBoxItem >Last week</ComboBoxItem>
+            <ComboBoxItem >Last ... trades</ComboBoxItem>
+            <ComboBoxItem >Between...</ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="buttonSearch" Content="Search" HorizontalAlignment="Left" Margin="432,12,0,0" VerticalAlignment="Top" Width="75" Click="buttonSearch_Click" Visibility="Hidden" />
+        <ComboBox x:Name="comboBoxInputNumber" HorizontalAlignment="Left" Margin="146,10,0,0" VerticalAlignment="Top" Width="74" SelectionChanged="comboBox_SelectionChanged" Visibility="Hidden">
+            <ComboBoxItem IsSelected="True" >5000</ComboBoxItem>
+            <ComboBoxItem >10000</ComboBoxItem>
+            <ComboBoxItem >30000</ComboBoxItem>
+            <ComboBoxItem >100000</ComboBoxItem>
+        </ComboBox>
+        <DatePicker Name="DatePickerFrom" HorizontalAlignment="Left" Margin="159,10,0,0" VerticalAlignment="Top" Visibility="Hidden" />
+        <DatePicker Name="DatePickerTo" HorizontalAlignment="Left" Margin="275,10,0,0" VerticalAlignment="Top" Visibility="Hidden" />
+    </Grid>
+</UserControl>

@@ -181,7 +181,35 @@ namespace Program
             {
                 _myConnection.Open();
                 DataTable dt = new DataTable();
-                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10*LIMIT + " * FROM dbo.items WHERE [timestamp] BETWEEN CONVERT(datetime,'" + start + "', 105) AND CONVERT(datetime,'" + end + "', 105) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
+                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp] BETWEEN CONVERT(datetime,'" + start.ToString("dd/M/yyyy") + "', 105) AND CONVERT(datetime,'" + end.ToString("dd/M/yyyy") + "', 105) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
+                dt.Load(command.ExecuteReader());
+                _myConnection.Close();
+                int[,] output = new int[dt.Rows.Count, 2];
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    for (int j = 0; j < 2; j++)
+                    {
+                        output[i, j] = Convert.ToInt32(dt.Rows[i].ItemArray[j]);
+                    }
+                }
+                return Sanitize(output);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                if (_myConnection.State == ConnectionState.Open)
+                    _myConnection.Close();
+                return new int[0, 0];
+            }
+        }
+
+        public static int[,] GetMarketShareOfLastWeek()
+        {
+            try
+            {
+                _myConnection.Open();
+                DataTable dt = new DataTable();
+                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(day,-7,GETUTCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
                 dt.Load(command.ExecuteReader());
                 _myConnection.Close();
                 int[,] output = new int[dt.Rows.Count, 2];
@@ -209,7 +237,7 @@ namespace Program
             {
                 _myConnection.Open();
                 DataTable dt = new DataTable();
-                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(day,-1,GETUDCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
+                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(day,-1,GETUTCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
                 dt.Load(command.ExecuteReader());
                 _myConnection.Close();
                 int[,] output = new int[dt.Rows.Count, 2];
@@ -237,7 +265,7 @@ namespace Program
             {
                 _myConnection.Open();
                 DataTable dt = new DataTable();
-                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(hour,-1,GETUDCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
+                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(hour,-1,GETUTCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
                 dt.Load(command.ExecuteReader());
                 _myConnection.Close();
                 int[,] output = new int[dt.Rows.Count, 2];

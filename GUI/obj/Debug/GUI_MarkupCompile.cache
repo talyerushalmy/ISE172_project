@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\GUI\obj\Debug\
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\obj\Debug\
 GUI
 none
 false
 DEBUG;TRACE
-C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\GUI\App.xaml
-12-1451890635
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\App.xaml
+15-1902810093
 
-16590538489
-17-1924650816
-AlgoTradingWindow.xaml;MainWindow.xaml;UserControlActiveRequests.xaml;UserControlBuySell.xaml;UserControlInfo.xaml;UserControlMarketStatus.xaml;UserControlQuery.xaml;UserControlSell.xaml;UserControlSessionHistory.xaml;UserControlAMAWorking.xaml;UserControlGraphs.xaml;UserControlWelcome.xaml;
+19-1122613466
+19121624416
+AlgoTradingWindow.xaml;MainWindow.xaml;UserControlActiveRequests.xaml;UserControlBuySell.xaml;UserControlInfo.xaml;UserControlMarketStatus.xaml;UserControlQuery.xaml;UserControlSell.xaml;UserControlSessionHistory.xaml;UserControlAMAWorking.xaml;UserControlStatistics.xaml;UserControlStatisticsTabCommodityRates.xaml;UserControlStatisticsTabHighlights.xaml;UserControlStatisticsTabMarketShare.xaml;UserControlWelcome.xaml;
 
 False
 
