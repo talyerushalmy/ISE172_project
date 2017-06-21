@@ -140,6 +140,7 @@ namespace Program
         public void runAutoMarketAgent()
         {
             AutoMarketAgent autoMarketAgent = new AutoMarketAgent();
+            autoMarketAgent.autoPilot();
         }
 
         //Query Buy/Sell/Market Request
@@ -204,7 +205,7 @@ namespace Program
             {
                 Console.WriteLine(item.ToString());
             }*/
-            int[,] marketShare = DatabaseSocket.marketShare(30, 10);
+            int[,] marketShare = DatabaseSocket.getMarketShare(1000);
             printMatrix(marketShare);
             
             //Console.WriteLine("Least Traded: " + Statistics.GetLeastTradedStock(marketShare));

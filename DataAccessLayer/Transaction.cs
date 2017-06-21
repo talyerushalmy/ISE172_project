@@ -12,6 +12,7 @@ namespace Program
         private readonly int _price;
         private readonly int _amount;
         private readonly int _commodityID;
+
         public Transaction(DateTime timestamp,int commodityID,int price,int amount)
         {
             _timestamp = timestamp;

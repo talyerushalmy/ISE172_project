@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="GUI.UserControlBuySell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="251" d:DesignWidth="358" Height="371" Width="524">
+    <Grid RenderTransformOrigin="0.491,0.514" Margin="0,0,0,0.2">
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="199" Margin="154,119,0,0" Stroke="Black" VerticalAlignment="Top" Width="199"/>
+        <Label x:Name="labelHeader" Content="Buy Commodity" HorizontalAlignment="Left" Margin="195,43,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelCommodityID" Content="Commodity ID" HorizontalAlignment="Left" Margin="183,140,0,0" VerticalAlignment="Top" Width="88"/>
+        <ComboBox x:Name="comboBoxCommodity" HorizontalAlignment="Left" Margin="276,140,0,0" VerticalAlignment="Top" Width="48">
+            <ComboBoxItem Content="0" HorizontalAlignment="Left" Width="92"/>
+            <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="92"/>
+            <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="92"/>
+            <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="92"/>
+            <ComboBoxItem Content="4" HorizontalAlignment="Left" Width="92"/>
+            <ComboBoxItem Content="5" HorizontalAlignment="Left" Width="92"/>
+            <ComboBoxItem Content="6" HorizontalAlignment="Left" Width="92"/>
+            <ComboBoxItem Content="7" HorizontalAlignment="Left" Width="92"/>
+            <ComboBoxItem Content="8" HorizontalAlignment="Left" Width="92"/>
+            <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="92"/>
+        </ComboBox>
+        <Label x:Name="labelQuantity" Content="Quantity" HorizontalAlignment="Left" Margin="183,170,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelPrice" Content="Price" HorizontalAlignment="Left" Margin="183,201,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxQuantity" HorizontalAlignment="Left" Height="23" Margin="276,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" />
+        <TextBox x:Name="textBoxPrice" HorizontalAlignment="Left" Height="23" Margin="276,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"/>
+        <Button x:Name="buttonBuy" Content="Buy" HorizontalAlignment="Left" Margin="216,261,0,0" VerticalAlignment="Top" Width="75" Height="38" Click="buttonBuy_Click"/>
+        <RadioButton GroupName="radioButtonBuySell" IsChecked="True" Margin="195,91,274,266" Checked="RadioButton_Checked" >Buy</RadioButton>
+        <RadioButton GroupName="radioButtonBuySell" Margin="255,91,227,266" Checked="RadioButton_Checked" >Sell</RadioButton>
+    </Grid>
+</UserControl>

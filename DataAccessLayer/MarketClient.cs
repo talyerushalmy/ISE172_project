@@ -66,8 +66,8 @@ namespace Program
                 Random rand = new Random();
                 int nonce = rand.Next(Int32.MinValue, Int32.MaxValue);
                 string token = req.createToken(nonce);
-                var resp = this.client.SendPostRequest<T1, T2>(this.req.getUrl(), this.req.getUser(), token, data, nonce);
                 RequestTimer.wait();
+                var resp = this.client.SendPostRequest<T1, T2>(this.req.getUrl(), this.req.getUser(), token, data, nonce);
                 RequestTimer.addRequest();
                 return resp;
             }

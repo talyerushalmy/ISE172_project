@@ -1,10 +1,5 @@
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\Logger\bin\Debug\Logger.exe.config
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\Logger\bin\Debug\Logger.exe
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\Logger\bin\Debug\Logger.pdb
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\Logger\obj\Debug\Logger.exe
-C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 1\ISE172_project\Logger\obj\Debug\Logger.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Logger\bin\Debug\Logger.exe.config
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Logger\bin\Debug\Logger.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Logger\bin\Debug\Logger.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Logger\obj\Debug\Logger.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Logger\obj\Debug\Logger.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Logger\bin\Debug\Logger.exe.config
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Logger\bin\Debug\Logger.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Logger\bin\Debug\Logger.pdb
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Logger\obj\Debug\Logger.exe
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Logger\obj\Debug\Logger.pdb

@@ -61,8 +61,8 @@
     <Compile Include="UserControlActiveRequests.xaml.cs">
       <DependentUpon>UserControlActiveRequests.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlBuy.xaml.cs">
-      <DependentUpon>UserControlBuy.xaml</DependentUpon>
+    <Compile Include="UserControlBuySell.xaml.cs">
+      <DependentUpon>UserControlBuySell.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlInfo.xaml.cs">
       <DependentUpon>UserControlInfo.xaml</DependentUpon>
@@ -78,6 +78,12 @@
     </Compile>
     <Compile Include="UserControlSessionHistory.xaml.cs">
       <DependentUpon>UserControlSessionHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlAMAWorking.xaml.cs">
+      <DependentUpon>UserControlAMAWorking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlGraphs.xaml.cs">
+      <DependentUpon>UserControlGraphs.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlWelcome.xaml.cs">
       <DependentUpon>UserControlWelcome.xaml</DependentUpon>
@@ -105,7 +111,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlBuy.xaml">
+    <Page Include="UserControlBuySell.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,6 +134,14 @@
     <Page Include="UserControlSessionHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlAMAWorking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControlGraphs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControlWelcome.xaml">
       <SubType>Designer</SubType>
