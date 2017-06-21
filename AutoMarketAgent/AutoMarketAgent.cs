@@ -24,10 +24,13 @@ namespace Program
         public void autoPilot()
         {
             //Functions to test
-            int[,] marketShare = DatabaseSocket.getMarketShare(20000);
-            printMatrix(marketShare);
-            TradeMostTradedComm(marketShare);
-            trade();
+            //DatabaseSocket.GetHistoryBetweenTwoDates(DateTime.Today, DateTime.Now, false);
+            while (true)
+            {
+                trade();
+                Console.WriteLine("Waiting 5 seconds for requests");
+                System.Threading.Thread.Sleep(5000);
+            }
             //Functions from milestone 2
             //n00bTrade();
             //raiseCommAvg();
@@ -68,7 +71,7 @@ namespace Program
         #region Trade Functions Using The DB
         private void trade()
         {
-            int n = DatabaseSocket.GetHistoryOfLastDay().Rows.Count;
+            int n = DatabaseSocket.GetHistoryOfLastDay(false).Rows.Count;
             int[,] marketShare = DatabaseSocket.getMarketShare(n);
             Console.WriteLine("Market share of the last " + n + " trades : ");
             printMatrix(marketShare);
