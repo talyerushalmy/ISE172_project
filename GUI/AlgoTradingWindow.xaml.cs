@@ -101,7 +101,7 @@ namespace GUI
             {
                 if (this._amaWorking)
                 {
-                    MessageBoxResult popup = MessageBox.Show("The Auto Agent has failed", "Automatic Market Agent");
+                    MessageBoxResult popup = MessageBox.Show("The Auto Agent has stopped", "Automatic Market Agent");
                 }
             }
             finally
@@ -122,7 +122,15 @@ namespace GUI
 
         public void ExitProgram()
         {
-            Application.Current.Shutdown();
+            try
+            {
+                this._amaThread.Abort();
+            }
+            catch { }
+            finally
+            {
+                Application.Current.Shutdown();
+            }
         }
 
         private void AlgoTradingWindow_OnClosing(object sender, CancelEventArgs e)

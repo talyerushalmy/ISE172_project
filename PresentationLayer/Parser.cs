@@ -9,7 +9,7 @@ namespace Program
     public static class Parser
     {
         // Recieves the input string from the communication module and parses it, the sends it to the relevant function in the socket
-        public static bool parse(String str)
+        public static void parse(String str)
         {
             Socket socket = new Socket();
             string[] words = str.Split(' ');
@@ -21,7 +21,7 @@ namespace Program
                         if (words.Length == 4)
                             socket.buy(str.Substring(command.Length + 1));
                         else
-                            goto default;
+                            socket.printNoValidCommandError();
                     }
                     break;
                 case "sell":
@@ -29,7 +29,7 @@ namespace Program
                         if (words.Length == 4)
                             socket.sell(str.Substring(command.Length + 1));
                         else
-                            goto default;
+                            socket.printNoValidCommandError();
                     }
                     break;
                 case "cancel":
@@ -42,7 +42,7 @@ namespace Program
                                 socket.cancel(words[1]);
                         }
                         else
-                            goto default;
+                            socket.printNoValidCommandError();
                     }
                     break;
                 case "info":
@@ -51,20 +51,20 @@ namespace Program
                             //print info about the user
                             socket.userInfo();
                         else
-                            goto default;
+                            socket.printNoValidCommandError();
                     }
                     break;
                 case "requests":
                     if (words.Length == 1)
                         socket.userRequestsInfo();
                     else
-                        goto default;
+                        socket.printNoValidCommandError();
                     break;
                 case "market":
                     if (words.Length == 1)
                         socket.allMarketRequest();
                     else
-                        goto default;
+                        socket.printNoValidCommandError();
                     break;
                 case "find":
                     {
@@ -79,7 +79,7 @@ namespace Program
                         if (words.Length == 1)
                             socket.runAutoMarketAgent();
                         else
-                            goto default;
+                            socket.printNoValidCommandError();
                     }
                     break;
                 case "history":
@@ -87,9 +87,9 @@ namespace Program
                         if (words.Length == 1)
                         {
                             socket.allHistory();
-                        }
+                        }   
                         else
-                            goto default;
+                            socket.printNoValidCommandError();
                     }
                     break;
                 case "share":
@@ -104,11 +104,9 @@ namespace Program
                     {
                         // no command was identified
                         socket.printNoValidCommandError();
-                        return false;
                     }
-                    
+                    break;
             }
-            return true;
         }
 
 

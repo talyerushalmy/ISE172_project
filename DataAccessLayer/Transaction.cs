@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+    // A Class which represents a row in the history table of the DB
     public class Transaction
     {
-        //Object that represents a transaction and contains its details.
         private readonly DateTime _timestamp;
         private readonly int _price;
         private readonly int _amount;

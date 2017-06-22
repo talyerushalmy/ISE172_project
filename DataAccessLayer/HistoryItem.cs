@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    //Object that represents an action.
     public enum Status { pending, completed, cancelled };
 
     public class HistoryItem
