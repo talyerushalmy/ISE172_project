@@ -8,6 +8,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="364" d:DesignWidth="517">
     <Grid>
-            
+        <Grid x:Name="GridLabels" Margin="0,0,-0.2,0">
+            <Label x:Name="labelBiggestPrice" Content="Biggest price: " HorizontalAlignment="Left" Margin="28,61,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="labelMostSoldComm" Content="Most sold commodity: " HorizontalAlignment="Left" Margin="28,120,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="labelLeastSoldComm" Content="Least sold commodity: " HorizontalAlignment="Left" Margin="28,180,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="labelBestSale" Content="Best sale: " HorizontalAlignment="Left" Margin="28,238,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="labelWorstSale" Content="Worst sale: " HorizontalAlignment="Left" Margin="28,292,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <ComboBox x:Name="comboBoxTimeWindow" HorizontalAlignment="Left" Margin="31,12,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBoxTimeWindow_SelectionChanged">
+            <ComboBoxItem IsSelected="True" >Last hour</ComboBoxItem>
+            <ComboBoxItem >Last day</ComboBoxItem>
+            <ComboBoxItem >Last week</ComboBoxItem>
+            <ComboBoxItem >Always</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </UserControl>

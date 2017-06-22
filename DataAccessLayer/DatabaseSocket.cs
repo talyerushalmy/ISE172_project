@@ -25,7 +25,7 @@ namespace Program
                 _myConnection.Close();
                 return history;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 if (_myConnection.State == ConnectionState.Open)
@@ -39,7 +39,7 @@ namespace Program
             DataTable history = new DataTable();
             try
             {
-                if (n<0 || n> LIMIT)
+                if (n < 0 || n > LIMIT)
                 {
                     throw new ArgumentException("n is out of range");
                 }
@@ -60,7 +60,7 @@ namespace Program
             }
             return history;
         }
- 
+
         // Creates a table of all the market history between two dates
         public static DataTable GetHistoryBetweenTwoDates(DateTime start, DateTime end, bool justOurs)
         {
@@ -68,14 +68,14 @@ namespace Program
             try
             {
                 _myConnection.Open();
-                string query = "SELECT TOP " + LIMIT + " * FROM[dbo].[items] WHERE[timestamp] BETWEEN CONVERT(datetime,'"+start+"', 105) AND CONVERT(datetime,'"+end+"', 105)";
+                string query = "SELECT TOP " + LIMIT + " timestamp, price FROM[dbo].[items] WHERE[timestamp] BETWEEN CONVERT(datetime,'" + start + "', 105) AND CONVERT(datetime,'" + end + "', 105)";
                 if (justOurs)
                     query += " WHERE buyer='user46' OR seller='user46'";
                 query += " ORDER BY timestamp DESC";
                 Console.WriteLine(start);
                 SqlCommand command = new SqlCommand(query, _myConnection);
                 history.Load(command.ExecuteReader());
-                Console.WriteLine("Last timestamp : " + history.Rows[history.Rows.Count-1].ItemArray[0]);
+                Console.WriteLine("Last timestamp : " + history.Rows[history.Rows.Count - 1].ItemArray[0]);
                 Console.WriteLine("First timestamp : " + history.Rows[0].ItemArray[0]);
                 Console.WriteLine();
                 _myConnection.Close();
@@ -102,7 +102,7 @@ namespace Program
                 string query = "SELECT TOP " + LIMIT + " * FROM [dbo].[items] WHERE [timestamp]>=DATEADD(day,-1,GETUTCDATE())";
                 if (justOurs)
                     query += " AND buyer='user46' OR seller='user46'";
-                query +=" ORDER BY timestamp DESC";
+                query += " ORDER BY timestamp DESC";
                 SqlCommand command = new SqlCommand(query, _myConnection);
                 historyOfToday.Load(command.ExecuteReader());
                 Console.WriteLine("Last timestamp :" + Convert.ToDateTime(historyOfToday.Rows[historyOfToday.Rows.Count - 1].ItemArray[0]));
@@ -148,14 +148,14 @@ namespace Program
         {
             try
             {
-                if (n<0 || n > LIMIT)
+                if (n < 0 || n > LIMIT)
                     throw new ArgumentException("n is above the limit");
                 _myConnection.Open();
                 DataTable dt = new DataTable();
                 SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + n + " * FROM dbo.items ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
                 dt.Load(command.ExecuteReader());
                 _myConnection.Close();
-                int [,] output = new int[dt.Rows.Count, 2];
+                int[,] output = new int[dt.Rows.Count, 2];
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     for (int j = 0; j < 2; j++)
@@ -449,6 +449,200 @@ namespace Program
             return toReturn;
         }
 
+        public static List<String> GetHighlightsBiggestPrice(string TIME_WINDOW)
+        {
+            try
+            {
+                _myConnection.Open();
+                DataTable dt = new DataTable();
+                string query = @"SELECT TOP 1 price, commodity, timestamp FROM [dbo].[items] ";
+                switch (TIME_WINDOW)
+                {
+                    case "DAY":
+                        query += @"WHERE[timestamp] >= DATEADD(day, -1, GETUTCDATE())";
+                        break;
+                    case "WEEK":
+                        query += @"WHERE [timestamp]>=DATEADD(day,-7,GETUTCDATE())";
+                        break;
+                    case "HOUR":
+                        query += @"WHERE [timestamp]>=DATEADD(hour,-1,GETUTCDATE())";
+                        break;
+                }
+                query += " ORDER BY price DESC";
+                SqlCommand command = new SqlCommand(query, _myConnection);
+                dt.Load(command.ExecuteReader());
+                _myConnection.Close();
+                List<String> output = new List<string>();
+                for (int i = 0; i < 3; i++)
+                {
+                    output.Add(Convert.ToString(dt.Rows[0].ItemArray[i]));
+                }
+                return output;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                if (_myConnection.State == ConnectionState.Open)
+                    _myConnection.Close();
+                return null;
+            }
+        }
+
+        public static List<String> GetHighlightsMostSoldComm(string TIME_WINDOW)
+        {
+            try
+            {
+                _myConnection.Open();
+                DataTable dt = new DataTable();
+                string query = @"SELECT TOP 1 commodity, SUM(amount) FROM [dbo].[items] ";
+                switch (TIME_WINDOW)
+                {
+                    case "DAY":
+                        query += @"WHERE[timestamp] >= DATEADD(day, -1, GETUTCDATE())";
+                        break;
+                    case "WEEK":
+                        query += @"WHERE [timestamp]>=DATEADD(day,-7,GETUTCDATE())";
+                        break;
+                    case "HOUR":
+                        query += @"WHERE [timestamp]>=DATEADD(hour,-1,GETUTCDATE())";
+                        break;
+                }
+                query += " GROUP BY commodity ORDER BY SUM(amount) DESC";
+                SqlCommand command = new SqlCommand(query, _myConnection);
+                dt.Load(command.ExecuteReader());
+                _myConnection.Close();
+                List<String> output = new List<string>();
+                for (int i = 0; i < 2; i++)
+                {
+                    output.Add(Convert.ToString(dt.Rows[0].ItemArray[i]));
+                }
+                return output;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                if (_myConnection.State == ConnectionState.Open)
+                    _myConnection.Close();
+                return new List<String>();
+            }
+        }
+
+        public static List<String> GetHighlightsLeastSoldComm(string TIME_WINDOW)
+        {
+            try
+            {
+                _myConnection.Open();
+                DataTable dt = new DataTable();
+                string query = @"SELECT TOP 1 commodity, SUM(amount) FROM [dbo].[items] ";
+                switch (TIME_WINDOW)
+                {
+                    case "DAY":
+                        query += @"WHERE[timestamp] >= DATEADD(day, -1, GETUTCDATE())";
+                        break;
+                    case "WEEK":
+                        query += @"WHERE [timestamp]>=DATEADD(day,-7,GETUTCDATE())";
+                        break;
+                    case "HOUR":
+                        query += @"WHERE [timestamp]>=DATEADD(hour,-1,GETUTCDATE())";
+                        break;
+                }
+                query += " GROUP BY commodity ORDER BY SUM(amount)";
+                SqlCommand command = new SqlCommand(query, _myConnection);
+                dt.Load(command.ExecuteReader());
+                _myConnection.Close();
+                List<String> output = new List<string>();
+                for (int i = 0; i < 2; i++)
+                {
+                    output.Add(Convert.ToString(dt.Rows[0].ItemArray[i]));
+                }
+                return output;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                if (_myConnection.State == ConnectionState.Open)
+                    _myConnection.Close();
+                return new List<String>();
+            }
+        }
+
+        public static List<String> GetHighlightsBestSale(string TIME_WINDOW)
+        {
+            try
+            {
+                _myConnection.Open();
+                DataTable dt = new DataTable();
+                string query = @"SELECT TOP 1 (amount * price), amount, price, commodity FROM [dbo].[items] ";
+                switch (TIME_WINDOW)
+                {
+                    case "DAY":
+                        query += @"WHERE[timestamp] >= DATEADD(day, -1, GETUTCDATE())";
+                        break;
+                    case "WEEK":
+                        query += @"WHERE [timestamp]>=DATEADD(day,-7,GETUTCDATE())";
+                        break;
+                    case "HOUR":
+                        query += @"WHERE [timestamp]>=DATEADD(hour,-1,GETUTCDATE())";
+                        break;
+                }
+                query += " ORDER BY (amount * price) DESC";
+                SqlCommand command = new SqlCommand(query, _myConnection);
+                dt.Load(command.ExecuteReader());
+                _myConnection.Close();
+                List<String> output = new List<string>();
+                for (int i = 0; i < 4; i++)
+                {
+                    output.Add(Convert.ToString(dt.Rows[0].ItemArray[i]));
+                }
+                return output;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                if (_myConnection.State == ConnectionState.Open)
+                    _myConnection.Close();
+                return new List<String>();
+            }
+        }
+
+        public static List<String> GetHighlightsWorstSale(string TIME_WINDOW)
+        {
+            try
+            {
+                _myConnection.Open();
+                DataTable dt = new DataTable();
+                string query = @"SELECT TOP 1 (amount * price), amount, price, commodity FROM [dbo].[items] ";
+                switch (TIME_WINDOW)
+                {
+                    case "DAY":
+                        query += @"WHERE[timestamp] >= DATEADD(day, -1, GETUTCDATE())";
+                        break;
+                    case "WEEK":
+                        query += @"WHERE [timestamp]>=DATEADD(day,-7,GETUTCDATE())";
+                        break;
+                    case "HOUR":
+                        query += @"WHERE [timestamp]>=DATEADD(hour,-1,GETUTCDATE())";
+                        break;
+                }
+                query += " ORDER BY (amount * price)";
+                SqlCommand command = new SqlCommand(query, _myConnection);
+                dt.Load(command.ExecuteReader());
+                _myConnection.Close();
+                List<String> output = new List<string>();
+                for (int i = 0; i < 4; i++)
+                {
+                    output.Add(Convert.ToString(dt.Rows[0].ItemArray[i]));
+                }
+                return output;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                if (_myConnection.State == ConnectionState.Open)
+                    _myConnection.Close();
+                return new List<String>();
+            }
+        }
 
     }
 }
