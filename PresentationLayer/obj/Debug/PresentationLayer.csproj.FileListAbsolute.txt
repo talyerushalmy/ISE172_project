@@ -1,3 +1,4 @@
+C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe.config
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\PresentationLayer.pdb
@@ -7,7 +8,6 @@ C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLa
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\AutoMarketAgent.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\MarketClient.dll
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\BusinessLayer.pdb
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\Logger.pdb
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\PresentationLayer\bin\Debug\DataAccessLayer.pdb

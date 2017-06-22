@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+    // A Class which represents a row in the history table of the DB
     public class Transaction
     {
         private readonly DateTime _timestamp;
