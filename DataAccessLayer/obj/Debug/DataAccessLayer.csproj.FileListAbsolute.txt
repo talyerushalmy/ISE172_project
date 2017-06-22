@@ -10,6 +10,7 @@ C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLaye
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+<<<<<<< HEAD
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.exe.config
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.exe
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
@@ -22,3 +23,17 @@ C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.exe
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+=======
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.exe.config
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\bin\Debug\Logger.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\bin\Debug\MarketClient.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\bin\Debug\Logger.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\bin\Debug\MarketClient.pdb
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.exe
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+>>>>>>> graphs

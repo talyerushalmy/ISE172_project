@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Program;
 using AutoMarketAgent = Program.AutoMarketAgent;
 
 namespace GUI
@@ -122,6 +123,7 @@ namespace GUI
 
         public void ExitProgram()
         {
+            HistoryTable.SaveList();
             try
             {
                 this._amaThread.Abort();
@@ -178,10 +180,10 @@ namespace GUI
             this.ContentControl.Content = userControlMarketStatus;
         }
 
-        private void ButtonGraphs_Click(object sender, RoutedEventArgs e)
+        private void ButtonStatistics_Click(object sender, RoutedEventArgs e)
         {
-            UserControlGraphs userControlGraphs = new UserControlGraphs();
-            this.ContentControl.Content = userControlGraphs;
+            UserControlStatistics userControlStatistics = new UserControlStatistics();
+            this.ContentControl.Content = userControlStatistics;
         }
     }
 }

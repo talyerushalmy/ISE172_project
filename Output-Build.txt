@@ -1,0 +1,3 @@
+﻿1>------ Build started: Project: GUI, Configuration: Debug Any CPU ------
+1>  GUI -> C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\bin\Debug\GUI.exe
+========== Build: 1 succeeded, 0 failed, 6 up-to-date, 0 skipped ==========

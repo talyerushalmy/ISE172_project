@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\obj\Debug\
+=======
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\obj\Debug\
+>>>>>>> graphs
 GUI
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\GUI\App.xaml
 12-1451890635
 
 16590538489
 17-517458354
 AlgoTradingWindow.xaml;MainWindow.xaml;UserControlActiveRequests.xaml;UserControlBuySell.xaml;UserControlInfo.xaml;UserControlMarketStatus.xaml;UserControlQuery.xaml;UserControlSell.xaml;UserControlSessionHistory.xaml;UserControlAMAWorking.xaml;UserControlGraphs.xaml;UserControlWelcome.xaml;
+=======
+C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\App.xaml
+15-1902810093
+
+19-1122613466
+22-111033215
+AlgoTradingWindow.xaml;MainWindow.xaml;UserControlActiveRequests.xaml;UserControlBuySell.xaml;UserControlInfo.xaml;UserControlMarketStatus.xaml;UserControlQuery.xaml;UserControlSell.xaml;UserControlSessionHistory.xaml;UserControlAMAWorking.xaml;UserControlStatistics.xaml;UserControlStatisticsTabCommodityRates.xaml;UserControlStatisticsTabHighlights.xaml;UserControlStatisticsTabMarketShare.xaml;UserControlWelcome.xaml;
+>>>>>>> graphs
 
 False
 

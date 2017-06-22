@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LiveCharts;
+using LiveCharts.Wpf;
 using Program;
 
 namespace GUI
@@ -25,8 +28,41 @@ namespace GUI
         {
             InitializeComponent();
             GenerateColumns();
-            PopulateGrid();
+            PopulateChart();
+            //PopulateGrid();
         }
+
+        private void PopulateChart()
+        {
+            global::Program.MarketClient marketClient = new global::Program.MarketClient();
+            Commodity[] commodities = marketClient.SendQueryAllMarketRequest();
+            this.CommodityRateCollection = new SeriesCollection();
+            ChartValues<double> askPrices = new ChartValues<double>();
+            ChartValues<double> bidPrices = new ChartValues<double>();
+            foreach (Commodity commodity in commodities)
+            {
+                askPrices.Add(commodity.info.ask);
+                bidPrices.Add(commodity.info.bid);
+            }
+            ColumnSeries askColumnSeries = new ColumnSeries();
+            ColumnSeries bidColumnSeries = new ColumnSeries();
+            askColumnSeries.Title = "Ask";
+            bidColumnSeries.Title = "Bid";
+            askColumnSeries.Values = askPrices;
+            bidColumnSeries.Values = bidPrices;
+            askColumnSeries.DataLabels = true;
+            bidColumnSeries.DataLabels = true;
+            askColumnSeries.LabelPoint = point => point.Y.ToString();
+            bidColumnSeries.LabelPoint = point => point.Y.ToString();
+            CommodityRateCollection.Add(askColumnSeries);
+            CommodityRateCollection.Add(bidColumnSeries);
+            CommodityRates = d => d.ToString("N");
+            DataContext = this;
+        }
+
+        public Func<double, string> CommodityRates { get; set; }
+
+        public SeriesCollection CommodityRateCollection { get; set; }
 
         private void GenerateColumns()
         {
@@ -79,6 +115,30 @@ namespace GUI
             {
                 this.labelHeader.Content = "Could not fetch data. Refreshed: " + DateTime.Now.ToLongTimeString();
                 this.dataGridData.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void radioButtonChart_Checked(object sender, RoutedEventArgs e)
+        {
+            if (((RadioButton) sender).Content.Equals("Chart"))
+            {
+                try
+                {
+                    PopulateChart();
+                    this.dataGridData.Visibility = Visibility.Hidden;
+                    this.Chart.Visibility = Visibility.Visible;
+                    this.labelHeader.Content = "Market status as of " + DateTime.Now.ToLongTimeString();
+                }
+                catch
+                {
+                    this.labelHeader.Content = "Could not fetch data. Refreshed: " + DateTime.Now.ToLongTimeString();
+                }
+            }
+            else
+            {
+                PopulateGrid();
+                this.Chart.Visibility = Visibility.Hidden;
+                this.dataGridData.Visibility = Visibility.Visible;
             }
         }
     }

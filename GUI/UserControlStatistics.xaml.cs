@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Interaction logic for UserControlGraphs.xaml
+    /// Interaction logic for UserControlStatistics.xaml
     /// </summary>
-    public partial class UserControlGraphs : UserControl
+    public partial class UserControlStatistics : UserControl
     {
-        public UserControlGraphs()
+        public UserControlStatistics()
         {
             InitializeComponent();
         }

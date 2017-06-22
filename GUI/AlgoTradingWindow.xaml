@@ -72,7 +72,7 @@
                 </Style>
             </Grid.Resources>
             <Button Grid.Row="0" x:Name="ButtonBuy" Content="Buy / Sell" Margin="10,64,539.6,282.2" Click="buttonBuy_Click" />
-            <Button Grid.Row="0" x:Name="ButtonGraphs" Content="Graphs" Margin="10,109,539.6,237.2" Click="ButtonGraphs_Click" />
+            <Button Grid.Row="0" x:Name="ButtonStatistics" Content="Statistics" Margin="10,109,539.6,237.2" Click="ButtonStatistics_Click" />
             <Button Grid.Row="0" x:Name="ButtonActiveRequests" Content="Active Requests" Margin="10,154,539.6,192.2" Click="buttonActiveRequests_Click" />
             <Button Grid.Row="0" x:Name="ButtonSearch" Content="Query" Margin="10,289,539.6,57.2" Click="buttonSearch_Click" />
             <Button Grid.Row="0" x:Name="ButtonSessionHistory" Content="Session History" Margin="10,199,539.6,147.2" Click="buttonSessionHistory_Click" />

@@ -6,14 +6,15 @@
              xmlns:local="clr-namespace:GUI"
              mc:Ignorable="d" 
              d:DesignHeight="371" d:DesignWidth="517">
-    <Grid Height="371" Width="517">
-        <Label x:Name="LabelHeader" Padding="20" Content="Loading" Margin="0,0,0,-1" />
+    <Grid Name="Grid" Height="371" Width="517">
+        <Label x:Name="LabelHeader" Padding="20" Margin="0,0,0,-1" >
+        </Label>
         <Label x:Name="LabelCommodities" Visibility="Visible" Padding="20" Content="Commodities" HorizontalAlignment="Left" Margin="0,22,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="DataGridCommodities" Visibility="Visible" Margin="22,68,284,30" ColumnWidth="80" />
         <Label x:Name="LabelRequests" Visibility="Visible" Content="Requests" HorizontalAlignment="Left" Margin="253,37,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="DataGridRequests" Visibility="Visible" HorizontalAlignment="Left" Margin="253,68,0,0" VerticalAlignment="Top" Height="273" Width="205" ColumnWidth="60" RowHeight="20" />
         <Label x:Name="LabelFunds" Visibility="Visible" Content="Funds" HorizontalAlignment="Left" Margin="253,15,0,0" VerticalAlignment="Top"/>
-
+        <Button x:Name="buttonCapture" Content="Print Data" Width="75" Margin="423,15,19,330" Click="buttonCapture_Click"/>
     </Grid>
 
 </UserControl>
