@@ -33,8 +33,6 @@ namespace Program
             //raiseCommAvg();
             //sell();
         }
-
-
         #region Update Functions
         private void updateCommodities()
         {

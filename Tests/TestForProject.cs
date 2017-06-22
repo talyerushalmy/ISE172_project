@@ -14,13 +14,13 @@ namespace Program
     {
         public static void Main(string[] args)
         {
-            Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
+
         }
 
         [PreTest] //Change directory to default.
         public static void initializeCWD()
         {
-            Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
+            Directory.SetCurrentDirectory(@"./ISE172_project/GUI/bin/Debug");
         }
 
         //Unit 1- checking Statistic class
@@ -87,7 +87,6 @@ namespace Program
         [Test]
         public static void TestInfoLog()
         {
-            //Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
             string path = @"../../../Logger/LogFiles/" + DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year + ".txt";
             string input = "Test Info Log " + DateTime.Now.ToString() + ".";
             Logger.DebugLog(input);
@@ -106,8 +105,8 @@ namespace Program
         [Test]
         public static void TestDebugLog()
         {
-            if (!Directory.GetCurrentDirectory().Equals(@"./GUI/bin/Debug"))
-                Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
+            if (!Directory.GetCurrentDirectory().Equals(@"./ISE172_project/GUI/bin/Debug"))
+                Directory.SetCurrentDirectory(@"./ISE172_project/GUI/bin/Debug");
             string path = @"../../../Logger/LogFiles/" + DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year + ".txt";
             string input = "Test Debug Log " + DateTime.Now.ToString() + ".";
             Logger.DebugLog(input);
@@ -126,7 +125,7 @@ namespace Program
         [Test]
         public static void TestErrorLog()
         {
-            //Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
+
             string path = @"../../../Logger/LogFiles/" + DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year + ".txt";
             StackFrame sf = new StackFrame(1);
             string input = "Test Error Log " + DateTime.Now.ToString() + ".";
@@ -147,8 +146,6 @@ namespace Program
         [Test]
         public static void TestParser()
         {
-            /*if (!Directory.GetCurrentDirectory().Equals(@"./GUI/bin/Debug"))
-                Directory.SetCurrentDirectory(@"./GUI/bin/Debug");*/
             Assert.AreEqual(false, Parser.parse("sfgfsgfg"));
             Assert.AreEqual(false, Parser.parse("cancel"));
             Assert.AreEqual(false, Parser.parse("MENU"));
