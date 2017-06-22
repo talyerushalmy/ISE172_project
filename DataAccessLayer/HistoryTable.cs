@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    //The purpose of this object is to store information about session history.
     public static class HistoryTable
     {
         private readonly static LinkedList<HistoryItem> _historyList = new LinkedList<HistoryItem>();
