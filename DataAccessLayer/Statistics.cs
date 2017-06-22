@@ -9,6 +9,7 @@ namespace Program
 {
     public static class Statistics
     {
+        //This class's purpose is to analyze informaion that stored in a given array/table and prevent it to AMA or GUI.
         public static int GetKthTradedComm(int[,] marketShare, int k)
         {
             try

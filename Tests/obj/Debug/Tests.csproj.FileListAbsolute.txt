@@ -1,28 +1,3 @@
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\Tests.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\BusinessLayer.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\DataAccessLayer.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\GUI.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\ISE17_project.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\MarketClient.dll
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\nunit.framework.dll
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\PresentationLayer.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\AutoMarketAgent.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\Logger.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\Newtonsoft.Json.dll
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\BusinessLayer.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\DataAccessLayer.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\GUI.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\ISE17_project.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\MarketClient.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\PresentationLayer.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\nunit.framework.xml
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\AutoMarketAgent.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\Logger.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\obj\Debug\Tests.pdb
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\Tests.exe
-C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\obj\Debug\Tests.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Tests\bin\Debug\Tests.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Tests\bin\Debug\Tests.pdb
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Tests\bin\Debug\BusinessLayer.exe
@@ -48,3 +23,28 @@ C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Tests\bin\Debu
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Tests\obj\Debug\Tests.exe
 C:\Users\Tom\Documents\Visual Studio 2015\Projects\ISE172_project\Tests\obj\Debug\Tests.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\Tests.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\Tests.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\BusinessLayer.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\DataAccessLayer.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\GUI.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\ISE17_project.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\MarketClient.dll
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\nunit.framework.dll
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\PresentationLayer.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\AutoMarketAgent.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\Logger.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\BusinessLayer.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\DataAccessLayer.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\GUI.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\ISE17_project.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\MarketClient.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\PresentationLayer.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\nunit.framework.xml
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\AutoMarketAgent.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\bin\Debug\Logger.pdb
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\obj\Debug\Tests.exe
+C:\Users\roee9\Desktop\Studyings\Semester 2\Introduction to Software Enginering\Project for SE\ISE172_project\Tests\obj\Debug\Tests.pdb

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLayer", "PresentationLayer\PresentationLayer.csproj", "{02C58AD6-4E3C-4FFF-8E0B-46A468612BEF}"
 EndProject
@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log", "Logger\Log.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMarketAgent", "AutoMarketAgent\AutoMarketAgent.csproj", "{850998D6-30DA-4718-BC86-C604A44CB1B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{5B78B843-8420-4E2D-A3DF-CECFDA955256}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{77E269CA-B3A4-4620-A39D-F8EADB11CDA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +59,10 @@ Global
 		{850998D6-30DA-4718-BC86-C604A44CB1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{850998D6-30DA-4718-BC86-C604A44CB1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{850998D6-30DA-4718-BC86-C604A44CB1B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B78B843-8420-4E2D-A3DF-CECFDA955256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B78B843-8420-4E2D-A3DF-CECFDA955256}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B78B843-8420-4E2D-A3DF-CECFDA955256}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B78B843-8420-4E2D-A3DF-CECFDA955256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E269CA-B3A4-4620-A39D-F8EADB11CDA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E269CA-B3A4-4620-A39D-F8EADB11CDA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E269CA-B3A4-4620-A39D-F8EADB11CDA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E269CA-B3A4-4620-A39D-F8EADB11CDA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

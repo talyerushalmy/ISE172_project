@@ -42,14 +42,12 @@ namespace Program
             this._commodities = this._marketClient.SendQueryAllMarketRequest();
             updateUserData();
         }
-
         private void updateUserData()
         {
             //wait();
             this._userData = (MarketUserData)this._marketClient.SendQueryUserRequest();
             updateAmount();
         }
-
         private void updateAmount()
         {
             foreach (var comm in this._userData.commodities)
@@ -58,7 +56,6 @@ namespace Program
                 this._commodities[id].amount = comm.Value;
             }
         }
-
         private void updateMarketShare()
         {
 
@@ -117,7 +114,6 @@ namespace Program
 
         }
         #endregion
-
         private void buy()
         {
             updateCommodities();
@@ -139,9 +135,6 @@ namespace Program
             if (toBuy > 0)
                 this._marketClient.SendBuyRequest(commodity.info.ask, commodity.id, checkAmountToBuy(commodity));
         }
-
-
-
         private void buyAskLowerThanBid()
         {
             updateCommodities();
@@ -153,7 +146,6 @@ namespace Program
                 _marketClient.SendBuyRequest(comm.info.ask, comm.id, toBuy);
             }
         }
-
         private void sellAskLowerThanBid()
         {
             updateCommodities();
@@ -204,7 +196,6 @@ namespace Program
                 lowestAsk = getLowestAskComm();
             }
         }
-
         private void sell()
         {
             updateCommodities();
@@ -223,7 +214,6 @@ namespace Program
                 avgRatio = getAvgAskToBid();
             }
         }
-
         private void raiseCommAvg()
         {
             updateCommodities();
@@ -240,13 +230,11 @@ namespace Program
             }
             buy(budget);
         }
-
         private double getAvgAskToBid()
         {
             double sum = _commodities.Sum(x => x.getAskToBid());
             return sum / this._commodities.Length;
         }
-
         private int checkAmountToBuy(Commodity comm)
         {
             double ratio = comm.getAskToBid();
@@ -261,8 +249,6 @@ namespace Program
             }
             return toBuy;
         }
-
-
         private int checkAmountToSell(Commodity comm)
         {
             int avg = getAvgCommAmount();
@@ -275,7 +261,6 @@ namespace Program
             }
             return 1;
         }
-
         public void n00bTrade()
         {
             updateCommodities();
@@ -294,79 +279,64 @@ namespace Program
                 }
             }
         }
-
         private int getTotalAmountOfComms()
         {
             int sum = (this._commodities.Sum(x => x.amount));
             return sum;
         }
-
         private int getAvgCommAmount()
         {
             return getTotalAmountOfComms() / this._commodities.Length;
         }
-
         private bool isRequestSuccessful(int id)
         {
             updateUserData();
             return (!(this._userData.requests.Contains(id)));
         }
-
         private Commodity getLowestAskComm()
         {
             return _commodities.OrderBy(x => x.info.ask).First();
         }
-
         private Commodity getHighestAskComm()
         {
             return _commodities.OrderBy(x => x.info.ask).Last();
         }
-
         private Commodity getLowestBidComm()
         {
             return _commodities.OrderBy(x => x.info.bid).First();
         }
-
         private Commodity getHighestBidComm()
         {
             return _commodities.OrderBy(x => x.info.bid).Last();
         }
-
         private Commodity getLowestAskToBidRatioComm()
         {
             return _commodities.OrderBy(x => x.getAskToBid()).First();
         }
-
         private Commodity getHighestAskToBidRatioComm()
         {
             return _commodities.OrderBy(x => x.getAskToBid()).Last();
         }
-
         private Commodity[] getSortedBy(Func<Commodity, double> selector)
         {
             return _commodities.OrderBy(selector).ToArray();
         }
-
         private Commodity[] getSortedByDescending(Func<Commodity, double> selector)
         {
             return _commodities.OrderByDescending(selector).ToArray();
         }
-
         private Commodity[] getAskLowerThanBid()
         {
             return _commodities.Where(x => x.getAskToBid() < 1).OrderBy(x => x.getAskToBid()).ToArray();
-        }
-        
+        }       
         private Commodity[] getBidLowerThanAsk()
         {
             return _commodities.Where(x => x.getAskToBid() > 1).OrderBy(x => x.getAskToBid()).ToArray();
         }
-
         private Commodity[] getBidLowerEqualToAsk()
         {
             return _commodities.Where(x => x.getAskToBid() >= 1).OrderBy(x => x.getAskToBid()).ToArray();
         }
-
         private void printMatrix(int[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)

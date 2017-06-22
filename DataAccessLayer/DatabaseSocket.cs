@@ -10,6 +10,7 @@ namespace Program
 {
     public static class DatabaseSocket
     {
+        //This class supposed to extract variety of information from the server.
         private static string _connectionString = @"Data Source=ise172.ise.bgu.ac.il;Initial Catalog=history;Persist Security Info=True;User ID=labuser;Password=wonsawheightfly";
         private static SqlConnection _myConnection = new SqlConnection(_connectionString);
 

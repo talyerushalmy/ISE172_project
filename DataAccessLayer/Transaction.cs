@@ -8,6 +8,7 @@ namespace Program
 {
     public class Transaction
     {
+        //Object that represents a transaction and contains its details.
         private readonly DateTime _timestamp;
         private readonly int _price;
         private readonly int _amount;
