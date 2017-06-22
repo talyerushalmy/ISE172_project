@@ -91,6 +91,7 @@ namespace Program
                     {
                         this._marketClient.SendBuyRequest(comm.info.ask, comm.id, buyAmount);
                         Console.WriteLine("Bought " + buyAmount + " from " + comm.id + " for the price of " + comm.info.ask + " each");
+                        Logger.InfoLog("The AMA performed buy request of " + buyAmount + " from " + comm.id + " for the price of " + comm.info.ask +" each");
                     }
                 }
                 if (avgPrice < comm.info.bid || comm.getAskToBid() <= 1)
@@ -100,6 +101,7 @@ namespace Program
                     {
                         this._marketClient.SendSellRequest(calcSellPrice(comm, sellAmount), comm.id, sellAmount);
                         Console.WriteLine("Sold " + sellAmount + " from " + comm.id + " for the price of " + comm.info.bid + " each");
+                        Logger.InfoLog("The AMA performed sell request of " + sellAmount + " from " + comm.id + " for the price of " + comm.info.ask + " each");
                     }
                 }
             }
