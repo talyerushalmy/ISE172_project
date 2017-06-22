@@ -93,11 +93,6 @@ namespace Program
             DataTable historyOfToday = new DataTable();
             try
             {
-                DateTime today = DateTime.Now;
-                string yesterday = today.AddDays(-1).ToString();
-                string now = today.ToString();
-                Console.WriteLine("TODAY : " + today);
-                Console.WriteLine("YESTERDAY : " + yesterday);
                 _myConnection.Open();
                 string query = "SELECT TOP " + LIMIT + " * FROM [dbo].[items] WHERE [timestamp]>=DATEADD(day,-1,GETUTCDATE())";
                 if (justOurs)
@@ -105,8 +100,8 @@ namespace Program
                 query +=" ORDER BY timestamp DESC";
                 SqlCommand command = new SqlCommand(query, _myConnection);
                 historyOfToday.Load(command.ExecuteReader());
-                Console.WriteLine("Last timestamp :" + Convert.ToDateTime(historyOfToday.Rows[historyOfToday.Rows.Count - 1].ItemArray[0]));
-                Console.WriteLine("First timestamp :" + (historyOfToday.Rows[0].ItemArray[0]));
+                //Console.WriteLine("Last timestamp :" + Convert.ToDateTime(historyOfToday.Rows[historyOfToday.Rows.Count - 1].ItemArray[0]));
+                //Console.WriteLine("First timestamp :" + (historyOfToday.Rows[0].ItemArray[0]));
                 _myConnection.Close();
 
             }
@@ -209,7 +204,7 @@ namespace Program
             {
                 _myConnection.Open();
                 DataTable dt = new DataTable();
-                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(day,-1,GETUDCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
+                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(day,-1,GETUTCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
                 dt.Load(command.ExecuteReader());
                 _myConnection.Close();
                 int[,] output = new int[dt.Rows.Count, 2];
@@ -237,7 +232,7 @@ namespace Program
             {
                 _myConnection.Open();
                 DataTable dt = new DataTable();
-                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(hour,-1,GETUDCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
+                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(hour,-1,GETUTCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
                 dt.Load(command.ExecuteReader());
                 _myConnection.Close();
                 int[,] output = new int[dt.Rows.Count, 2];
