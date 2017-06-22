@@ -14,8 +14,7 @@ namespace Program
         private static string _connectionString = @"Data Source=ise172.ise.bgu.ac.il;Initial Catalog=history;Persist Security Info=True;User ID=labuser;Password=wonsawheightfly";
         private static SqlConnection _myConnection = new SqlConnection(_connectionString);
 
-        // Returns a table of all the history of the market
-        public static DataTable GetAllHistory(bool justOurs)
+        public static DataTable GetAllHistory()
         {
             DataTable history = new DataTable();
             try
@@ -35,8 +34,7 @@ namespace Program
             }
         }
 
-        // Returns a table of the market history of the last N trades 
-        public static DataTable GetHistoryOfLastNTrades(int n, bool justOurs)
+        public static DataTable GetHistoryOfLastNTrades(int n)
         {
             DataTable history = new DataTable();
             try
@@ -61,34 +59,6 @@ namespace Program
         }
  
         public static DataTable GetHistoryOfLastDay()
-        {
-            DataTable history = new DataTable();
-            try
-            {
-                _myConnection.Open();
-                string query = "SELECT TOP " + LIMIT + " * FROM[dbo].[items] WHERE[timestamp] BETWEEN CONVERT(datetime,'"+start+"', 105) AND CONVERT(datetime,'"+end+"', 105)";
-                if (justOurs)
-                    query += " WHERE buyer='user46' OR seller='user46'";
-                query += " ORDER BY timestamp DESC";
-                Console.WriteLine(start);
-                SqlCommand command = new SqlCommand(query, _myConnection);
-                history.Load(command.ExecuteReader());
-                Console.WriteLine("Last timestamp : " + history.Rows[history.Rows.Count-1].ItemArray[0]);
-                Console.WriteLine("First timestamp : " + history.Rows[0].ItemArray[0]);
-                Console.WriteLine();
-                _myConnection.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                if (_myConnection.State == ConnectionState.Open)
-                    _myConnection.Close();
-            }
-            return history;
-        }
-
-        // Returns a table which contains the market history of the last day
-        public static DataTable GetHistoryOfLastDay(bool justOurs)
         {
             DataTable historyOfToday = new DataTable();
             try
@@ -116,8 +86,7 @@ namespace Program
             return historyOfToday;
         }
 
-        // Returns a table which contains the market history of the last hour
-        public static DataTable GetHistoryOfLastHour(bool justOurs)
+        public static DataTable GetHistoryOfLastHour()
         {
             DataTable history = new DataTable();
             try
@@ -137,8 +106,6 @@ namespace Program
             }
             return history;
         }
-
-        // Returns an array representing the market shared based on the last N trades of the market
         public static int[,] getMarketShare(int n)
         {
             try
@@ -168,94 +135,6 @@ namespace Program
             }
         }
 
-        // Returns an array representing the market share between two given dates
-        public static int[,] getMarketShareBetweenDates(DateTime start, DateTime end)
-        {
-            try
-            {
-                _myConnection.Open();
-                DataTable dt = new DataTable();
-                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10*LIMIT + " * FROM dbo.items WHERE [timestamp] BETWEEN CONVERT(datetime,'" + start + "', 105) AND CONVERT(datetime,'" + end + "', 105) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
-                dt.Load(command.ExecuteReader());
-                _myConnection.Close();
-                int[,] output = new int[dt.Rows.Count, 2];
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    for (int j = 0; j < 2; j++)
-                    {
-                        output[i, j] = Convert.ToInt32(dt.Rows[i].ItemArray[j]);
-                    }
-                }
-                return Sanitize(output);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                if (_myConnection.State == ConnectionState.Open)
-                    _myConnection.Close();
-                return new int[0, 0];
-            }
-        }
-
-        // Returns an array representing the market share of the market based on the last day
-        public static int[,] GetMarketShareOfLastDay()
-        {
-            try
-            {
-                _myConnection.Open();
-                DataTable dt = new DataTable();
-                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(day,-1,GETUTCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
-                dt.Load(command.ExecuteReader());
-                _myConnection.Close();
-                int[,] output = new int[dt.Rows.Count, 2];
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    for (int j = 0; j < 2; j++)
-                    {
-                        output[i, j] = Convert.ToInt32(dt.Rows[i].ItemArray[j]);
-                    }
-                }
-                return Sanitize(output);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                if (_myConnection.State == ConnectionState.Open)
-                    _myConnection.Close();
-                return new int[0, 0];
-            }
-        }
-
-        // Returns an array representing the market share of the market based on the last hour
-        public static int[,] GetMarketShareOfLastHour()
-        {
-            try
-            {
-                _myConnection.Open();
-                DataTable dt = new DataTable();
-                SqlCommand command = new SqlCommand(@"WITH s AS (SELECT TOP " + 10 * LIMIT + " * FROM dbo.items WHERE [timestamp]>=DATEADD(hour,-1,GETUTCDATE()) ORDER BY timestamp DESC) SELECT commodity, SUM(amount) AS sum_amounts FROM s GROUP BY commodity ORDER BY sum_amounts", _myConnection);
-                dt.Load(command.ExecuteReader());
-                _myConnection.Close();
-                int[,] output = new int[dt.Rows.Count, 2];
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    for (int j = 0; j < 2; j++)
-                    {
-                        output[i, j] = Convert.ToInt32(dt.Rows[i].ItemArray[j]);
-                    }
-                }
-                return Sanitize(output);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                if (_myConnection.State == ConnectionState.Open)
-                    _myConnection.Close();
-                return new int[0, 0];
-            }
-        }
-
-        // Returns an array representing the market history of the user
         public static Transaction[] getOurLastHistory()
         {
             try
@@ -285,7 +164,6 @@ namespace Program
             }
         }
 
-        // Returns an array representing the price of a certain commodity starting on a certain date
         public static Transaction[] getPriceOfCommFromStartDate(int commodityID, DateTime start)
         {
             try
@@ -314,7 +192,6 @@ namespace Program
             }
         }
 
-        // Returns an array representing the price of a certain commodity based on the last N trades of it
         public static Transaction[] getPriceOfCommByLastNTrades(int commID, int n)
         {
             try

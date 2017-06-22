@@ -12,6 +12,7 @@ namespace Program
         private MarketClient _marketClient;
         private MarketUserData _userData;
         private Commodity[] _commodities;
+        //private Commodity[] _marketShare;
 
         public AutoMarketAgent()
         {
@@ -19,15 +20,14 @@ namespace Program
             updateCommodities();
             //autoPilot();
         }
-        //The main AMA loop
+
         public void autoPilot()
         {
-            while (true)
-            {
-                trade();
-                Console.WriteLine("Waiting 7 seconds for requests");
-                System.Threading.Thread.Sleep(7000);
-            }
+            //Functions to test
+            int[,] marketShare = DatabaseSocket.getMarketShare(20000);
+            printMatrix(marketShare);
+            TradeMostTradedComm(marketShare);
+            trade();
             //Functions from milestone 2
             //n00bTrade();
             //raiseCommAvg();
@@ -61,7 +61,6 @@ namespace Program
         #endregion
 
         #region Trade Functions Using The DB
-        //The main trade function which goes over the Market Share and trades each commodity
         private void trade()
         {
             int n = DatabaseSocket.GetHistoryOfLastDay().Rows.Count;
@@ -74,7 +73,6 @@ namespace Program
             }
         }
 
-        // Trades the given commodity based on the last n trades
         private void TradeComm(Commodity comm, int n)
         {
             updateCommodities();
@@ -102,8 +100,7 @@ namespace Program
                 }
             }
         }
-
-        // Trades the most traded commodity
+        
         private void TradeMostTradedComm(int[,] marketShare)
         {
             int commID = Statistics.GetMostTradedComm(marketShare);
@@ -136,7 +133,6 @@ namespace Program
             if (toBuy > 0)
                 this._marketClient.SendBuyRequest(commodity.info.ask, commodity.id, checkAmountToBuy(commodity));
         }
-
         private void buyAskLowerThanBid()
         {
             updateCommodities();
@@ -257,20 +253,11 @@ namespace Program
             if (comm.amount == 0)
                 return 0;
             int diff = comm.amount - avg;
-            int toSell = 1;
-            if (comm.getAskToBid() < 1 && comm.amount > (int)Math.Ceiling((comm.amount * comm.getAskToBid())))
-                toSell = (int)Math.Ceiling((comm.amount* comm.getAskToBid()));
             if (diff > 0)
             {
-                toSell = diff;
-                if (comm.amount > (int)(Math.Max((diff / comm.getAskToBid()), diff)))
-                    toSell = (int)(Math.Max((diff / comm.getAskToBid()), diff));
+                return diff;
             }
-            else if (comm.amount > (int)Math.Ceiling((avg * comm.getAskToBid())))
-            {
-                toSell = (int)Math.Ceiling((avg * comm.getAskToBid()));
-            }
-            return toSell;
+            return 1;
         }
         public void n00bTrade()
         {
