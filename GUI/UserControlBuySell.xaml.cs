@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using Program;
 
 namespace GUI
 {
@@ -85,11 +87,26 @@ namespace GUI
             global::Program.MarketClient marketClient = new global::Program.MarketClient();
             int id = -1;
 
-            if (this.isBuy) id = marketClient.SendBuyRequest(price, commodityId, quantity);
-            else id = marketClient.SendSellRequest(price, commodityId, quantity);
-
+            if (this.isBuy)
+            {
+                id = marketClient.SendBuyRequest(price, commodityId, quantity);
+                if (id!=-1)
+                {
+                    Program.Logger.InfoLog("The user performed a buy request of " + quantity + " from commodity " + commodityId + " for a price of " + price + " each");
+                }
+            }
+            else
+            {
+                id = marketClient.SendSellRequest(price, commodityId, quantity);
+                if (id!=-1)
+                {
+                    Program.Logger.InfoLog("The user performed a sell request of " + quantity + " from commodity " + commodityId + " for a price of " + price + " each");
+                }
+            }
             if (id == -1)
             {
+                StackFrame sf = new StackFrame(1);
+                Program.Logger.ErrorLog(sf.GetMethod(), sf.GetFileLineNumber(), "The user performed an illegal buy/sell request");
                 MessageBoxResult popup = MessageBox.Show("An error occured while processing the request", "Confirmation");
             }
             else

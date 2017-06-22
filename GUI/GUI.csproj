@@ -224,6 +224,10 @@
       <Project>{1970e9f1-ab4d-4270-baef-5417e47f03c3}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logger\Log.csproj">
+      <Project>{c950ce16-ac0d-4449-9807-acaf995fe338}</Project>
+      <Name>Log</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MarketClient\MarketClient.csproj">
       <Project>{371E8EA8-CE7A-4AB2-85E5-EAC135DF4A26}</Project>
       <Name>MarketClient</Name>
