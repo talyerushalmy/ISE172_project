@@ -12,7 +12,6 @@ namespace Program
         private MarketClient _marketClient;
         private MarketUserData _userData;
         private Commodity[] _commodities;
-        //private Commodity[] _marketShare;
 
         public AutoMarketAgent()
         {
@@ -20,11 +19,9 @@ namespace Program
             updateCommodities();
             //autoPilot();
         }
-
+        //The main AMA loop
         public void autoPilot()
         {
-            //Functions to test
-            //DatabaseSocket.GetHistoryBetweenTwoDates(DateTime.Today, DateTime.Now, false);
             while (true)
             {
                 trade();
@@ -64,6 +61,7 @@ namespace Program
         #endregion
 
         #region Trade Functions Using The DB
+        //The main trade function which goes over the Market Share and trades each commodity
         private void trade()
         {
             int n = DatabaseSocket.GetHistoryOfLastHour(false).Rows.Count;
@@ -76,6 +74,7 @@ namespace Program
             }
         }
 
+        // Trades the given commodity based on the last n trades
         private void TradeComm(Commodity comm, int n)
         {
             updateCommodities();
@@ -106,6 +105,7 @@ namespace Program
             }
         }
 
+        // Trades the most traded commodity
         private void TradeMostTradedComm(int[,] marketShare)
         {
             int commID = Statistics.GetMostTradedComm(marketShare);
@@ -134,8 +134,6 @@ namespace Program
             if (toBuy > 0)
                 this._marketClient.SendBuyRequest(commodity.info.ask, commodity.id, checkAmountToBuy(commodity));
         }
-
-
 
         private void buyAskLowerThanBid()
         {
@@ -266,16 +264,16 @@ namespace Program
                 return 0;
             int diff = comm.amount - avg;
             int toSell = 1;
-            if (comm.getAskToBid() < 1)
+            if (comm.getAskToBid() < 1 && comm.amount > (int)Math.Ceiling((comm.amount * comm.getAskToBid())))
                 toSell = (int)Math.Ceiling((comm.amount* comm.getAskToBid()));
             if (diff > 0)
             {
-                Console.WriteLine("Groise");
-                toSell = (int)(Math.Max((diff / comm.getAskToBid()), diff));
+                toSell = diff;
+                if (comm.amount > (int)(Math.Max((diff / comm.getAskToBid()), diff)))
+                    toSell = (int)(Math.Max((diff / comm.getAskToBid()), diff));
             }
             else if (comm.amount > (int)Math.Ceiling((avg * comm.getAskToBid())))
             {
-                Console.WriteLine("Tom");
                 toSell = (int)Math.Ceiling((avg * comm.getAskToBid()));
             }
             return toSell;
