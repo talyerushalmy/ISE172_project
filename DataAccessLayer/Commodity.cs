@@ -23,12 +23,12 @@ namespace Program
 
         public double getAskToBid()
         {
-            return (double) info.ask / Math.Max(1, info.bid);
+            return (double) info.ask / (double) info.bid;
         }
 
         public double getAmountToAskToBid()
         {
-            return (double) amount / getAskToBid();
+            return (double)amount / getAskToBid();
         }
     }
 }
