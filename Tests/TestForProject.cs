@@ -87,6 +87,7 @@ namespace Program
         [Test]
         public static void TestInfoLog()
         {
+            //Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
             string path = @"../../../Logger/LogFiles/" + DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year + ".txt";
             string input = "Test Info Log " + DateTime.Now.ToString() + ".";
             Logger.DebugLog(input);
@@ -105,8 +106,7 @@ namespace Program
         [Test]
         public static void TestDebugLog()
         {
-            if (!Directory.GetCurrentDirectory().Equals(@"./ISE172_project/GUI/bin/Debug"))
-                Directory.SetCurrentDirectory(@"./ISE172_project/GUI/bin/Debug");
+            Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
             string path = @"../../../Logger/LogFiles/" + DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year + ".txt";
             string input = "Test Debug Log " + DateTime.Now.ToString() + ".";
             Logger.DebugLog(input);
@@ -125,7 +125,7 @@ namespace Program
         [Test]
         public static void TestErrorLog()
         {
-
+            //Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
             string path = @"../../../Logger/LogFiles/" + DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year + ".txt";
             StackFrame sf = new StackFrame(1);
             string input = "Test Error Log " + DateTime.Now.ToString() + ".";
@@ -146,6 +146,7 @@ namespace Program
         [Test]
         public static void TestParser()
         {
+            //Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
             Assert.AreEqual(false, Parser.parse("sfgfsgfg"));
             Assert.AreEqual(false, Parser.parse("cancel"));
             Assert.AreEqual(false, Parser.parse("MENU"));
@@ -158,6 +159,7 @@ namespace Program
         [Test]
         public static void TestSocket()
         {
+            //Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
             Socket socket = new Socket();
             Assert.AreEqual(-1, socket.generalStringToInt("-1", -1, "The number should be a number different then 0"));
             Assert.AreEqual(-1, socket.generalStringToInt("0.3", -1, "The number should be a number different then 0"));
@@ -168,6 +170,7 @@ namespace Program
         [Test]
         public static void TestSessionHistory()
         {
+            //Directory.SetCurrentDirectory(@"./GUI/bin/Debug");
             Random rnd = new Random();
             BuyRequest b1 = new BuyRequest(rnd.Next(1,10), rnd.Next(1,100),rnd.Next(30,200));
             HistoryItem item1 = new HistoryItem(DateTime.Now, "BuyRequest", b1, rnd.Next(10000, 99999));
