@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using System.IO;
+using System.Diagnostics;
 
 
 namespace Program
@@ -12,14 +14,75 @@ namespace Program
     public class TestForProject
     {
         public static void Main(string[] args)
+        { 
+
+        }
+
+        [PreTest] //Change directory to default.
+        public static void initializeCWD()
         {
-            testUnit1();
+            Directory.SetCurrentDirectory(@"./ISE172_project/GUI/bin/Debug");
+        }
+
+        //Unit 1- checking Statistic class
+        [Test]
+        public static void TestGetMostTradedComm()
+        {
+            int[,] a = { { 0, 12 }, { 1, 10 }, { 2, 15 }, { 3, 14 }, { 4, 11 } };
+            int mostTradedComm = Statistics.GetMostTradedComm(a);
+            Assert.AreEqual(4, mostTradedComm); //Because the sql sort the array before Statitistics gets array.
         }
         [Test]
-        public static void testUnit1()
+        public static void TestGetLeastMostTradedComm()
         {
-            MarketClient m = new MarketClient();
-            m.SendSellRequest(1, 1, 1);
+            int[,] a = { { 0, 12 }, { 1, 10 }, { 2, 15 }, { 3, 14 }, { 4, 11 } };
+            int leastTradedComm = Statistics.GetLeastTradedComm(a);
+            Assert.AreEqual(0, leastTradedComm); //Because the sql sort the array before Statitistics gets array.
+        }
+        [Test]
+        public static void TestCalcAvgPrice()
+        {
+            Random rnd = new Random();
+            Transaction first = new Transaction(0, 12, rnd.Next(0, 50));
+            Transaction second = new Transaction(1, 10, rnd.Next(0, 50));
+            Transaction third = new Transaction(2, 15, rnd.Next(0, 50));
+            Transaction fourth = new Transaction(3, 14, rnd.Next(0, 50));
+            Transaction fifth = new Transaction(4, 11, rnd.Next(0, 50));
+            Transaction[] transactions = { first, second, third, fourth, fifth };
+            double excepted = 0;
+            for (int i = 0; i < transactions.Length; i++)
+            {
+                excepted += transactions[i].getPrice();
+            }
+            excepted = excepted / (double)transactions.Length;
+            double leastTradedComm = Statistics.CalcAvgCommPrice(transactions);
+            Assert.AreEqual(excepted, leastTradedComm);
+        }
+        [Test]
+        public static void TestCalcAvgCommPriceByLastNTrades()
+        {
+            Random rnd = new Random();
+            double excepted = 0;
+            int n = rnd.Next(20, 100);
+            int id = rnd.Next(0, 10);
+            Transaction[] transactions = new Transaction[100];
+            for (int i = 0; i < transactions.Length; i++)
+            {
+                transactions[i] = new Transaction(DateTime.Now, id, rnd.Next(10, 40), rnd.Next(1, 40));
+            }
+            Transaction[] someTransactions = new Transaction[n];
+            for (int i = 0; i < someTransactions.Length; i++)
+            {
+                someTransactions[i] = transactions[transactions.Length - n + i];
+            }
+            for (int i = 0; i < someTransactions.Length; i++)
+            {
+                excepted += (double)someTransactions[i].getPrice();
+            }
+            excepted = excepted / (double)n;
+            double result = Statistics.CalcAvgCommPrice(someTransactions);
+            Assert.AreEqual(excepted, result);
+        }
 
         //Unit 2- checking reaction of the logger to 3 types of messages
         [Test]
