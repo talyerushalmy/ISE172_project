@@ -316,13 +316,69 @@ namespace Program
             }
         }
 
-        public static Transaction[] getPriceOfCommFromStartDate(int commodityID, DateTime start)
+        public static Transaction[] getPriceOfCommBetweenDates(int commodityID, DateTime start, DateTime end)
         {
             try
             {
                 _myConnection.Open();
                 DataTable dt = new DataTable();
-                SqlCommand command = new SqlCommand(@"SELECT [timestamp], [price] From [dbo].[items] Where @timestamp>=" + start.ToString() + "AND @commodity=" + commodityID, _myConnection);
+                SqlCommand command = new SqlCommand(@"SELECT dateadd(hour, case when datepart(minute,timestamp) < 30 then 0 else 1 end +  datepart(hour, timestamp), cast(convert(varchar(10),timestamp, 112) as datetime)) as formatted_time, AVG(price) FROM [dbo].[items] WHERE commodity=" + commodityID + " AND [timestamp] BETWEEN CONVERT(datetime,'" + start.ToString("dd/M/yyyy") + "', 105) AND CONVERT(datetime,'" + end.ToString("dd/M/yyyy") + "', 105) GROUP BY dateadd(hour, case when datepart(minute,timestamp) < 30 then 0 else 1 end +  datepart(hour, timestamp), cast(convert(varchar(10),timestamp, 112) as datetime)) ORDER BY dateadd(hour, case when datepart(minute,timestamp) < 30 then 0 else 1 end +  datepart(hour, timestamp), cast(convert(varchar(10),timestamp, 112) as datetime)) DESC", _myConnection);
+                dt.Load(command.ExecuteReader());
+                _myConnection.Close();
+                int count = dt.Rows.Count;
+                Transaction[] transactions = new Transaction[count];
+                for (int i = 0; i < transactions.Length; i++)
+                {
+                    DateTime date = Convert.ToDateTime(dt.Rows[i].ItemArray[0]);
+                    int price = Convert.ToInt32(dt.Rows[i].ItemArray[1]);
+                    transactions[i] = new Transaction(date, price);
+                }
+                return transactions;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                if (_myConnection.State == ConnectionState.Open)
+                    _myConnection.Close();
+                return new Transaction[0];
+            }
+        }
+
+        public static Transaction[] getPriceOfCommByLastHour(int commodityID)
+        {
+            try
+            {
+                _myConnection.Open();
+                DataTable dt = new DataTable();
+                SqlCommand command = new SqlCommand(@"SELECT dateadd(hour, case when datepart(minute,timestamp) < 30 then 0 else 1 end +  datepart(hour, timestamp), cast(convert(varchar(10),timestamp, 112) as datetime)) as formatted_time, AVG(price) FROM [dbo].[items] WHERE [timestamp] >= DATEADD(hour, -1, GETUTCDATE()) AND commodity=" + commodityID + " GROUP BY dateadd(hour, case when datepart(minute,timestamp) < 30 then 0 else 1 end +  datepart(hour, timestamp), cast(convert(varchar(10),timestamp, 112) as datetime))", _myConnection);
+                dt.Load(command.ExecuteReader());
+                _myConnection.Close();
+                int count = dt.Rows.Count;
+                Transaction[] transactions = new Transaction[count];
+                for (int i = 0; i < transactions.Length; i++)
+                {
+                    DateTime date = Convert.ToDateTime(dt.Rows[i].ItemArray[0]);
+                    int price = Convert.ToInt32(dt.Rows[i].ItemArray[1]);
+                    transactions[i] = new Transaction(date, price);
+                }
+                return transactions;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                if (_myConnection.State == ConnectionState.Open)
+                    _myConnection.Close();
+                return new Transaction[0];
+            }
+        }
+
+        public static Transaction[] getPriceOfCommByLastDay(int commodityID)
+        {
+            try
+            {
+                _myConnection.Open();
+                DataTable dt = new DataTable();
+                SqlCommand command = new SqlCommand(@"SELECT dateadd(hour, case when datepart(minute,timestamp) < 30 then 0 else 1 end +  datepart(hour, timestamp), cast(convert(varchar(10),timestamp, 112) as datetime)) as formatted_time, AVG(price) FROM [dbo].[items] WHERE [timestamp] >= DATEADD(DAY, -1, GETUTCDATE()) AND commodity=" + commodityID + " GROUP BY dateadd(hour, case when datepart(minute,timestamp) < 30 then 0 else 1 end +  datepart(hour, timestamp), cast(convert(varchar(10),timestamp, 112) as datetime))", _myConnection);
                 dt.Load(command.ExecuteReader());
                 _myConnection.Close();
                 int count = dt.Rows.Count;
@@ -350,7 +406,7 @@ namespace Program
             {
                 _myConnection.Open();
                 DataTable dt = new DataTable();
-                SqlCommand command = new SqlCommand(@"SELECT TOP " + n + " [timestamp], [price] FROM [dbo].[items] WHERE [commodity] = " + commID + " ORDER BY timestamp DESC", _myConnection);
+                SqlCommand command = new SqlCommand(@"SELECT TOP " + n + " dateadd(hour, case when datepart(minute,timestamp) < 30 then 0 else 1 end +  datepart(hour, timestamp), cast(convert(varchar(10),timestamp, 112) as datetime)) as formatted_time, AVG(price) FROM [dbo].[items] WHERE commodity=" + commID + " GROUP BY dateadd(hour, case when datepart(minute,timestamp) < 30 then 0 else 1 end +  datepart(hour, timestamp), cast(convert(varchar(10),timestamp, 112) as datetime))", _myConnection);
                 dt.Load(command.ExecuteReader());
                 _myConnection.Close();
                 int count = dt.Rows.Count;

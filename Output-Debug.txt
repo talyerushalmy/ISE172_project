@@ -1,0 +1,67 @@
+﻿'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\assembly\GAC_MSIL\Microsoft.VisualStudio.HostingProcess.Utilities\14.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.HostingProcess.Utilities.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\assembly\GAC_MSIL\Microsoft.VisualStudio.HostingProcess.Utilities.Sync\14.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.HostingProcess.Utilities.Sync.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\assembly\GAC_MSIL\Microsoft.VisualStudio.Debugger.Runtime\14.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.Debugger.Runtime.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\bin\Debug\GUI.vshost.exe'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.CSharp\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.CSharp.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.DataSetExtensions\v4.0_4.0.0.0__b77a5c561934e089\System.Data.DataSetExtensions.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\WindowsBase\v4.0_4.0.0.0__31bf3856ad364e35\WindowsBase.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\PresentationCore\v4.0_4.0.0.0__31bf3856ad364e35\PresentationCore.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\PresentationFramework\v4.0_4.0.0.0__31bf3856ad364e35\PresentationFramework.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+The thread 0x4ec has exited with code 0 (0x0).
+The thread 0x2ad8 has exited with code 0 (0x0).
+The thread 0x4ee0 has exited with code 0 (0x0).
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\bin\Debug\GUI.exe'. Symbols loaded.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+Step into: Stepping over non-user code 'GUI.App..ctor'
+Step into: Stepping over non-user code 'GUI.App.InitializeComponent'
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\PresentationFramework.Aero2\v4.0_4.0.0.0__31bf3856ad364e35\PresentationFramework.Aero2.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\PresentationFramework-SystemXmlLinq\v4.0_4.0.0.0__b77a5c561934e089\PresentationFramework-SystemXmlLinq.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\PresentationFramework-SystemXml\v4.0_4.0.0.0__b77a5c561934e089\PresentationFramework-SystemXml.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\Users\Deathray\AppData\Local\Temp\VisualStudio.XamlDiagnostics.21264\WpfXamlDiagnosticsTap.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\assembly\GAC\Microsoft.VisualStudio.OLE.Interop\7.1.40304.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.OLE.Interop.dll'. Module was built without symbols.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\UIAutomationTypes\v4.0_4.0.0.0__31bf3856ad364e35\UIAutomationTypes.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll'. Cannot find or open the PDB file.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\UIAutomationProvider\v4.0_4.0.0.0__31bf3856ad364e35\UIAutomationProvider.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\bin\Debug\LiveCharts.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\bin\Debug\DataAccessLayer.exe'. Symbols loaded.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\Users\Deathray\Desktop\Everything\University\סמסטר ב\מבוא להנדסת תכנה\Milestone 3\ISE172_project\GUI\bin\Debug\LiveCharts.Wpf.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+Exception thrown: 'System.NullReferenceException' in GUI.exe
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at GUI.UserControlStatisticsTabMarketShare.comboBoxRange_SelectionChanged(Object sender, SelectionChangedEventArgs e) in C:\Users\Deathray\Desktop\Everything\University\????? ?\???? ?????? ????\Milestone 3\ISE172_project\GUI\UserControlStatisticsTabMarketShare.xaml.cs:line 61
+Exception thrown: 'System.NullReferenceException' in GUI.exe
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.Wrapper.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Caching\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Caching.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at GUI.UserControlStatisticsTabMarketShare.comboBox_SelectionChanged(Object sender, SelectionChangedEventArgs e) in C:\Users\Deathray\Desktop\Everything\University\????? ?\???? ?????? ????\Milestone 3\ISE172_project\GUI\UserControlStatisticsTabMarketShare.xaml.cs:line 134
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+Exception thrown: 'System.NullReferenceException' in GUI.exe
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at GUI.UserControlStatisticsTabCommodityRates.comboBoxRange_SelectionChanged(Object sender, SelectionChangedEventArgs e) in C:\Users\Deathray\Desktop\Everything\University\????? ?\???? ?????? ????\Milestone 3\ISE172_project\GUI\UserControlStatisticsTabCommodityRates.xaml.cs:line 61
+Exception thrown: 'System.NullReferenceException' in GUI.exe
+Exception thrown: 'System.NullReferenceException' in GUI.exe
+Exception thrown: 'System.Data.SqlClient.SqlException' in System.Data.dll
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at GUI.UserControlStatisticsTabCommodityRates.comboBox_SelectionChanged(Object sender, SelectionChangedEventArgs e) in C:\Users\Deathray\Desktop\Everything\University\????? ?\???? ?????? ????\Milestone 3\ISE172_project\GUI\UserControlStatisticsTabCommodityRates.xaml.cs:line 127
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at GUI.UserControlStatisticsTabCommodityRates.comboBoxCommID_SelectionChanged(Object sender, SelectionChangedEventArgs e) in C:\Users\Deathray\Desktop\Everything\University\????? ?\???? ?????? ????\Milestone 3\ISE172_project\GUI\UserControlStatisticsTabCommodityRates.xaml.cs:line 143
+Incorrect syntax near the keyword 'GROUP'.
+'GUI.vshost.exe' (CLR v4.0.30319: GUI.vshost.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\PresentationFramework-SystemData\v4.0_4.0.0.0__b77a5c561934e089\PresentationFramework-SystemData.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+Exception thrown: 'System.Data.SqlClient.SqlException' in System.Data.dll
+Incorrect syntax near the keyword 'GROUP'.
+The thread 0x17d4 has exited with code 0 (0x0).
+The thread 0xeac has exited with code 0 (0x0).
+The thread 0x3638 has exited with code 0 (0x0).
+The program '[21264] GUI.vshost.exe: Program Trace' has exited with code 0 (0x0).
+The program '[21264] GUI.vshost.exe' has exited with code 0 (0x0).

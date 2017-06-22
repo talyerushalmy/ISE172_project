@@ -46,8 +46,8 @@ namespace GUI
                     return point.Y != 0 ? string.Format("{0} ({1:P})", point.Y, point.Participation) : "";
                 };
                 MarketShareCollection.Add(pieSeries);
-                DataContext = this;
             }
+            DataContext = this;
         }
 
         public SeriesCollection MarketShareCollection { get; set; }
