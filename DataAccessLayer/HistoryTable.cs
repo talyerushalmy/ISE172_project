@@ -1,15 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Program
 {
     public static class HistoryTable
     {
+        private static string FILENAME = "History_File";
         private readonly static LinkedList<HistoryItem> _historyList = new LinkedList<HistoryItem>();
         private static MarketClient _marketClient = new MarketClient();
+
+        public static void SaveList()
+        {
+            string json = JsonConvert.SerializeObject(_historyList);
+            StreamWriter streamWriter = new StreamWriter(FILENAME, true);
+            streamWriter.Write("History from " + DateTime.Now.ToLongDateString() + '\n' + json + "\n\n");
+            streamWriter.Close();
+        }
 
         public static void Add(HistoryItem toAdd)
         {

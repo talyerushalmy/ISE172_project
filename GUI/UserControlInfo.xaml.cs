@@ -1,21 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Program;
-using Program = Program.Program;
+using System.Drawing.Imaging;
+using System.Windows.Controls;
+using System.Windows.Forms;
+using Clipboard = System.Windows.Clipboard;
+using DataFormats = System.Windows.DataFormats;
+using DataGrid = System.Windows.Controls.DataGrid;
+using DataObject = System.Windows.DataObject;
+using Excel = Microsoft.Office.Interop.Excel;
+using MessageBox = System.Windows.MessageBox;
+using PixelFormat = System.Drawing.Imaging.PixelFormat;
+using Point = System.Windows.Point;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace GUI
 {
@@ -63,7 +76,7 @@ namespace GUI
                 {
                     this.DataGridRequests.Visibility = Visibility.Visible;
                     this.DataGridRequests.ItemsSource = marketUserData.requests
-                        .Select((x, index) => new {Number = index + 1, Request = x})
+                        .Select((x, index) => new { Number = index + 1, Request = x })
                         .ToList();
                 }
                 else
@@ -89,5 +102,44 @@ namespace GUI
             }
         }
 
+        private void buttonCapture_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string filename_comm = @"Reports\Report-Comm-" + DateTime.Now.ToString("ddMMyyyy-hhmmss") + ".xls";
+                string filename_requests = @"Reports\Report-Requests-" + DateTime.Now.ToString("ddMMyyyy-hhmmss") + ".xls";
+                MessageBox.Show("Finished exporting data to the Reports directory!");
+                SaveDataGridToExcel(filename_comm, this.DataGridCommodities);
+                SaveDataGridToExcel(filename_requests, this.DataGridRequests);
+            }
+            catch
+            {
+                MessageBox.Show("Could not export data!");
+            }
+        }
+
+        private void SaveDataGridToExcel(string filename, DataGrid grid)
+        {
+            EnsureDirectoryExists(filename);
+
+            grid.SelectAllCells();
+            grid.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+            ApplicationCommands.Copy.Execute(null, grid);
+            String resultat = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
+            String result = (string)Clipboard.GetData(DataFormats.Text);
+            grid.UnselectAllCells();
+            System.IO.StreamWriter file1 = new System.IO.StreamWriter(filename);
+            file1.WriteLine(result.Replace(',', ' '));
+            file1.Close();
+        }
+
+        private static void EnsureDirectoryExists(string filePath)
+        {
+            FileInfo fi = new FileInfo(filePath);
+            if (!fi.Directory.Exists)
+            {
+                System.IO.Directory.CreateDirectory(fi.DirectoryName);
+            }
+        }
     }
 }

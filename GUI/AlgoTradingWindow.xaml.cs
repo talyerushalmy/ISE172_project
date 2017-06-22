@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Program;
 using AutoMarketAgent = Program.AutoMarketAgent;
 
 namespace GUI
@@ -122,6 +123,7 @@ namespace GUI
 
         public void ExitProgram()
         {
+            HistoryTable.SaveList();
             Application.Current.Shutdown();
         }
 
